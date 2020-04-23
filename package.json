@@ -1,0 +1,47 @@
+{
+  "name": "setup-terraform",
+  "version": "1.0.0",
+  "description": "Setup Terraform CLI for GitHub Actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd wrapper && npm test && cd .. && semistandard --env jest && jest --coverage",
+    "lint": "cd wrapper && npm run lint && cd .. && semistandard --env jest --fix",
+    "build": "cd wrapper && npm run build && cd .. && ncc build index.js --out dist",
+    "postinstall": "cd wrapper && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "@actions/io": "^1.0.2",
+    "@actions/tool-cache": "^1.3.3",
+    "node-fetch": "^2.6.0",
+    "semver": "^7.1.3"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "0.22.1",
+    "husky": "^4.2.3",
+    "jest": "^25.2.4",
+    "nock": "^12.0.3",
+    "semistandard": "^14.2.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/node_modules/",
+      "<rootDir>/wrapper/"
+    ]
+  },
+  "semistandard": {
+    "ignore": [
+      "dist/**",
+      "wrapper/**"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run build && git add dist/"
+    }
+  }
+}
