@@ -5,17 +5,19 @@
   <a href="https://github.com/hashicorp/setup-terraform/actions"><img alt="Setup Terraform" src="https://github.com/hashicorp/setup-terraform/workflows/Setup%20Terraform/badge.svg" /></a>
 </p>
 
-This action sets up Terraform CLI in your [GitHub Actions](https://github.com/features/actions) workflow by:
+The `hashicorp/setup-terraform` action is a JavaScript action that sets up Terraform CLI in your GitHub Actions workflow by:
 
 - Downloading a specific version of Terraform CLI and adding it to the `PATH`.
-- Configuring the Terraform CLI configuration file with a Terraform Cloud/Enterprise hostname and API token.
-- Optionally installing a wrapper to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively.
+- Configuring the [Terraform CLI configuration file](/docs/commands/cli-config.html) with a Terraform Cloud/Enterprise hostname and API token.
+- Installing a wrapper script to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively. (This can be optionally skipped if subsequent steps in the same job do not need to access the results of Terraform commands.)
+
+After you've used the action, subsequent steps in the same job can run arbitrary Terraform commands using [the GitHub Actions `run` syntax](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsrun). This allows most Terraform commands to work exactly like they do on your local command line.
 
 ## Usage
 
 This action can be run on `ubuntu-latest`, `windows-latest`, and `macos-latest` GitHub Actions runners. When running on `windows-latest` the shell should be set to Bash.
 
-The default configuration installs the latest version of Terraform CLI and installs the wrapper to wrap subsequent calls to the `terraform` binary.
+The default configuration installs the latest version of Terraform CLI and installs the wrappers script to wrap subsequent calls to the `terraform` binary.
 
 ```yaml
 steps:
@@ -50,7 +52,7 @@ steps:
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 ```
 
-The wrapper installation can be skipped.
+The wrapper script installation can be skipped.
 
 ```yaml
 steps:
@@ -59,7 +61,7 @@ steps:
     terraform_wrapper: false
 ```
 
-Subsequent steps can access outputs when the wrapper is installed.
+Subsequent steps can access outputs when the wrapper script is installed.
 
 
 ```yaml
@@ -76,7 +78,7 @@ steps:
 - run: echo ${{ steps.plan.outputs.exitcode }}
 ```
 
-The outputs can be used in subsequent steps to comment on the pull request:
+Outputs can be used in subsequent steps to comment on the pull request:
 
 ```yaml
 steps:
