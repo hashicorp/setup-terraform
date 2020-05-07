@@ -17,7 +17,7 @@ After you've used the action, subsequent steps in the same job can run arbitrary
 
 This action can be run on `ubuntu-latest`, `windows-latest`, and `macos-latest` GitHub Actions runners. When running on `windows-latest` the shell should be set to Bash.
 
-The default configuration installs the latest version of Terraform CLI and installs the wrappers script to wrap subsequent calls to the `terraform` binary.
+The default configuration installs the latest version of Terraform CLI and installs the wrapper script to wrap subsequent calls to the `terraform` binary.
 
 ```yaml
 steps:
