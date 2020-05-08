@@ -108,7 +108,7 @@ steps:
 
 The following inputs are supported.
 
-- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.
+- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file. Defaults to `app.terraform.io`.
 
 - `cli_config_credentials_token` - (optional) The API token for a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.
 
