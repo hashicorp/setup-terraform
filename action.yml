@@ -3,7 +3,7 @@ description: 'Sets up Terraform CLI in your GitHub Actions workflow.'
 author: 'HashiCorp, Inc.'
 inputs:
   cli_config_credentials_hostname:
-    description: 'The hostname of a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.'
+    description: 'The hostname of a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file. Defaults to `app.terraform.io`.'
     default: 'app.terraform.io'
     required: false
   cli_config_credentials_token:
