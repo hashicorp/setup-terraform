@@ -30,7 +30,7 @@ A specific version of Terraform CLI can be installed.
 steps:
 - uses: hashicorp/setup-terraform@v1 
   with:
-    terraform_version: 0.12.24
+    terraform_version: 0.12.25
 ```
 
 Credentials for Terraform Cloud (app.terraform.io) can be configured.
