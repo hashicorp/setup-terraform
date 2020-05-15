@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        terraform-versions: [0.11.14, 0.12.25]
+        terraform-versions: [0.11.14, latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -28,7 +28,12 @@ jobs:
         terraform_version: ${{ matrix['terraform-versions'] }}
     
     - name: Validate Teraform Version - ${{ matrix['terraform-versions'] }}
+      if: ${{ matrix['terraform-versions'] != 'latest' }}
       run: terraform version | grep ${{ matrix['terraform-versions']}}
+
+    - name: Validate Teraform Version - ${{ matrix['terraform-versions'] }}
+      if: ${{ matrix['terraform-versions'] == 'latest' }}
+      run: terraform version | grep 'Terraform v'
   
   terraform-versions-no-wrapper:
     name: 'Terraform Versions No Wrapper' 
@@ -36,7 +41,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        terraform-versions: [0.11.14, 0.12.25]
+        terraform-versions: [0.11.14, latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -47,8 +52,13 @@ jobs:
         terraform_version: ${{ matrix['terraform-versions'] }}
         terraform_wrapper: false
 
-    - name: Validate Teraform Version (no wrapper) - ${{ matrix['terraform-versions'] }}
+    - name: Validate Teraform Version - ${{ matrix['terraform-versions'] }}
+      if: ${{ matrix['terraform-versions'] != 'latest' }}
       run: terraform version | grep ${{ matrix['terraform-versions']}}
+
+    - name: Validate Teraform Version - ${{ matrix['terraform-versions'] }}
+      if: ${{ matrix['terraform-versions'] == 'latest' }}
+      run: terraform version | grep 'Terraform v'
   
   terraform-credentials-cloud:
     name: 'Terraform Cloud Credentials' 
