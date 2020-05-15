@@ -126,7 +126,7 @@ This action does not configure any outputs directly. However, when the `terrafor
 
 - `stderr` - The STDERR stream of the call to the `terraform` binary.
 
-- `exitcode` - The exit code of the call to the `terraform` binary..
+- `exitcode` - The exit code of the call to the `terraform` binary.
 
 ## License
 
