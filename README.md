@@ -105,6 +105,59 @@ steps:
         body: output
       })
 ```
+Specify terraform working directory and previous outputs can be used in subsequent steps for a concise comment on the pull request
+```yaml
+env:
+    tf_actions_working_dir: <Terraform working directory>
+steps:
+- uses: actions/checkout@v2
+- uses: hashicorp/setup-terraform@v1
+
+- name: Terraform fmt
+  id: fmt
+  run: cd ${{ env.tf_actions_working_dir }} && terraform fmt
+  continue-on-error: true
+
+- name: Terraform Init
+  id: init
+  run: cd ${{ env.tf_actions_working_dir }} && terraform init
+
+- name: Terraform Validate
+  id: validate
+  run: cd ${{ env.tf_actions_working_dir }} && terraform validate -no-color
+
+- name: Terraform Plan
+  id: plan
+  run: cd ${{ env.tf_actions_working_dir }} && terraform plan -no-color
+  continue-on-error: true
+
+- uses: actions/github-script@0.9.0
+  if: github.event_name == 'pull_request'
+  env:
+    PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+  with:
+    github-token: ${{ secrets.GITHUB_TOKEN }}
+    script: |
+      const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
+      #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+      #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
+      #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      
+      <details><summary>Show Plan</summary>
+      
+      \`\`\`${process.env.PLAN}\`\`\`
+      
+      </details>
+      
+      *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+        
+      github.issues.createComment({
+        issue_number: context.issue.number,
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        body: output
+      })
+```
 
 ## Inputs
 
