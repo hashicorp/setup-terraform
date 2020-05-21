@@ -81,34 +81,6 @@ steps:
 Outputs can be used in subsequent steps to comment on the pull request:
 
 ```yaml
-steps:
-- uses: hashicorp/setup-terraform@v1
-
-- run: terraform init
-
-- id: plan
-  run: terraform plan -no-color
-
-- uses: actions/github-script@0.9.0
-  if: github.event_name == 'pull_request'
-  env:
-    STDOUT: "```terraform\n${{ steps.plan.outputs.stdout }}```"
-  with:
-    github-token: ${{ secrets.GITHUB_TOKEN }}
-    script: |
-      const output = `<details><summary>tf plan:</summary>\n\n${process.env.STDOUT}\n\n</details>`;
-
-      github.issues.createComment({
-        issue_number: context.issue.number,
-        owner: context.repo.owner,
-        repo: context.repo.repo,
-        body: output
-      })
-```
-
-Outputs can be used in subsequent steps to comment on the pull request
-
-```yaml
 defaults:
   run:
     working-directory: ${{ env.tf_actions_working_dir }}
