@@ -105,30 +105,33 @@ steps:
         body: output
       })
 ```
-Specify terraform working directory and previous outputs can be used in subsequent steps for a concise comment on the pull request
+
+Outputs can be used in subsequent steps to comment on the pull request
+
 ```yaml
-env:
-    tf_actions_working_dir: <Terraform working directory>
+defaults:
+  run:
+    working-directory: ${{ env.tf_actions_working_dir }}
 steps:
 - uses: actions/checkout@v2
 - uses: hashicorp/setup-terraform@v1
 
 - name: Terraform fmt
   id: fmt
-  run: cd ${{ env.tf_actions_working_dir }} && terraform fmt
+  run: terraform fmt
   continue-on-error: true
 
 - name: Terraform Init
   id: init
-  run: cd ${{ env.tf_actions_working_dir }} && terraform init
+  run: terraform init
 
 - name: Terraform Validate
   id: validate
-  run: cd ${{ env.tf_actions_working_dir }} && terraform validate -no-color
+  run: terraform validate -no-color
 
 - name: Terraform Plan
   id: plan
-  run: cd ${{ env.tf_actions_working_dir }} && terraform plan -no-color
+  run: terraform plan -no-color
   continue-on-error: true
 
 - uses: actions/github-script@0.9.0
