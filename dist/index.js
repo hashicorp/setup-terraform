@@ -2052,6 +2052,10 @@ function findLatest (allVersions) {
   let latest = '0.0.0';
 
   for (const version in allVersions.versions) {
+    // Ignore pre-release
+    if (semver.prerelease(version) !== null) {
+      continue;
+    }
     // is "version" greater than "latest"
     latest = semver.gt(version, latest) ? version : latest;
   }
