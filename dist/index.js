@@ -2060,6 +2060,8 @@ function findLatest (allVersions) {
     latest = semver.gt(version, latest) ? version : latest;
   }
 
+  core.info(`Latest version is ${latest}`);
+
   return allVersions.versions[latest];
 }
 
