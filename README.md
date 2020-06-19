@@ -136,19 +136,29 @@ steps:
 
 ## Inputs
 
-The following inputs are supported.
+The action supports the following inputs:
 
-- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file. Defaults to `app.terraform.io`.
+- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to 
+   place within the credentials block of the Terraform CLI configuration file. Defaults to `app.terraform.io`.
 
-- `cli_config_credentials_token` - (optional) The API token for a Terraform Cloud/Enterprise instance to place within the credentials block of the Terraform CLI configuration file.
+- `cli_config_credentials_token` - (optional) The API token for a Terraform Cloud/Enterprise instance to
+   place within the credentials block of the Terraform CLI configuration file.
 
-- `terraform_version` - (optional) The version of Terraform CLI to install. A value of `latest` will install the latest version of Terraform CLI. Defaults to `latest`.
+- `terraform_version` - (optional) The version of Terraform CLI to install. Instead of a full version string,
+   you can also specify a constraint string (see [Semver Ranges](https://www.npmjs.com/package/semver#ranges)
+   for available range specifications). Examples are: `<1.13.0`, `~1.12`, `1.12.x` (all three installing
+   the latest available 1.12 version). The special value of `latest` installs the latest version of
+   Terraform CLI. Defaults to `latest`.
 
-- `terraform_wrapper` - (optional) Whether or not to install a wrapper to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.
+- `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of 
+   the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs
+   named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.
+
 
 ## Outputs
 
-This action does not configure any outputs directly. However, when the `terraform_wrapper` input is set to `true`, the following outputs will be available for subsequent steps that call the `terraform` binary.
+This action does not configure any outputs directly. However, when you set the `terraform_wrapper` input
+to `true`, the following outputs is available for subsequent steps that call the `terraform` binary.
 
 - `stdout` - The STDOUT stream of the call to the `terraform` binary.
 
