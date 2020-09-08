@@ -90,7 +90,7 @@ steps:
 
 - name: Terraform fmt
   id: fmt
-  run: terraform fmt
+  run: terraform fmt -check
   continue-on-error: true
 
 - name: Terraform Init
