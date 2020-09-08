@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+- Allow `terraform_version` to take a version constraint. ([#38](https://github.com/hashicorp/setup-terraform/pull/38))
+
 ## v1.1.0
 
 - Ignore pre-release versions when `terraform_version` is set to `latest`. ([#19](https://github.com/hashicorp/setup-terraform/pull/19))
