@@ -61,7 +61,7 @@ jobs:
       run: terraform version | grep 'Terraform v'
   
   terraform-versions-constraints:
-    name: 'Terraform Versions' 
+    name: 'Terraform Versions Constraints' 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -80,7 +80,7 @@ jobs:
       run: terraform version | grep 'Terraform v0\.12'
   
   terraform-versions-constraints-no-wrapper:
-    name: 'Terraform Versions No Wrapper' 
+    name: 'Terraform Versions Constraints No Wrapper' 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
