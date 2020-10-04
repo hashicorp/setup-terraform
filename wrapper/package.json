@@ -6,7 +6,7 @@
   "scripts": {
     "test": "semistandard --env jest && jest --coverage",
     "lint": "semistandard --env jest --fix",
-    "build": "ncc build terraform.js --out dist"
+    "build": "ncc build terraform.js -m --out dist"
   },
   "author": "",
   "dependencies": {
