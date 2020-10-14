@@ -275,8 +275,8 @@ jobs:
       run: terraform plan 
 
     - name: Print Terraform Plan 
-      shell: bash
-      run: echo "${{ steps.plan.outputs.stdout }}"
+      shell: python
+      run: print("""${{ steps.plan.outputs.stdout }}""")
   
   terraform-run-local-no-wrapper:
     name: 'Terraform Run Local No Wrapper' 
