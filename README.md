@@ -68,10 +68,10 @@ Subsequent steps can access outputs when the wrapper script is installed.
 steps:
 - uses: hashicorp/setup-terraform@v1
 
-- run: terraform init
+- run: terraform init -input=false
 
 - id: plan
-  run: terraform plan -no-color
+  run: terraform plan -no-color -input=false
 
 - run: echo ${{ steps.plan.outputs.stdout }}
 - run: echo ${{ steps.plan.outputs.stderr }}
@@ -95,7 +95,7 @@ steps:
 
 - name: Terraform Init
   id: init
-  run: terraform init
+  run: terraform init -input=false
 
 - name: Terraform Validate
   id: validate
@@ -103,7 +103,7 @@ steps:
 
 - name: Terraform Plan
   id: plan
-  run: terraform plan -no-color
+  run: terraform plan -no-color -input=false
   continue-on-error: true
 
 - uses: actions/github-script@0.9.0
