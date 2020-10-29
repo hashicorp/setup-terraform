@@ -2,6 +2,8 @@
   "name": "setup-terraform",
   "version": "1.0.0",
   "description": "Setup Terraform CLI for GitHub Actions",
+  "license": "MPL-2.0",
+  "publisher": "hashicorp",
   "main": "index.js",
   "scripts": {
     "test": "cd wrapper && npm test && cd .. && semistandard --env jest && jest --coverage",

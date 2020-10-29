@@ -1,7 +1,9 @@
 {
   "name": "terraform.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JavaScript wrapper for terraform binary",
+  "license": "MPL-2.0",
+  "publisher": "hashicorp",
   "main": "terraform.js",
   "scripts": {
     "test": "semistandard --env jest && jest --coverage",
