@@ -1,5 +1,5 @@
 resource "null_resource" "null" {
   triggers = {
-    value = "${timestamp()}"
+    value = timestamp()
   }
 }

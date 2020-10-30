@@ -1,7 +1,9 @@
 {
   "name": "terraform.js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JavaScript wrapper for terraform binary",
+  "license": "MPL-2.0",
+  "publisher": "hashicorp",
   "main": "terraform.js",
   "scripts": {
     "test": "semistandard --env jest && jest --coverage",
@@ -10,8 +12,8 @@
   },
   "author": "",
   "dependencies": {
-    "@actions/core": "^1.2.3",
-    "@actions/exec": "^1.0.3",
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
     "@actions/io": "^1.0.2"
   },
   "devDependencies": {
