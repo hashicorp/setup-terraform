@@ -1,6 +1,6 @@
-# v1.2.1 (unreleased)
+# v1.2.1 (2020-10-30)
 
-- Update dependencies to resolve CVE-2020-15228
+- Update dependencies to resolve CVE-2020-15228 (#63)
 
 # v1.2.0
 
