@@ -146,9 +146,9 @@ The action supports the following inputs:
 
 - `terraform_version` - (optional) The version of Terraform CLI to install. Instead of a full version string,
    you can also specify a constraint string (see [Semver Ranges](https://www.npmjs.com/package/semver#ranges)
-   for available range specifications). Examples are: `<0.13.0`, `~0.12`, `0.12.x` (all three installing
-   the latest available 0.12 version). The special value of `latest` installs the latest version of
-   Terraform CLI. Defaults to `latest`.
+   for available range specifications). Examples are: `<0.14.0`, `~0.13.0`, `0.13.x` (all three installing
+   the latest available 0.13 version). Prerelease versions are always ignored. The special value of `latest`
+   installs the latest version of Terraform CLI. Defaults to `latest`.
 
 - `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of 
    the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs
