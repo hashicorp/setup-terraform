@@ -36,8 +36,6 @@ module.exports =
 /******/ 		// Load entry module and return exports
 /******/ 		return __webpack_require__(104);
 /******/ 	};
-/******/ 	// initialize runtime
-/******/ 	runtime(__webpack_require__);
 /******/
 /******/ 	// run startup
 /******/ 	return startup();
@@ -950,16 +948,9 @@ class ExecState extends events.EventEmitter {
 /***/ }),
 
 /***/ 16:
-/***/ (function(module, __unusedexports, __webpack_require__) {
+/***/ (function(module) {
 
-const SemVer = __webpack_require__(65)
-const compareBuild = (a, b, loose) => {
-  const versionA = new SemVer(a, loose)
-  const versionB = new SemVer(b, loose)
-  return versionA.compare(versionB) || versionA.compareBuild(versionB)
-}
-module.exports = compareBuild
-
+module.exports = require("tls");
 
 /***/ }),
 
@@ -1463,7 +1454,7 @@ const setup = __webpack_require__(146);
 /***/ 120:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
-const compareBuild = __webpack_require__(16)
+const compareBuild = __webpack_require__(465)
 const sort = (list, loose) => list.sort((a, b) => compareBuild(a, b, loose))
 module.exports = sort
 
@@ -1969,7 +1960,7 @@ module.exports = function nodeRNG() {
 
 
 var net = __webpack_require__(631);
-var tls = __webpack_require__(818);
+var tls = __webpack_require__(16);
 var http = __webpack_require__(605);
 var https = __webpack_require__(211);
 var events = __webpack_require__(614);
@@ -2235,14 +2226,7 @@ exports.debug = debug; // for test
 /***/ }),
 
 /***/ 146:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _hashicorp_js_releases__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(844);
-/* harmony import */ var _hashicorp_js_releases__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_hashicorp_js_releases__WEBPACK_IMPORTED_MODULE_0__);
-/* module decorator */ module = __webpack_require__.hmd(module);
-
+/***/ (function(module, __unusedexports, __webpack_require__) {
 
 // Node.js core
 const fs = __webpack_require__(747).promises;
@@ -2253,6 +2237,7 @@ const path = __webpack_require__(622);
 const core = __webpack_require__(470);
 const tc = __webpack_require__(533);
 const io = __webpack_require__(1);
+const releases = __webpack_require__(844);
 
 // arch in [arm, x32, x64...] (https://nodejs.org/api/os.html#os_os_arch)
 // return value in [amd64, 386, arm]
@@ -2307,10 +2292,10 @@ async function installWrapper (pathToCLI) {
 
   // Install our wrapper as terraform
   try {
-    source = path.resolve([__dirname, '..', 'wrapper', 'dist', 'index.js'].join(path.sep));
+    source = __webpack_require__.ab + "index1.js";
     target = [pathToCLI, 'terraform'].join(path.sep);
     core.debug(`Copying ${source} to ${target}.`);
-    await io.cp(source, target);
+    await io.cp(__webpack_require__.ab + "index1.js", target);
   } catch (e) {
     core.error(`Unable to copy ${source} to ${target}.`);
     throw e;
@@ -2362,7 +2347,7 @@ async function run () {
     const osArch = os.arch();
 
     core.debug(`Finding releases for Terraform version ${version}`);
-    const release = Object(_hashicorp_js_releases__WEBPACK_IMPORTED_MODULE_0__.getRelease)('terraform', version);
+    const release = await releases.getRelease('terraform', version);
     const platform = mapOS(osPlatform);
     const arch = mapArch(osArch);
     core.debug(`Getting build for Terraform version ${release.version}: ${platform} ${arch}`);
@@ -2738,7 +2723,7 @@ module.exports = ltr
 
 var fs = __webpack_require__(747);
 var util = __webpack_require__(669);
-var stream = __webpack_require__(413);
+var stream = __webpack_require__(794);
 var Readable = stream.Readable;
 var Writable = stream.Writable;
 var PassThrough = stream.PassThrough;
@@ -3044,9 +3029,10 @@ module.exports = require("assert");
 /***/ }),
 
 /***/ 413:
-/***/ (function(module) {
+/***/ (function(module, __unusedexports, __webpack_require__) {
 
-module.exports = require("stream");
+module.exports = __webpack_require__(141);
+
 
 /***/ }),
 
@@ -3226,6 +3212,20 @@ const outside = (version, range, hilo, options) => {
 }
 
 module.exports = outside
+
+
+/***/ }),
+
+/***/ 465:
+/***/ (function(module, __unusedexports, __webpack_require__) {
+
+const SemVer = __webpack_require__(65)
+const compareBuild = (a, b, loose) => {
+  const versionA = new SemVer(a, loose)
+  const versionB = new SemVer(b, loose)
+  return versionA.compare(versionB) || versionA.compareBuild(versionB)
+}
+module.exports = compareBuild
 
 
 /***/ }),
@@ -3628,7 +3628,7 @@ const os = __importStar(__webpack_require__(87));
 const path = __importStar(__webpack_require__(622));
 const httpm = __importStar(__webpack_require__(539));
 const semver = __importStar(__webpack_require__(550));
-const stream = __importStar(__webpack_require__(413));
+const stream = __importStar(__webpack_require__(794));
 const util = __importStar(__webpack_require__(669));
 const v4_1 = __importDefault(__webpack_require__(826));
 const exec_1 = __webpack_require__(986);
@@ -4745,7 +4745,7 @@ class HttpClient {
         if (useProxy) {
             // If using proxy, need tunnel
             if (!tunnel) {
-                tunnel = __webpack_require__(856);
+                tunnel = __webpack_require__(413);
             }
             const agentOptions = {
                 maxSockets: maxSockets,
@@ -6497,7 +6497,7 @@ module.exports = lt
 /***/ 593:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
-const compareBuild = __webpack_require__(16)
+const compareBuild = __webpack_require__(465)
 const rsort = (list, loose) => list.sort((a, b) => compareBuild(b, a, loose))
 module.exports = rsort
 
@@ -51347,9 +51347,9 @@ var fd_slicer = __webpack_require__(324);
 var crc32 = __webpack_require__(538);
 var util = __webpack_require__(669);
 var EventEmitter = __webpack_require__(614).EventEmitter;
-var Transform = __webpack_require__(413).Transform;
-var PassThrough = __webpack_require__(413).PassThrough;
-var Writable = __webpack_require__(413).Writable;
+var Transform = __webpack_require__(794).Transform;
+var PassThrough = __webpack_require__(794).PassThrough;
+var Writable = __webpack_require__(794).Writable;
 
 exports.open = open;
 exports.fromFd = fromFd;
@@ -52172,6 +52172,13 @@ exports.httpsRequest = httpsRequest;
 
 /***/ }),
 
+/***/ 794:
+/***/ (function(module) {
+
+module.exports = require("stream");
+
+/***/ }),
+
 /***/ 803:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -52211,13 +52218,6 @@ const maxSatisfying = (versions, range, options) => {
 }
 module.exports = maxSatisfying
 
-
-/***/ }),
-
-/***/ 818:
-/***/ (function(module) {
-
-module.exports = require("tls");
 
 /***/ }),
 
@@ -52529,14 +52529,6 @@ function matchVersion(versions, range) {
 
 /***/ }),
 
-/***/ 856:
-/***/ (function(module, __unusedexports, __webpack_require__) {
-
-module.exports = __webpack_require__(141);
-
-
-/***/ }),
-
 /***/ 873:
 /***/ (function(module, __unusedexports, __webpack_require__) {
 
@@ -52584,7 +52576,7 @@ module.exports = {
   compare: __webpack_require__(874),
   rcompare: __webpack_require__(630),
   compareLoose: __webpack_require__(283),
-  compareBuild: __webpack_require__(16),
+  compareBuild: __webpack_require__(465),
   sort: __webpack_require__(120),
   rsort: __webpack_require__(593),
   gt: __webpack_require__(486),
@@ -53317,66 +53309,4 @@ module.exports = subset
 
 /***/ })
 
-/******/ },
-/******/ function(__webpack_require__) { // webpackRuntimeModules
-/******/ 	"use strict";
-/******/ 
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function getDefault() { return module['default']; } :
-/******/ 				function getModuleExports() { return module; };
-/******/ 			__webpack_require__.d(getter, 'a', getter);
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/harmony module decorator */
-/******/ 	!function() {
-/******/ 		__webpack_require__.hmd = function(module) {
-/******/ 			module = Object.create(module);
-/******/ 			if (!module.children) module.children = [];
-/******/ 			Object.defineProperty(module, 'loaded', {
-/******/ 				enumerable: true,
-/******/ 				get: function () { return module.l; }
-/******/ 			});
-/******/ 			Object.defineProperty(module, 'id', {
-/******/ 				enumerable: true,
-/******/ 				get: function () { return module.i; }
-/******/ 			});
-/******/ 			Object.defineProperty(module, 'exports', {
-/******/ 				enumerable: true,
-/******/ 				set: function () {
-/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
-/******/ 				}
-/******/ 			});
-/******/ 			return module;
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getter */
-/******/ 	!function() {
-/******/ 		// define getter function for harmony exports
-/******/ 		var hasOwnProperty = Object.prototype.hasOwnProperty;
-/******/ 		__webpack_require__.d = function(exports, name, getter) {
-/******/ 			if(!hasOwnProperty.call(exports, name)) {
-/******/ 				Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 			}
-/******/ 		};
-/******/ 	}();
-/******/ 	
-/******/ }
-);
+/******/ });
