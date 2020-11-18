@@ -18,9 +18,7 @@
     "@actions/github": "^4.0.0",
     "@actions/io": "^1.0.2",
     "@actions/tool-cache": "^1.6.1",
-    "@hashicorp/js-releases": "^1.1.0",
-    "node-fetch": "^2.6.1",
-    "semver": "^7.3.2"
+    "@hashicorp/js-releases": "^1.1.0"
   },
   "devDependencies": {
     "@zeit/ncc": "0.22.1",
