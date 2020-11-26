@@ -113,15 +113,25 @@ steps:
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
+      const validate = ${{ toJson(steps.validate.outputs.stdout) }};
+      const plan = ${{ toJson(steps.plan.outputs.stdout) }};
+
       const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
       #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-      #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
+      #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+
+      <details><summary>Show Validation</summary>
+
+      \`\`\`${validate}\`\`\`
+
+      </details>
+
       #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-      
+
       <details><summary>Show Plan</summary>
-      
-      \`\`\`${process.env.PLAN}\`\`\`
-      
+
+      \`\`\`terraform\n${plan}\`\`\`
+
       </details>
       
       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
