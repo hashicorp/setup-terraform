@@ -21,8 +21,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -47,8 +45,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
   
     - name: Setup Terraform (no wrapper) - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -74,8 +70,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -95,8 +89,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
   
     - name: Setup Terraform (no wrapper) - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -118,8 +110,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./
@@ -149,8 +139,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./
@@ -179,8 +167,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./
@@ -204,8 +190,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./
@@ -237,8 +221,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./
@@ -275,8 +257,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./
@@ -310,8 +290,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: npm ci
 
     - name: Setup Terraform
       uses: ./

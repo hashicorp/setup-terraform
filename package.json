@@ -8,7 +8,7 @@
   "scripts": {
     "test": "cd wrapper && npm test && cd .. && semistandard --env jest && jest --coverage",
     "lint": "cd wrapper && npm run lint && cd .. && semistandard --env jest --fix",
-    "build": "cd wrapper && npm run build && cd .. && ncc build index.js --out dist",
+    "build": "cd wrapper && npm run build && cd .. && ncc build index.js",
     "postinstall": "cd wrapper && npm install"
   },
   "keywords": [],
@@ -18,7 +18,8 @@
     "@actions/github": "^4.0.0",
     "@actions/io": "^1.0.2",
     "@actions/tool-cache": "^1.6.1",
-    "@hashicorp/js-releases": "^1.2.0"
+    "@hashicorp/js-releases": "^1.2.0",
+    "asn1":"^0.2.4"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.25.1",
