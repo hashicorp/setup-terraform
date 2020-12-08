@@ -1,3 +1,7 @@
+# v1.3.0 (2020-12-08)
+
+- Use `@hashicorp/js-releases` package to identify and download the specified version of Terraform. This will ensure that our tooling is consistent in how it works with the releases API, especially when handling pre-releases. (#70, #73)
+
 # v1.2.1 (2020-10-30)
 
 - Update dependencies to resolve CVE-2020-15228 (#63)
