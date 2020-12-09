@@ -1,3 +1,7 @@
+# v1.3.2 (2020-12-09)
+
+- Update js-releases to fix missing dep in bundle (#78)
+
 # v1.3.1 (2020-12-08)
 
 - Fix build dependency (#76)
