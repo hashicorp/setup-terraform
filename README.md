@@ -115,12 +115,14 @@ steps:
     script: |
       const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
       #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-      #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
+      #### Terraform Validation 🤖\`${{ steps.validate.outputs.stdout }}\`
       #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
       
       <details><summary>Show Plan</summary>
       
-      \`\`\`${process.env.PLAN}\`\`\`
+      \`\`\`\n
+      ${process.env.PLAN}
+      \`\`\`
       
       </details>
       
