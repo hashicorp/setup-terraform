@@ -1,3 +1,7 @@
+# v1.4.0 (unreleased)
+
+- Update js-releases to v1.4.0 to address HCSEC-2021-12 (#111)
+
 # v1.3.2 (2020-12-09)
 
 - Update js-releases to fix missing dep in bundle (#78)
