@@ -5,11 +5,16 @@
   "license": "MPL-2.0",
   "publisher": "hashicorp",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hashicorp/setup-terraform.git"
+  },
   "scripts": {
     "test": "cd wrapper && npm test && cd .. && semistandard --env jest && jest --coverage",
     "lint": "cd wrapper && npm run lint && cd .. && semistandard --env jest --fix",
     "build": "cd wrapper && npm run build && cd .. && ncc build index.js --out dist",
-    "postinstall": "cd wrapper && npm install"
+    "postinstall": "cd wrapper && npm install",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +27,7 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.28.5",
-    "husky": "^4.3.0",
+    "husky": "^6.0.0",
     "jest": "^26.6.3",
     "nock": "^13.0.11",
     "semistandard": "^16.0.0"
@@ -39,10 +44,5 @@
       "dist/**",
       "wrapper/**"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run build && git add dist/"
-    }
   }
 }
