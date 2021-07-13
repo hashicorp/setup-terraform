@@ -42,7 +42,8 @@ async function checkTerraform () {
   core.setOutput('exitcode', exitCode.toString(10));
 
   // A non-zero exitCode is considered an error
-  if (exitCode !== 0) {
+  // An exit-code 2 is used when the '-detailed-exitcode' option is passed to plan. this denotes Success with non-empty diff (changes present)
+  if (exitCode !== 0 || exitCode !== 2  ) {
     core.setFailed(`Terraform exited with code ${exitCode}.`);
   }
 })();
