@@ -106,7 +106,7 @@ steps:
   run: terraform plan -no-color
   continue-on-error: true
 
-- uses: actions/github-script@v5
+- uses: actions/github-script@v6
   if: github.event_name == 'pull_request'
   env:
     PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
