@@ -17,9 +17,9 @@
     "@actions/io": "^1.0.2"
   },
   "devDependencies": {
-    "@zeit/ncc": "0.22.1",
-    "jest": "^25.4.0",
-    "semistandard": "^14.2.0"
+    "@vercel/ncc": "0.33.3",
+    "jest": "^27.5.1",
+    "semistandard": "^16.0.1"
   },
   "semistandard": {
     "ignore": [
