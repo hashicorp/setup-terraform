@@ -23,7 +23,7 @@
     "@actions/github": "^4.0.0",
     "@actions/io": "^1.1.0",
     "@actions/tool-cache": "^1.6.1",
-    "@hashicorp/js-releases": "^1.4.0"
+    "@hashicorp/js-releases": "^1.5.0"
   },
   "devDependencies": {
     "@vercel/ncc": "0.33.3",
