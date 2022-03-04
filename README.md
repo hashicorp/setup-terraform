@@ -106,7 +106,7 @@ steps:
   run: terraform plan -no-color
   continue-on-error: true
 
-- uses: actions/github-script@0.9.0
+- uses: actions/github-script@v5
   if: github.event_name == 'pull_request'
   env:
     PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
@@ -128,7 +128,7 @@ steps:
       
       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
         
-      github.issues.createComment({
+      github.rest.issues.createComment({
         issue_number: context.issue.number,
         owner: context.repo.owner,
         repo: context.repo.repo,
