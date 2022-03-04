@@ -5,9 +5,9 @@
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 // Node.js core
-const fs = __nccwpck_require__(5747).promises;
-const os = __nccwpck_require__(2087);
-const path = __nccwpck_require__(5622);
+const fs = (__nccwpck_require__(7147).promises);
+const os = __nccwpck_require__(2037);
+const path = __nccwpck_require__(1017);
 
 // External
 const core = __nccwpck_require__(2186);
@@ -172,7 +172,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const os = __importStar(__nccwpck_require__(2087));
+const os = __importStar(__nccwpck_require__(2037));
 const utils_1 = __nccwpck_require__(5278);
 /**
  * Commands
@@ -270,8 +270,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const command_1 = __nccwpck_require__(7351);
 const file_command_1 = __nccwpck_require__(717);
 const utils_1 = __nccwpck_require__(5278);
-const os = __importStar(__nccwpck_require__(2087));
-const path = __importStar(__nccwpck_require__(5622));
+const os = __importStar(__nccwpck_require__(2037));
+const path = __importStar(__nccwpck_require__(1017));
 /**
  * The code to exit an action
  */
@@ -507,8 +507,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__nccwpck_require__(5747));
-const os = __importStar(__nccwpck_require__(2087));
+const fs = __importStar(__nccwpck_require__(7147));
+const os = __importStar(__nccwpck_require__(2037));
 const utils_1 = __nccwpck_require__(5278);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
@@ -626,10 +626,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const os = __importStar(__nccwpck_require__(2087));
-const events = __importStar(__nccwpck_require__(8614));
-const child = __importStar(__nccwpck_require__(3129));
-const path = __importStar(__nccwpck_require__(5622));
+const os = __importStar(__nccwpck_require__(2037));
+const events = __importStar(__nccwpck_require__(2361));
+const child = __importStar(__nccwpck_require__(2081));
+const path = __importStar(__nccwpck_require__(1017));
 const io = __importStar(__nccwpck_require__(7436));
 const ioUtil = __importStar(__nccwpck_require__(1962));
 /* eslint-disable @typescript-eslint/unbound-method */
@@ -1217,9 +1217,9 @@ class ExecState extends events.EventEmitter {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const url = __nccwpck_require__(8835);
-const http = __nccwpck_require__(8605);
-const https = __nccwpck_require__(7211);
+const url = __nccwpck_require__(7310);
+const http = __nccwpck_require__(3685);
+const https = __nccwpck_require__(5687);
 const pm = __nccwpck_require__(6443);
 let tunnel;
 var HttpCodes;
@@ -1756,7 +1756,7 @@ exports.HttpClient = HttpClient;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const url = __nccwpck_require__(8835);
+const url = __nccwpck_require__(7310);
 function getProxyUrl(reqUrl) {
     let usingSsl = reqUrl.protocol === 'https:';
     let proxyUrl;
@@ -1839,9 +1839,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 var _a;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const assert_1 = __nccwpck_require__(2357);
-const fs = __importStar(__nccwpck_require__(5747));
-const path = __importStar(__nccwpck_require__(5622));
+const assert_1 = __nccwpck_require__(9491);
+const fs = __importStar(__nccwpck_require__(7147));
+const path = __importStar(__nccwpck_require__(1017));
 _a = fs.promises, exports.chmod = _a.chmod, exports.copyFile = _a.copyFile, exports.lstat = _a.lstat, exports.mkdir = _a.mkdir, exports.readdir = _a.readdir, exports.readlink = _a.readlink, exports.rename = _a.rename, exports.rmdir = _a.rmdir, exports.stat = _a.stat, exports.symlink = _a.symlink, exports.unlink = _a.unlink;
 exports.IS_WINDOWS = process.platform === 'win32';
 function exists(fsPath) {
@@ -2047,9 +2047,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const childProcess = __importStar(__nccwpck_require__(3129));
-const path = __importStar(__nccwpck_require__(5622));
-const util_1 = __nccwpck_require__(1669);
+const childProcess = __importStar(__nccwpck_require__(2081));
+const path = __importStar(__nccwpck_require__(1017));
+const util_1 = __nccwpck_require__(3837);
 const ioUtil = __importStar(__nccwpck_require__(1962));
 const exec = util_1.promisify(childProcess.exec);
 /**
@@ -2370,9 +2370,9 @@ const semver = __importStar(__nccwpck_require__(562));
 const core_1 = __nccwpck_require__(2186);
 // needs to be require for core node modules to be mocked
 /* eslint @typescript-eslint/no-require-imports: 0 */
-const os = __nccwpck_require__(2087);
-const cp = __nccwpck_require__(3129);
-const fs = __nccwpck_require__(5747);
+const os = __nccwpck_require__(2037);
+const cp = __nccwpck_require__(2081);
+const fs = __nccwpck_require__(7147);
 function _findMatch(versionSpec, stable, candidates, archFilter) {
     return __awaiter(this, void 0, void 0, function* () {
         const platFilter = os.platform();
@@ -2561,17 +2561,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(2186));
 const io = __importStar(__nccwpck_require__(7436));
-const fs = __importStar(__nccwpck_require__(5747));
+const fs = __importStar(__nccwpck_require__(7147));
 const mm = __importStar(__nccwpck_require__(2473));
-const os = __importStar(__nccwpck_require__(2087));
-const path = __importStar(__nccwpck_require__(5622));
+const os = __importStar(__nccwpck_require__(2037));
+const path = __importStar(__nccwpck_require__(1017));
 const httpm = __importStar(__nccwpck_require__(9925));
 const semver = __importStar(__nccwpck_require__(562));
-const stream = __importStar(__nccwpck_require__(2413));
-const util = __importStar(__nccwpck_require__(1669));
+const stream = __importStar(__nccwpck_require__(2781));
+const util = __importStar(__nccwpck_require__(3837));
 const v4_1 = __importDefault(__nccwpck_require__(824));
 const exec_1 = __nccwpck_require__(1514);
-const assert_1 = __nccwpck_require__(2357);
+const assert_1 = __nccwpck_require__(9491);
 const retry_helper_1 = __nccwpck_require__(8279);
 class HTTPError extends Error {
     constructor(httpStatusCode) {
@@ -6129,10 +6129,10 @@ module.exports = {
   re: internalRe.re,
   src: internalRe.src,
   tokens: internalRe.t,
-  SEMVER_SPEC_VERSION: __nccwpck_require__(8577).SEMVER_SPEC_VERSION,
+  SEMVER_SPEC_VERSION: (__nccwpck_require__(8577).SEMVER_SPEC_VERSION),
   SemVer: __nccwpck_require__(9034),
-  compareIdentifiers: __nccwpck_require__(6426).compareIdentifiers,
-  rcompareIdentifiers: __nccwpck_require__(6426).rcompareIdentifiers,
+  compareIdentifiers: (__nccwpck_require__(6426).compareIdentifiers),
+  rcompareIdentifiers: (__nccwpck_require__(6426).rcompareIdentifiers),
   parse: __nccwpck_require__(9105),
   valid: __nccwpck_require__(3269),
   clean: __nccwpck_require__(8764),
@@ -7034,9 +7034,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getRelease = exports.Release = void 0;
-const crypto = __nccwpck_require__(6417);
-const fs = __nccwpck_require__(5747);
-const https = __nccwpck_require__(7211);
+const crypto = __nccwpck_require__(6113);
+const fs = __nccwpck_require__(7147);
+const https = __nccwpck_require__(5687);
 const openpgp = __nccwpck_require__(7946);
 const semver = __nccwpck_require__(2221);
 const yauzl = __nccwpck_require__(8781);
@@ -7323,7 +7323,7 @@ function matchVersion(versions, range, includePrerelease) {
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.httpsRequest = void 0;
-const https = __nccwpck_require__(7211);
+const https = __nccwpck_require__(5687);
 function httpsRequest(url, options = {}, encoding = 'utf8') {
     return new Promise((resolve, reject) => {
         https.request(url, options, res => {
@@ -7347,7 +7347,7 @@ exports.httpsRequest = httpsRequest;
 
 /***/ }),
 
-/***/ 5435:
+/***/ 4293:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
 "use strict";
@@ -7357,7 +7357,7 @@ const asn1 = exports;
 
 asn1.bignum = __nccwpck_require__(6641);
 
-asn1.define = __nccwpck_require__(5245).define;
+asn1.define = (__nccwpck_require__(5245).define);
 asn1.base = __nccwpck_require__(8096);
 asn1.constants = __nccwpck_require__(3371);
 asn1.decoders = __nccwpck_require__(4952);
@@ -7438,8 +7438,8 @@ Entity.prototype.encode = function encode(data, enc, /* internal */ reporter) {
 
 
 const inherits = __nccwpck_require__(4124);
-const Reporter = __nccwpck_require__(3744)/* .Reporter */ .b;
-const Buffer = __nccwpck_require__(5118).Buffer;
+const Reporter = (__nccwpck_require__(3744)/* .Reporter */ .b);
+const Buffer = (__nccwpck_require__(5118).Buffer);
 
 function DecoderBuffer(base, options) {
   Reporter.call(this, options);
@@ -7600,9 +7600,9 @@ EncoderBuffer.prototype.join = function join(out, offset) {
 
 const base = exports;
 
-base.Reporter = __nccwpck_require__(3744)/* .Reporter */ .b;
-base.DecoderBuffer = __nccwpck_require__(5298)/* .DecoderBuffer */ .C;
-base.EncoderBuffer = __nccwpck_require__(5298)/* .EncoderBuffer */ .R;
+base.Reporter = (__nccwpck_require__(3744)/* .Reporter */ .b);
+base.DecoderBuffer = (__nccwpck_require__(5298)/* .DecoderBuffer */ .C);
+base.EncoderBuffer = (__nccwpck_require__(5298)/* .EncoderBuffer */ .R);
 base.Node = __nccwpck_require__(842);
 
 
@@ -7614,9 +7614,9 @@ base.Node = __nccwpck_require__(842);
 "use strict";
 
 
-const Reporter = __nccwpck_require__(3744)/* .Reporter */ .b;
-const EncoderBuffer = __nccwpck_require__(5298)/* .EncoderBuffer */ .R;
-const DecoderBuffer = __nccwpck_require__(5298)/* .DecoderBuffer */ .C;
+const Reporter = (__nccwpck_require__(3744)/* .Reporter */ .b);
+const EncoderBuffer = (__nccwpck_require__(5298)/* .EncoderBuffer */ .R);
+const DecoderBuffer = (__nccwpck_require__(5298)/* .DecoderBuffer */ .C);
 const assert = __nccwpck_require__(910);
 
 // Supported tags
@@ -8489,7 +8489,7 @@ constants.der = __nccwpck_require__(1188);
 const inherits = __nccwpck_require__(4124);
 
 const bignum = __nccwpck_require__(6641);
-const DecoderBuffer = __nccwpck_require__(5298)/* .DecoderBuffer */ .C;
+const DecoderBuffer = (__nccwpck_require__(5298)/* .DecoderBuffer */ .C);
 const Node = __nccwpck_require__(842);
 
 // Import DER constants
@@ -8844,7 +8844,7 @@ decoders.pem = __nccwpck_require__(8361);
 
 
 const inherits = __nccwpck_require__(4124);
-const Buffer = __nccwpck_require__(5118).Buffer;
+const Buffer = (__nccwpck_require__(5118).Buffer);
 
 const DERDecoder = __nccwpck_require__(3332);
 
@@ -8903,7 +8903,7 @@ PEMDecoder.prototype.decode = function decode(data, options) {
 
 
 const inherits = __nccwpck_require__(4124);
-const Buffer = __nccwpck_require__(5118).Buffer;
+const Buffer = (__nccwpck_require__(5118).Buffer);
 const Node = __nccwpck_require__(842);
 
 // Import DER constants
@@ -9303,7 +9303,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
     if (typeof window !== 'undefined' && typeof window.Buffer !== 'undefined') {
       Buffer = window.Buffer;
     } else {
-      Buffer = __nccwpck_require__(4293).Buffer;
+      Buffer = (__nccwpck_require__(4300).Buffer);
     }
   } catch (e) {
   }
@@ -12701,7 +12701,7 @@ PEMEncoder.prototype.encode = function encode(data, options) {
 /***/ 4794:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
-var Buffer = __nccwpck_require__(4293).Buffer;
+var Buffer = (__nccwpck_require__(4300).Buffer);
 
 var CRC_TABLE = [
   0x00000000, 0x77073096, 0xee0e612c, 0x990951ba, 0x076dc419,
@@ -12819,14 +12819,14 @@ module.exports = crc32;
 /***/ 5010:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-var fs = __nccwpck_require__(5747);
-var util = __nccwpck_require__(1669);
-var stream = __nccwpck_require__(2413);
+var fs = __nccwpck_require__(7147);
+var util = __nccwpck_require__(3837);
+var stream = __nccwpck_require__(2781);
 var Readable = stream.Readable;
 var Writable = stream.Writable;
 var PassThrough = stream.PassThrough;
 var Pend = __nccwpck_require__(4833);
-var EventEmitter = __nccwpck_require__(8614).EventEmitter;
+var EventEmitter = (__nccwpck_require__(2361).EventEmitter);
 
 exports.createFromBuffer = createFromBuffer;
 exports.createFromFd = createFromFd;
@@ -13123,7 +13123,7 @@ function createFromFd(fd, options) {
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 try {
-  var util = __nccwpck_require__(1669);
+  var util = __nccwpck_require__(3837);
   /* istanbul ignore next */
   if (typeof util.inherits !== 'function') throw '';
   module.exports = util.inherits;
@@ -13534,7 +13534,7 @@ assert.equal = function assertEqual(l, r, msg) {
 
 "use strict";
 /*! OpenPGP.js v5.0.0-1 - 2021-03-03 - this is LGPL licensed code, see LICENSE/our website https://openpgpjs.org/ for more information. */
-const e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};Object.defineProperty(exports, "__esModule", ({value:!0}));var t=__nccwpck_require__(4293),r=__nccwpck_require__(2413),i=__nccwpck_require__(6417),n=__nccwpck_require__(8761),a=__nccwpck_require__(2087),s=__nccwpck_require__(1669),o=__nccwpck_require__(5435);function c(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var u=/*#__PURE__*/c(t),h=/*#__PURE__*/c(r),d=/*#__PURE__*/c(i),f=/*#__PURE__*/c(n),l=/*#__PURE__*/c(a),p=/*#__PURE__*/c(s),y=/*#__PURE__*/c(o);const b="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?Symbol:e=>`Symbol(${e})`;function m(){}const g=Number.isNaN||function(e){return e!=e},w=m;function v(e){return"object"==typeof e&&null!==e||"function"==typeof e}function _(e){return e.slice()}function k(e){return!1!==function(e){if("number"!=typeof e)return!1;if(g(e))return!1;if(e<0)return!1;return!0}(e)&&e!==1/0}function A(e,t,r){if("function"!=typeof e)throw new TypeError("Argument is not a function");return Function.prototype.apply.call(e,t,r)}function S(e,t,r,i){const n=e[t];if(void 0!==n){if("function"!=typeof n)throw new TypeError(n+" is not a method");switch(r){case 0:return()=>x(n,e,i);case 1:return t=>{const r=[t].concat(i);return x(n,e,r)}}}return()=>U(void 0)}function E(e,t,r){const i=e[t];if(void 0!==i)return A(i,e,r)}function x(e,t,r){try{return U(A(e,t,r))}catch(e){return D(e)}}function P(e){if(g(e=Number(e))||e<0)throw new RangeError("highWaterMark property of a queuing strategy must be non-negative and non-NaN");return e}function M(e){if(void 0===e)return()=>1;if("function"!=typeof e)throw new TypeError("size property of a queuing strategy must be a function");return t=>e(t)}const C=Promise,K=Promise.prototype.then,R=Promise.resolve.bind(C),I=Promise.reject.bind(C);function B(e){return new C(e)}function U(e){return R(e)}function D(e){return I(e)}function T(e,t,r){return K.call(e,t,r)}function z(e,t,r){T(T(e,t,r),void 0,w)}function q(e,t){z(e,t)}function O(e,t){z(e,void 0,t)}function N(e,t,r){return T(e,t,r)}function F(e){T(e,void 0,w)}class L{constructor(){this._cursor=0,this._size=0,this._front={_elements:[],_next:void 0},this._back=this._front,this._cursor=0,this._size=0}get length(){return this._size}push(e){const t=this._back;let r=t;16383===t._elements.length&&(r={_elements:[],_next:void 0}),t._elements.push(e),r!==t&&(this._back=r,t._next=r),++this._size}shift(){const e=this._front;let t=e;const r=this._cursor;let i=r+1;const n=e._elements,a=n[r];return 16384===i&&(t=e._next,i=0),--this._size,this._cursor=i,e!==t&&(this._front=t),n[r]=void 0,a}forEach(e){let t=this._cursor,r=this._front,i=r._elements;for(;!(t===i.length&&void 0===r._next||t===i.length&&(r=r._next,i=r._elements,t=0,0===i.length));)e(i[t]),++t}peek(){const e=this._front,t=this._cursor;return e._elements[t]}}function j(e,t,r){let i=null;!0===r&&(i=Object.prototype);const n=Object.create(i);return n.value=e,n.done=t,n}function H(e,t){e._forAuthorCode=!0,e._ownerReadableStream=t,t._reader=e,"readable"===t._state?Z(e):"closed"===t._state?function(e){Z(e),X(e)}(e):Y(e,t._storedError)}function W(e,t){return Qt(e._ownerReadableStream,t)}function G(e){"readable"===e._ownerReadableStream._state?$(e,new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")):function(e,t){Y(e,t)}(e,new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")),e._ownerReadableStream._reader=void 0,e._ownerReadableStream=void 0}function V(e){return new TypeError("Cannot "+e+" a stream using a released reader")}function Z(e){e._closedPromise=B((t,r)=>{e._closedPromise_resolve=t,e._closedPromise_reject=r})}function Y(e,t){Z(e),$(e,t)}function $(e,t){F(e._closedPromise),e._closedPromise_reject(t),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0}function X(e){e._closedPromise_resolve(void 0),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0}const J=b("[[CancelSteps]]"),Q=b("[[PullSteps]]");function ee(e,t=!1){const r=new ae(e);return r._forAuthorCode=t,r}function te(e){return B((t,r)=>{const i={_resolve:t,_reject:r};e._reader._readRequests.push(i)})}function re(e,t,r){const i=e._reader;i._readRequests.shift()._resolve(j(t,r,i._forAuthorCode))}function ie(e){return e._reader._readRequests.length}function ne(e){const t=e._reader;return void 0!==t&&!!se(t)}class ae{constructor(e){if(!1===Xt(e))throw new TypeError("ReadableStreamDefaultReader can only be constructed with a ReadableStream instance");if(!0===Jt(e))throw new TypeError("This stream has already been locked for exclusive reading by another reader");H(this,e),this._readRequests=new L}get closed(){return se(this)?this._closedPromise:D(ce("closed"))}cancel(e){return se(this)?void 0===this._ownerReadableStream?D(V("cancel")):W(this,e):D(ce("cancel"))}read(){return se(this)?void 0===this._ownerReadableStream?D(V("read from")):oe(this):D(ce("read"))}releaseLock(){if(!se(this))throw ce("releaseLock");if(void 0!==this._ownerReadableStream){if(this._readRequests.length>0)throw new TypeError("Tried to release a reader lock when that reader has pending read() calls un-settled");G(this)}}}function se(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_readRequests")}function oe(e){const t=e._ownerReadableStream;return t._disturbed=!0,"closed"===t._state?U(j(void 0,!0,e._forAuthorCode)):"errored"===t._state?D(t._storedError):t._readableStreamController[Q]()}function ce(e){return new TypeError(`ReadableStreamDefaultReader.prototype.${e} can only be used on a ReadableStreamDefaultReader`)}let ue;"symbol"==typeof b.asyncIterator&&(ue={[b.asyncIterator](){return this}},Object.defineProperty(ue,b.asyncIterator,{enumerable:!1}));const he={next(){if(!1===de(this))return D(fe("next"));const e=this._asyncIteratorReader;return void 0===e._ownerReadableStream?D(V("iterate")):N(oe(e),t=>{const r=t.done;return r&&G(e),j(t.value,r,!0)})},return(e){if(!1===de(this))return D(fe("next"));const t=this._asyncIteratorReader;if(void 0===t._ownerReadableStream)return D(V("finish iterating"));if(t._readRequests.length>0)return D(new TypeError("Tried to release a reader lock when that reader has pending read() calls un-settled"));if(!1===this._preventCancel){const r=W(t,e);return G(t),N(r,()=>j(e,!0,!0))}return G(t),U(j(e,!0,!0))}};function de(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_asyncIteratorReader")}function fe(e){return new TypeError(`ReadableStreamAsyncIterator.${e} can only be used on a ReadableSteamAsyncIterator`)}function le(e){const t=e._queue.shift();return e._queueTotalSize-=t.size,e._queueTotalSize<0&&(e._queueTotalSize=0),t.value}function pe(e,t,r){if(!k(r=Number(r)))throw new RangeError("Size must be a finite, non-NaN, non-negative number.");e._queue.push({value:t,size:r}),e._queueTotalSize+=r}function ye(e){e._queue=new L,e._queueTotalSize=0}void 0!==ue&&Object.setPrototypeOf(he,ue),Object.defineProperty(he,"next",{enumerable:!1}),Object.defineProperty(he,"return",{enumerable:!1});const be=b("[[AbortSteps]]"),me=b("[[ErrorSteps]]");class ge{constructor(e={},t={}){ve(this);const r=t.size;let i=t.highWaterMark;if(void 0!==e.type)throw new RangeError("Invalid type is specified");const n=M(r);void 0===i&&(i=1),i=P(i),function(e,t,r,i){const n=Object.create(qe.prototype);const a=S(t,"write",1,[n]),s=S(t,"close",0,[]),o=S(t,"abort",1,[]);Oe(e,n,(function(){return E(t,"start",[n])}),a,s,o,r,i)}(this,e,i,n)}get locked(){if(!1===_e(this))throw Ge("locked");return ke(this)}abort(e){return!1===_e(this)?D(Ge("abort")):!0===ke(this)?D(new TypeError("Cannot abort a stream that already has a writer")):Ae(this,e)}close(){return!1===_e(this)?D(Ge("close")):!0===ke(this)?D(new TypeError("Cannot close a stream that already has a writer")):!0===Me(this)?D(new TypeError("Cannot close an already-closing stream")):Se(this)}getWriter(){if(!1===_e(this))throw Ge("getWriter");return we(this)}}function we(e){return new Re(e)}function ve(e){e._state="writable",e._storedError=void 0,e._writer=void 0,e._writableStreamController=void 0,e._writeRequests=new L,e._inFlightWriteRequest=void 0,e._closeRequest=void 0,e._inFlightCloseRequest=void 0,e._pendingAbortRequest=void 0,e._backpressure=!1}function _e(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_writableStreamController")}function ke(e){return void 0!==e._writer}function Ae(e,t){const r=e._state;if("closed"===r||"errored"===r)return U(void 0);if(void 0!==e._pendingAbortRequest)return e._pendingAbortRequest._promise;let i=!1;"erroring"===r&&(i=!0,t=void 0);const n=B((r,n)=>{e._pendingAbortRequest={_promise:void 0,_resolve:r,_reject:n,_reason:t,_wasAlreadyErroring:i}});return e._pendingAbortRequest._promise=n,!1===i&&xe(e,t),n}function Se(e){const t=e._state;if("closed"===t||"errored"===t)return D(new TypeError(`The stream (in ${t} state) is not in the writable state and cannot be closed`));const r=B((t,r)=>{const i={_resolve:t,_reject:r};e._closeRequest=i}),i=e._writer;var n;return void 0!==i&&!0===e._backpressure&&"writable"===t&&it(i),pe(n=e._writableStreamController,"close",0),Le(n),r}function Ee(e,t){"writable"!==e._state?Pe(e):xe(e,t)}function xe(e,t){const r=e._writableStreamController;e._state="erroring",e._storedError=t;const i=e._writer;void 0!==i&&De(i,t),!1===function(e){if(void 0===e._inFlightWriteRequest&&void 0===e._inFlightCloseRequest)return!1;return!0}(e)&&!0===r._started&&Pe(e)}function Pe(e){e._state="errored",e._writableStreamController[me]();const t=e._storedError;if(e._writeRequests.forEach(e=>{e._reject(t)}),e._writeRequests=new L,void 0===e._pendingAbortRequest)return void Ce(e);const r=e._pendingAbortRequest;if(e._pendingAbortRequest=void 0,!0===r._wasAlreadyErroring)return r._reject(t),void Ce(e);z(e._writableStreamController[be](r._reason),()=>{r._resolve(),Ce(e)},t=>{r._reject(t),Ce(e)})}function Me(e){return void 0!==e._closeRequest||void 0!==e._inFlightCloseRequest}function Ce(e){void 0!==e._closeRequest&&(e._closeRequest._reject(e._storedError),e._closeRequest=void 0);const t=e._writer;void 0!==t&&Xe(t,e._storedError)}function Ke(e,t){const r=e._writer;void 0!==r&&t!==e._backpressure&&(!0===t?function(e){Qe(e)}(r):it(r)),e._backpressure=t}class Re{constructor(e){if(!1===_e(e))throw new TypeError("WritableStreamDefaultWriter can only be constructed with a WritableStream instance");if(!0===ke(e))throw new TypeError("This stream has already been locked for exclusive writing by another writer");this._ownerWritableStream=e,e._writer=this;const t=e._state;if("writable"===t)!1===Me(e)&&!0===e._backpressure?Qe(this):tt(this),Ye(this);else if("erroring"===t)et(this,e._storedError),Ye(this);else if("closed"===t)tt(this),Ye(r=this),Je(r);else{const t=e._storedError;et(this,t),$e(this,t)}var r}get closed(){return!1===Ie(this)?D(Ve("closed")):this._closedPromise}get desiredSize(){if(!1===Ie(this))throw Ve("desiredSize");if(void 0===this._ownerWritableStream)throw Ze("desiredSize");return function(e){const t=e._ownerWritableStream,r=t._state;if("errored"===r||"erroring"===r)return null;if("closed"===r)return 0;return Fe(t._writableStreamController)}(this)}get ready(){return!1===Ie(this)?D(Ve("ready")):this._readyPromise}abort(e){return!1===Ie(this)?D(Ve("abort")):void 0===this._ownerWritableStream?D(Ze("abort")):function(e,t){return Ae(e._ownerWritableStream,t)}(this,e)}close(){if(!1===Ie(this))return D(Ve("close"));const e=this._ownerWritableStream;return void 0===e?D(Ze("close")):!0===Me(e)?D(new TypeError("Cannot close an already-closing stream")):Be(this)}releaseLock(){if(!1===Ie(this))throw Ve("releaseLock");void 0!==this._ownerWritableStream&&Te(this)}write(e){return!1===Ie(this)?D(Ve("write")):void 0===this._ownerWritableStream?D(Ze("write to")):ze(this,e)}}function Ie(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_ownerWritableStream")}function Be(e){return Se(e._ownerWritableStream)}function Ue(e,t){"pending"===e._closedPromiseState?Xe(e,t):function(e,t){$e(e,t)}(e,t)}function De(e,t){"pending"===e._readyPromiseState?rt(e,t):function(e,t){et(e,t)}(e,t)}function Te(e){const t=e._ownerWritableStream,r=new TypeError("Writer was released and can no longer be used to monitor the stream's closedness");De(e,r),Ue(e,r),t._writer=void 0,e._ownerWritableStream=void 0}function ze(e,t){const r=e._ownerWritableStream,i=r._writableStreamController,n=function(e,t){try{return e._strategySizeAlgorithm(t)}catch(t){return je(e,t),1}}(i,t);if(r!==e._ownerWritableStream)return D(Ze("write to"));const a=r._state;if("errored"===a)return D(r._storedError);if(!0===Me(r)||"closed"===a)return D(new TypeError("The stream is closing or closed and cannot be written to"));if("erroring"===a)return D(r._storedError);const s=function(e){return B((t,r)=>{const i={_resolve:t,_reject:r};e._writeRequests.push(i)})}(r);return function(e,t,r){const i={chunk:t};try{pe(e,i,r)}catch(t){return void je(e,t)}const n=e._controlledWritableStream;if(!1===Me(n)&&"writable"===n._state){const t=He(e);Ke(n,t)}Le(e)}(i,t,n),s}class qe{constructor(){throw new TypeError("WritableStreamDefaultController cannot be constructed explicitly")}error(e){if(!1===function(e){if(!v(e))return!1;if(!Object.prototype.hasOwnProperty.call(e,"_controlledWritableStream"))return!1;return!0}(this))throw new TypeError("WritableStreamDefaultController.prototype.error can only be used on a WritableStreamDefaultController");"writable"===this._controlledWritableStream._state&&We(this,e)}[be](e){const t=this._abortAlgorithm(e);return Ne(this),t}[me](){ye(this)}}function Oe(e,t,r,i,n,a,s,o){t._controlledWritableStream=e,e._writableStreamController=t,t._queue=void 0,t._queueTotalSize=void 0,ye(t),t._started=!1,t._strategySizeAlgorithm=o,t._strategyHWM=s,t._writeAlgorithm=i,t._closeAlgorithm=n,t._abortAlgorithm=a;const c=He(t);Ke(e,c),z(U(r()),()=>{t._started=!0,Le(t)},r=>{t._started=!0,Ee(e,r)})}function Ne(e){e._writeAlgorithm=void 0,e._closeAlgorithm=void 0,e._abortAlgorithm=void 0,e._strategySizeAlgorithm=void 0}function Fe(e){return e._strategyHWM-e._queueTotalSize}function Le(e){const t=e._controlledWritableStream;if(!1===e._started)return;if(void 0!==t._inFlightWriteRequest)return;if("erroring"===t._state)return void Pe(t);if(0===e._queue.length)return;const r=e._queue.peek().value;"close"===r?function(e){const t=e._controlledWritableStream;(function(e){e._inFlightCloseRequest=e._closeRequest,e._closeRequest=void 0})(t),le(e);const r=e._closeAlgorithm();Ne(e),z(r,()=>{!function(e){e._inFlightCloseRequest._resolve(void 0),e._inFlightCloseRequest=void 0,"erroring"===e._state&&(e._storedError=void 0,void 0!==e._pendingAbortRequest&&(e._pendingAbortRequest._resolve(),e._pendingAbortRequest=void 0)),e._state="closed";const t=e._writer;void 0!==t&&Je(t)}(t)},e=>{!function(e,t){e._inFlightCloseRequest._reject(t),e._inFlightCloseRequest=void 0,void 0!==e._pendingAbortRequest&&(e._pendingAbortRequest._reject(t),e._pendingAbortRequest=void 0),Ee(e,t)}(t,e)})}(e):function(e,t){const r=e._controlledWritableStream;(function(e){e._inFlightWriteRequest=e._writeRequests.shift()})(r),z(e._writeAlgorithm(t),()=>{!function(e){e._inFlightWriteRequest._resolve(void 0),e._inFlightWriteRequest=void 0}(r);const t=r._state;if(le(e),!1===Me(r)&&"writable"===t){const t=He(e);Ke(r,t)}Le(e)},t=>{"writable"===r._state&&Ne(e),function(e,t){e._inFlightWriteRequest._reject(t),e._inFlightWriteRequest=void 0,Ee(e,t)}(r,t)})}(e,r.chunk)}function je(e,t){"writable"===e._controlledWritableStream._state&&We(e,t)}function He(e){return Fe(e)<=0}function We(e,t){const r=e._controlledWritableStream;Ne(e),xe(r,t)}function Ge(e){return new TypeError(`WritableStream.prototype.${e} can only be used on a WritableStream`)}function Ve(e){return new TypeError(`WritableStreamDefaultWriter.prototype.${e} can only be used on a WritableStreamDefaultWriter`)}function Ze(e){return new TypeError("Cannot "+e+" a stream using a released writer")}function Ye(e){e._closedPromise=B((t,r)=>{e._closedPromise_resolve=t,e._closedPromise_reject=r,e._closedPromiseState="pending"})}function $e(e,t){Ye(e),Xe(e,t)}function Xe(e,t){F(e._closedPromise),e._closedPromise_reject(t),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0,e._closedPromiseState="rejected"}function Je(e){e._closedPromise_resolve(void 0),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0,e._closedPromiseState="resolved"}function Qe(e){e._readyPromise=B((t,r)=>{e._readyPromise_resolve=t,e._readyPromise_reject=r}),e._readyPromiseState="pending"}function et(e,t){Qe(e),rt(e,t)}function tt(e){Qe(e),it(e)}function rt(e,t){F(e._readyPromise),e._readyPromise_reject(t),e._readyPromise_resolve=void 0,e._readyPromise_reject=void 0,e._readyPromiseState="rejected"}function it(e){e._readyPromise_resolve(void 0),e._readyPromise_resolve=void 0,e._readyPromise_reject=void 0,e._readyPromiseState="fulfilled"}function nt(e){if("object"!=typeof e||null===e)return!1;try{return"boolean"==typeof e.aborted}catch(e){return!1}}const at="undefined"!=typeof DOMException?DOMException:void 0;const st=function(e){if("function"!=typeof e&&"object"!=typeof e)return!1;try{return new e,!0}catch(e){return!1}}(at)?at:function(){const e=function(e,t){this.message=e||"",this.name=t||"Error",Error.captureStackTrace&&Error.captureStackTrace(this,this.constructor)};return Object.defineProperty(e.prototype=Object.create(Error.prototype),"constructor",{value:e,writable:!0,configurable:!0}),e}();function ot(e,t,r,i,n,a){const s=ee(e),o=we(t);e._disturbed=!0;let c=!1,u=U(void 0);return B((h,d)=>{let f;if(void 0!==a){if(f=()=>{const r=new st("Aborted","AbortError"),a=[];!1===i&&a.push(()=>"writable"===t._state?Ae(t,r):U(void 0)),!1===n&&a.push(()=>"readable"===e._state?Qt(e,r):U(void 0)),y(()=>Promise.all(a.map(e=>e())),!0,r)},!0===a.aborted)return void f();a.addEventListener("abort",f)}if(p(e,s._closedPromise,e=>{!1===i?y(()=>Ae(t,e),!0,e):b(!0,e)}),p(t,o._closedPromise,t=>{!1===n?y(()=>Qt(e,t),!0,t):b(!0,t)}),function(e,t,r){"closed"===e._state?r():q(t,r)}(e,s._closedPromise,()=>{!1===r?y(()=>function(e){const t=e._ownerWritableStream,r=t._state;return!0===Me(t)||"closed"===r?U(void 0):"errored"===r?D(t._storedError):Be(e)}(o)):b()}),!0===Me(t)||"closed"===t._state){const t=new TypeError("the destination writable stream closed before all data could be piped to it");!1===n?y(()=>Qt(e,t),!0,t):b(!0,t)}function l(){const e=u;return T(u,()=>e!==u?l():void 0)}function p(e,t,r){"errored"===e._state?r(e._storedError):O(t,r)}function y(e,r,i){function n(){z(e(),()=>g(r,i),e=>g(!0,e))}!0!==c&&(c=!0,"writable"===t._state&&!1===Me(t)?q(l(),n):n())}function b(e,r){!0!==c&&(c=!0,"writable"===t._state&&!1===Me(t)?q(l(),()=>g(e,r)):g(e,r))}function g(e,t){Te(o),G(s),void 0!==a&&a.removeEventListener("abort",f),e?d(t):h(void 0)}F(B((e,t)=>{!function r(i){i?e():T(!0===c?U(!0):T(o._readyPromise,()=>T(oe(s),e=>!0===e.done||(u=T(ze(o,e.value),void 0,m),!1))),r,t)}(!1)}))})}class ct{constructor(){throw new TypeError}get desiredSize(){if(!1===ut(this))throw wt("desiredSize");return bt(this)}close(){if(!1===ut(this))throw wt("close");if(!1===mt(this))throw new TypeError("The stream is not in a state that permits close");lt(this)}enqueue(e){if(!1===ut(this))throw wt("enqueue");if(!1===mt(this))throw new TypeError("The stream is not in a state that permits enqueue");return pt(this,e)}error(e){if(!1===ut(this))throw wt("error");yt(this,e)}[J](e){ye(this);const t=this._cancelAlgorithm(e);return ft(this),t}[Q](){const e=this._controlledReadableStream;if(this._queue.length>0){const t=le(this);return!0===this._closeRequested&&0===this._queue.length?(ft(this),er(e)):ht(this),U(j(t,!1,e._reader._forAuthorCode))}const t=te(e);return ht(this),t}}function ut(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_controlledReadableStream")}function ht(e){!1!==dt(e)&&(!0!==e._pulling?(e._pulling=!0,z(e._pullAlgorithm(),()=>{e._pulling=!1,!0===e._pullAgain&&(e._pullAgain=!1,ht(e))},t=>{yt(e,t)})):e._pullAgain=!0)}function dt(e){const t=e._controlledReadableStream;return!1!==mt(e)&&(!1!==e._started&&(!0===Jt(t)&&ie(t)>0||bt(e)>0))}function ft(e){e._pullAlgorithm=void 0,e._cancelAlgorithm=void 0,e._strategySizeAlgorithm=void 0}function lt(e){const t=e._controlledReadableStream;e._closeRequested=!0,0===e._queue.length&&(ft(e),er(t))}function pt(e,t){const r=e._controlledReadableStream;if(!0===Jt(r)&&ie(r)>0)re(r,t,!1);else{let r;try{r=e._strategySizeAlgorithm(t)}catch(t){throw yt(e,t),t}try{pe(e,t,r)}catch(t){throw yt(e,t),t}}ht(e)}function yt(e,t){const r=e._controlledReadableStream;"readable"===r._state&&(ye(e),ft(e),tr(r,t))}function bt(e){const t=e._controlledReadableStream._state;return"errored"===t?null:"closed"===t?0:e._strategyHWM-e._queueTotalSize}function mt(e){const t=e._controlledReadableStream._state;return!1===e._closeRequested&&"readable"===t}function gt(e,t,r,i,n,a,s){t._controlledReadableStream=e,t._queue=void 0,t._queueTotalSize=void 0,ye(t),t._started=!1,t._closeRequested=!1,t._pullAgain=!1,t._pulling=!1,t._strategySizeAlgorithm=s,t._strategyHWM=a,t._pullAlgorithm=i,t._cancelAlgorithm=n,e._readableStreamController=t,z(U(r()),()=>{t._started=!0,ht(t)},e=>{yt(t,e)})}function wt(e){return new TypeError(`ReadableStreamDefaultController.prototype.${e} can only be used on a ReadableStreamDefaultController`)}const vt=Number.isInteger||function(e){return"number"==typeof e&&isFinite(e)&&Math.floor(e)===e};class _t{constructor(){throw new TypeError("ReadableStreamBYOBRequest cannot be used directly")}get view(){if(!1===St(this))throw Nt("view");return this._view}respond(e){if(!1===St(this))throw Nt("respond");if(void 0===this._associatedReadableByteStreamController)throw new TypeError("This BYOB request has been invalidated");this._view.buffer,function(e,t){if(!1===k(t=Number(t)))throw new RangeError("bytesWritten must be a finite");Ut(e,t)}(this._associatedReadableByteStreamController,e)}respondWithNewView(e){if(!1===St(this))throw Nt("respond");if(void 0===this._associatedReadableByteStreamController)throw new TypeError("This BYOB request has been invalidated");if(!ArrayBuffer.isView(e))throw new TypeError("You can only respond with array buffer views");e.buffer,function(e,t){const r=e._pendingPullIntos.peek();if(r.byteOffset+r.bytesFilled!==t.byteOffset)throw new RangeError("The region specified by view does not match byobRequest");if(r.byteLength!==t.byteLength)throw new RangeError("The buffer of view has different capacity than byobRequest");r.buffer=t.buffer,Ut(e,t.byteLength)}(this._associatedReadableByteStreamController,e)}}class kt{constructor(){throw new TypeError("ReadableByteStreamController constructor cannot be used directly")}get byobRequest(){if(!1===At(this))throw Ft("byobRequest");if(void 0===this._byobRequest&&this._pendingPullIntos.length>0){const e=this._pendingPullIntos.peek(),t=new Uint8Array(e.buffer,e.byteOffset+e.bytesFilled,e.byteLength-e.bytesFilled),r=Object.create(_t.prototype);!function(e,t,r){e._associatedReadableByteStreamController=t,e._view=r}(r,this,t),this._byobRequest=r}return this._byobRequest}get desiredSize(){if(!1===At(this))throw Ft("desiredSize");return qt(this)}close(){if(!1===At(this))throw Ft("close");if(!0===this._closeRequested)throw new TypeError("The stream has already been closed; do not close it again!");const e=this._controlledReadableByteStream._state;if("readable"!==e)throw new TypeError(`The stream (in ${e} state) is not in the readable state and cannot be closed`);!function(e){const t=e._controlledReadableByteStream;if(e._queueTotalSize>0)return void(e._closeRequested=!0);if(e._pendingPullIntos.length>0){if(e._pendingPullIntos.peek().bytesFilled>0){const t=new TypeError("Insufficient bytes to fill elements in the given buffer");throw zt(e,t),t}}Tt(e),er(t)}(this)}enqueue(e){if(!1===At(this))throw Ft("enqueue");if(!0===this._closeRequested)throw new TypeError("stream is closed or draining");const t=this._controlledReadableByteStream._state;if("readable"!==t)throw new TypeError(`The stream (in ${t} state) is not in the readable state and cannot be enqueued to`);if(!ArrayBuffer.isView(e))throw new TypeError("You can only enqueue array buffer views when using a ReadableByteStreamController");e.buffer,function(e,t){const r=e._controlledReadableByteStream,i=t.buffer,n=t.byteOffset,a=t.byteLength,s=i;if(!0===ne(r))if(0===ie(r))Mt(e,s,n,a);else{const e=new Uint8Array(s,n,a);re(r,e,!1)}else!0===Ht(r)?(Mt(e,s,n,a),Bt(e)):Mt(e,s,n,a);Et(e)}(this,e)}error(e){if(!1===At(this))throw Ft("error");zt(this,e)}[J](e){if(this._pendingPullIntos.length>0){this._pendingPullIntos.peek().bytesFilled=0}ye(this);const t=this._cancelAlgorithm(e);return Tt(this),t}[Q](){const e=this._controlledReadableByteStream;if(this._queueTotalSize>0){const t=this._queue.shift();let r;this._queueTotalSize-=t.byteLength,Rt(this);try{r=new Uint8Array(t.buffer,t.byteOffset,t.byteLength)}catch(e){return D(e)}return U(j(r,!1,e._reader._forAuthorCode))}const t=this._autoAllocateChunkSize;if(void 0!==t){let e;try{e=new ArrayBuffer(t)}catch(e){return D(e)}const r={buffer:e,byteOffset:0,byteLength:t,bytesFilled:0,elementSize:1,ctor:Uint8Array,readerType:"default"};this._pendingPullIntos.push(r)}const r=te(e);return Et(this),r}}function At(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_controlledReadableByteStream")}function St(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_associatedReadableByteStreamController")}function Et(e){!1!==function(e){const t=e._controlledReadableByteStream;if("readable"!==t._state)return!1;if(!0===e._closeRequested)return!1;if(!1===e._started)return!1;if(!0===ne(t)&&ie(t)>0)return!0;if(!0===Ht(t)&&jt(t)>0)return!0;if(qt(e)>0)return!0;return!1}(e)&&(!0!==e._pulling?(e._pulling=!0,z(e._pullAlgorithm(),()=>{e._pulling=!1,!0===e._pullAgain&&(e._pullAgain=!1,Et(e))},t=>{zt(e,t)})):e._pullAgain=!0)}function xt(e,t){let r=!1;"closed"===e._state&&(r=!0);const i=Pt(t);"default"===t.readerType?re(e,i,r):function(e,t,r){const i=e._reader;i._readIntoRequests.shift()._resolve(j(t,r,i._forAuthorCode))}(e,i,r)}function Pt(e){const t=e.bytesFilled,r=e.elementSize;return new e.ctor(e.buffer,e.byteOffset,t/r)}function Mt(e,t,r,i){e._queue.push({buffer:t,byteOffset:r,byteLength:i}),e._queueTotalSize+=i}function Ct(e,t){const r=t.elementSize,i=t.bytesFilled-t.bytesFilled%r,n=Math.min(e._queueTotalSize,t.byteLength-t.bytesFilled),a=t.bytesFilled+n,s=a-a%r;let o=n,c=!1;s>i&&(o=s-t.bytesFilled,c=!0);const u=e._queue;for(;o>0;){const r=u.peek(),i=Math.min(o,r.byteLength),n=t.byteOffset+t.bytesFilled;h=t.buffer,d=n,f=r.buffer,l=r.byteOffset,p=i,new Uint8Array(h).set(new Uint8Array(f,l,p),d),r.byteLength===i?u.shift():(r.byteOffset+=i,r.byteLength-=i),e._queueTotalSize-=i,Kt(e,i,t),o-=i}var h,d,f,l,p;return c}function Kt(e,t,r){It(e),r.bytesFilled+=t}function Rt(e){0===e._queueTotalSize&&!0===e._closeRequested?(Tt(e),er(e._controlledReadableByteStream)):Et(e)}function It(e){void 0!==e._byobRequest&&(e._byobRequest._associatedReadableByteStreamController=void 0,e._byobRequest._view=void 0,e._byobRequest=void 0)}function Bt(e){for(;e._pendingPullIntos.length>0;){if(0===e._queueTotalSize)return;const t=e._pendingPullIntos.peek();!0===Ct(e,t)&&(Dt(e),xt(e._controlledReadableByteStream,t))}}function Ut(e,t){const r=e._pendingPullIntos.peek();if("closed"===e._controlledReadableByteStream._state){if(0!==t)throw new TypeError("bytesWritten must be 0 when calling respond() on a closed stream");!function(e,t){t.buffer=t.buffer;const r=e._controlledReadableByteStream;if(!0===Ht(r))for(;jt(r)>0;){xt(r,Dt(e))}}(e,r)}else!function(e,t,r){if(r.bytesFilled+t>r.byteLength)throw new RangeError("bytesWritten out of range");if(Kt(e,t,r),r.bytesFilled<r.elementSize)return;Dt(e);const i=r.bytesFilled%r.elementSize;if(i>0){const t=r.byteOffset+r.bytesFilled,n=r.buffer.slice(t-i,t);Mt(e,n,0,n.byteLength)}r.buffer=r.buffer,r.bytesFilled-=i,xt(e._controlledReadableByteStream,r),Bt(e)}(e,t,r);Et(e)}function Dt(e){const t=e._pendingPullIntos.shift();return It(e),t}function Tt(e){e._pullAlgorithm=void 0,e._cancelAlgorithm=void 0}function zt(e,t){const r=e._controlledReadableByteStream;"readable"===r._state&&(!function(e){It(e),e._pendingPullIntos=new L}(e),ye(e),Tt(e),tr(r,t))}function qt(e){const t=e._controlledReadableByteStream._state;return"errored"===t?null:"closed"===t?0:e._strategyHWM-e._queueTotalSize}function Ot(e,t,r){const i=Object.create(kt.prototype);const n=S(t,"pull",0,[i]),a=S(t,"cancel",1,[]);let s=t.autoAllocateChunkSize;if(void 0!==s&&(s=Number(s),!1===vt(s)||s<=0))throw new RangeError("autoAllocateChunkSize must be a positive integer");!function(e,t,r,i,n,a,s){t._controlledReadableByteStream=e,t._pullAgain=!1,t._pulling=!1,t._byobRequest=void 0,t._queue=t._queueTotalSize=void 0,ye(t),t._closeRequested=!1,t._started=!1,t._strategyHWM=P(a),t._pullAlgorithm=i,t._cancelAlgorithm=n,t._autoAllocateChunkSize=s,t._pendingPullIntos=new L,e._readableStreamController=t,z(U(r()),()=>{t._started=!0,Et(t)},e=>{zt(t,e)})}(e,i,(function(){return E(t,"start",[i])}),n,a,r,s)}function Nt(e){return new TypeError(`ReadableStreamBYOBRequest.prototype.${e} can only be used on a ReadableStreamBYOBRequest`)}function Ft(e){return new TypeError(`ReadableByteStreamController.prototype.${e} can only be used on a ReadableByteStreamController`)}function Lt(e){return B((t,r)=>{const i={_resolve:t,_reject:r};e._reader._readIntoRequests.push(i)})}function jt(e){return e._reader._readIntoRequests.length}function Ht(e){const t=e._reader;return void 0!==t&&!!Gt(t)}class Wt{constructor(e){if(!Xt(e))throw new TypeError("ReadableStreamBYOBReader can only be constructed with a ReadableStream instance given a byte source");if(!1===At(e._readableStreamController))throw new TypeError("Cannot construct a ReadableStreamBYOBReader for a stream not constructed with a byte source");if(Jt(e))throw new TypeError("This stream has already been locked for exclusive reading by another reader");H(this,e),this._readIntoRequests=new L}get closed(){return Gt(this)?this._closedPromise:D(Vt("closed"))}cancel(e){return Gt(this)?void 0===this._ownerReadableStream?D(V("cancel")):W(this,e):D(Vt("cancel"))}read(e){return Gt(this)?void 0===this._ownerReadableStream?D(V("read from")):ArrayBuffer.isView(e)?(e.buffer,0===e.byteLength?D(new TypeError("view must have non-zero byteLength")):function(e,t){const r=e._ownerReadableStream;if(r._disturbed=!0,"errored"===r._state)return D(r._storedError);return function(e,t){const r=e._controlledReadableByteStream;let i=1;t.constructor!==DataView&&(i=t.constructor.BYTES_PER_ELEMENT);const n=t.constructor,a={buffer:t.buffer,byteOffset:t.byteOffset,byteLength:t.byteLength,bytesFilled:0,elementSize:i,ctor:n,readerType:"byob"};if(e._pendingPullIntos.length>0)return e._pendingPullIntos.push(a),Lt(r);if("closed"===r._state){return U(j(new n(a.buffer,a.byteOffset,0),!0,r._reader._forAuthorCode))}if(e._queueTotalSize>0){if(!0===Ct(e,a)){const t=Pt(a);return Rt(e),U(j(t,!1,r._reader._forAuthorCode))}if(!0===e._closeRequested){const t=new TypeError("Insufficient bytes to fill elements in the given buffer");return zt(e,t),D(t)}}e._pendingPullIntos.push(a);const s=Lt(r);return Et(e),s}(r._readableStreamController,t)}(this,e)):D(new TypeError("view must be an array buffer view")):D(Vt("read"))}releaseLock(){if(!Gt(this))throw Vt("releaseLock");if(void 0!==this._ownerReadableStream){if(this._readIntoRequests.length>0)throw new TypeError("Tried to release a reader lock when that reader has pending read() calls un-settled");G(this)}}}function Gt(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_readIntoRequests")}function Vt(e){return new TypeError(`ReadableStreamBYOBReader.prototype.${e} can only be used on a ReadableStreamBYOBReader`)}class Zt{constructor(e={},t={}){$t(this);const r=t.size;let i=t.highWaterMark;const n=e.type;if("bytes"===n+""){if(void 0!==r)throw new RangeError("The strategy for a byte stream cannot have a size function");void 0===i&&(i=0),i=P(i),Ot(this,e,i)}else{if(void 0!==n)throw new RangeError("Invalid type is specified");{const t=M(r);void 0===i&&(i=1),i=P(i),function(e,t,r,i){const n=Object.create(ct.prototype),a=S(t,"pull",0,[n]),s=S(t,"cancel",1,[]);gt(e,n,(function(){return E(t,"start",[n])}),a,s,r,i)}(this,e,i,t)}}}get locked(){if(!1===Xt(this))throw rr("locked");return Jt(this)}cancel(e){return!1===Xt(this)?D(rr("cancel")):!0===Jt(this)?D(new TypeError("Cannot cancel a stream that already has a reader")):Qt(this,e)}getReader({mode:e}={}){if(!1===Xt(this))throw rr("getReader");if(void 0===e)return ee(this,!0);if("byob"===(e+=""))return function(e,t=!1){const r=new Wt(e);return r._forAuthorCode=t,r}(this,!0);throw new RangeError("Invalid mode is specified")}pipeThrough({writable:e,readable:t},{preventClose:r,preventAbort:i,preventCancel:n,signal:a}={}){if(!1===Xt(this))throw rr("pipeThrough");if(!1===_e(e))throw new TypeError("writable argument to pipeThrough must be a WritableStream");if(!1===Xt(t))throw new TypeError("readable argument to pipeThrough must be a ReadableStream");if(r=!!r,i=!!i,n=!!n,void 0!==a&&!nt(a))throw new TypeError("ReadableStream.prototype.pipeThrough's signal option must be an AbortSignal");if(!0===Jt(this))throw new TypeError("ReadableStream.prototype.pipeThrough cannot be used on a locked ReadableStream");if(!0===ke(e))throw new TypeError("ReadableStream.prototype.pipeThrough cannot be used on a locked WritableStream");return F(ot(this,e,r,i,n,a)),t}pipeTo(e,{preventClose:t,preventAbort:r,preventCancel:i,signal:n}={}){return!1===Xt(this)?D(rr("pipeTo")):!1===_e(e)?D(new TypeError("ReadableStream.prototype.pipeTo's first argument must be a WritableStream")):(t=!!t,r=!!r,i=!!i,void 0===n||nt(n)?!0===Jt(this)?D(new TypeError("ReadableStream.prototype.pipeTo cannot be used on a locked ReadableStream")):!0===ke(e)?D(new TypeError("ReadableStream.prototype.pipeTo cannot be used on a locked WritableStream")):ot(this,e,t,r,i,n):D(new TypeError("ReadableStream.prototype.pipeTo's signal option must be an AbortSignal")))}tee(){if(!1===Xt(this))throw rr("tee");const e=function(e,t){const r=ee(e);let i,n,a,s,o,c=!1,u=!1,h=!1;const d=B(e=>{o=e});function f(){if(!0===c)return U(void 0);return c=!0,F(N(oe(r),e=>{if(c=!1,!0===e.done)return!1===u&&lt(a._readableStreamController),void(!1===h&&lt(s._readableStreamController));const t=e.value,r=t,i=t;!1===u&&pt(a._readableStreamController,r),!1===h&&pt(s._readableStreamController,i)})),U(void 0)}function l(){}return a=Yt(l,f,(function(t){if(u=!0,i=t,!0===h){const t=_([i,n]),r=Qt(e,t);o(r)}return d})),s=Yt(l,f,(function(t){if(h=!0,n=t,!0===u){const t=_([i,n]),r=Qt(e,t);o(r)}return d})),O(r._closedPromise,e=>{yt(a._readableStreamController,e),yt(s._readableStreamController,e)}),[a,s]}(this);return _(e)}getIterator({preventCancel:e=!1}={}){if(!1===Xt(this))throw rr("getIterator");return function(e,t=!1){const r=ee(e),i=Object.create(he);return i._asyncIteratorReader=r,i._preventCancel=!!t,i}(this,e)}}function Yt(e,t,r,i=1,n=(()=>1)){const a=Object.create(Zt.prototype);return $t(a),gt(a,Object.create(ct.prototype),e,t,r,i,n),a}function $t(e){e._state="readable",e._reader=void 0,e._storedError=void 0,e._disturbed=!1}function Xt(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_readableStreamController")}function Jt(e){return void 0!==e._reader}function Qt(e,t){if(e._disturbed=!0,"closed"===e._state)return U(void 0);if("errored"===e._state)return D(e._storedError);return er(e),N(e._readableStreamController[J](t),m)}function er(e){e._state="closed";const t=e._reader;void 0!==t&&(se(t)&&(t._readRequests.forEach(e=>{e._resolve(j(void 0,!0,t._forAuthorCode))}),t._readRequests=new L),X(t))}function tr(e,t){e._state="errored",e._storedError=t;const r=e._reader;void 0!==r&&(se(r)?(r._readRequests.forEach(e=>{e._reject(t)}),r._readRequests=new L):(r._readIntoRequests.forEach(e=>{e._reject(t)}),r._readIntoRequests=new L),$(r,t))}function rr(e){return new TypeError(`ReadableStream.prototype.${e} can only be used on a ReadableStream`)}"symbol"==typeof b.asyncIterator&&Object.defineProperty(Zt.prototype,b.asyncIterator,{value:Zt.prototype.getIterator,enumerable:!1,writable:!0,configurable:!0});function ir(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_transformStreamController")}function nr(e,t){yt(e._readable._readableStreamController,t),ar(e,t)}function ar(e,t){ur(e._transformStreamController),je(e._writable._writableStreamController,t),!0===e._backpressure&&sr(e,!1)}function sr(e,t){void 0!==e._backpressureChangePromise&&e._backpressureChangePromise_resolve(),e._backpressureChangePromise=B(t=>{e._backpressureChangePromise_resolve=t}),e._backpressure=t}class or{constructor(){throw new TypeError("TransformStreamDefaultController instances cannot be created directly")}get desiredSize(){if(!1===cr(this))throw fr("desiredSize");return bt(this._controlledTransformStream._readable._readableStreamController)}enqueue(e){if(!1===cr(this))throw fr("enqueue");hr(this,e)}error(e){if(!1===cr(this))throw fr("error");var t;t=e,nr(this._controlledTransformStream,t)}terminate(){if(!1===cr(this))throw fr("terminate");!function(e){const t=e._controlledTransformStream,r=t._readable._readableStreamController;!0===mt(r)&&lt(r);ar(t,new TypeError("TransformStream terminated"))}(this)}}function cr(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_controlledTransformStream")}function ur(e){e._transformAlgorithm=void 0,e._flushAlgorithm=void 0}function hr(e,t){const r=e._controlledTransformStream,i=r._readable._readableStreamController;if(!1===mt(i))throw new TypeError("Readable side is not in a state that permits enqueue");try{pt(i,t)}catch(e){throw ar(r,e),r._readable._storedError}(function(e){return!0!==dt(e)})(i)!==r._backpressure&&sr(r,!0)}function dr(e,t){return N(e._transformAlgorithm(t),void 0,t=>{throw nr(e._controlledTransformStream,t),t})}function fr(e){return new TypeError(`TransformStreamDefaultController.prototype.${e} can only be used on a TransformStreamDefaultController`)}function lr(e){return new TypeError(`TransformStream.prototype.${e} can only be used on a TransformStream`)}
+const e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};Object.defineProperty(exports, "__esModule", ({value:!0}));var t=__nccwpck_require__(4300),r=__nccwpck_require__(2781),i=__nccwpck_require__(6113),n=__nccwpck_require__(9796),a=__nccwpck_require__(2037),s=__nccwpck_require__(3837),o=__nccwpck_require__(4293);function c(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var u=/*#__PURE__*/c(t),h=/*#__PURE__*/c(r),d=/*#__PURE__*/c(i),f=/*#__PURE__*/c(n),l=/*#__PURE__*/c(a),p=/*#__PURE__*/c(s),y=/*#__PURE__*/c(o);const b="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?Symbol:e=>`Symbol(${e})`;function m(){}const g=Number.isNaN||function(e){return e!=e},w=m;function v(e){return"object"==typeof e&&null!==e||"function"==typeof e}function _(e){return e.slice()}function k(e){return!1!==function(e){if("number"!=typeof e)return!1;if(g(e))return!1;if(e<0)return!1;return!0}(e)&&e!==1/0}function A(e,t,r){if("function"!=typeof e)throw new TypeError("Argument is not a function");return Function.prototype.apply.call(e,t,r)}function S(e,t,r,i){const n=e[t];if(void 0!==n){if("function"!=typeof n)throw new TypeError(n+" is not a method");switch(r){case 0:return()=>x(n,e,i);case 1:return t=>{const r=[t].concat(i);return x(n,e,r)}}}return()=>U(void 0)}function E(e,t,r){const i=e[t];if(void 0!==i)return A(i,e,r)}function x(e,t,r){try{return U(A(e,t,r))}catch(e){return D(e)}}function P(e){if(g(e=Number(e))||e<0)throw new RangeError("highWaterMark property of a queuing strategy must be non-negative and non-NaN");return e}function M(e){if(void 0===e)return()=>1;if("function"!=typeof e)throw new TypeError("size property of a queuing strategy must be a function");return t=>e(t)}const C=Promise,K=Promise.prototype.then,R=Promise.resolve.bind(C),I=Promise.reject.bind(C);function B(e){return new C(e)}function U(e){return R(e)}function D(e){return I(e)}function T(e,t,r){return K.call(e,t,r)}function z(e,t,r){T(T(e,t,r),void 0,w)}function q(e,t){z(e,t)}function O(e,t){z(e,void 0,t)}function N(e,t,r){return T(e,t,r)}function F(e){T(e,void 0,w)}class L{constructor(){this._cursor=0,this._size=0,this._front={_elements:[],_next:void 0},this._back=this._front,this._cursor=0,this._size=0}get length(){return this._size}push(e){const t=this._back;let r=t;16383===t._elements.length&&(r={_elements:[],_next:void 0}),t._elements.push(e),r!==t&&(this._back=r,t._next=r),++this._size}shift(){const e=this._front;let t=e;const r=this._cursor;let i=r+1;const n=e._elements,a=n[r];return 16384===i&&(t=e._next,i=0),--this._size,this._cursor=i,e!==t&&(this._front=t),n[r]=void 0,a}forEach(e){let t=this._cursor,r=this._front,i=r._elements;for(;!(t===i.length&&void 0===r._next||t===i.length&&(r=r._next,i=r._elements,t=0,0===i.length));)e(i[t]),++t}peek(){const e=this._front,t=this._cursor;return e._elements[t]}}function j(e,t,r){let i=null;!0===r&&(i=Object.prototype);const n=Object.create(i);return n.value=e,n.done=t,n}function H(e,t){e._forAuthorCode=!0,e._ownerReadableStream=t,t._reader=e,"readable"===t._state?Z(e):"closed"===t._state?function(e){Z(e),X(e)}(e):Y(e,t._storedError)}function W(e,t){return Qt(e._ownerReadableStream,t)}function G(e){"readable"===e._ownerReadableStream._state?$(e,new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")):function(e,t){Y(e,t)}(e,new TypeError("Reader was released and can no longer be used to monitor the stream's closedness")),e._ownerReadableStream._reader=void 0,e._ownerReadableStream=void 0}function V(e){return new TypeError("Cannot "+e+" a stream using a released reader")}function Z(e){e._closedPromise=B((t,r)=>{e._closedPromise_resolve=t,e._closedPromise_reject=r})}function Y(e,t){Z(e),$(e,t)}function $(e,t){F(e._closedPromise),e._closedPromise_reject(t),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0}function X(e){e._closedPromise_resolve(void 0),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0}const J=b("[[CancelSteps]]"),Q=b("[[PullSteps]]");function ee(e,t=!1){const r=new ae(e);return r._forAuthorCode=t,r}function te(e){return B((t,r)=>{const i={_resolve:t,_reject:r};e._reader._readRequests.push(i)})}function re(e,t,r){const i=e._reader;i._readRequests.shift()._resolve(j(t,r,i._forAuthorCode))}function ie(e){return e._reader._readRequests.length}function ne(e){const t=e._reader;return void 0!==t&&!!se(t)}class ae{constructor(e){if(!1===Xt(e))throw new TypeError("ReadableStreamDefaultReader can only be constructed with a ReadableStream instance");if(!0===Jt(e))throw new TypeError("This stream has already been locked for exclusive reading by another reader");H(this,e),this._readRequests=new L}get closed(){return se(this)?this._closedPromise:D(ce("closed"))}cancel(e){return se(this)?void 0===this._ownerReadableStream?D(V("cancel")):W(this,e):D(ce("cancel"))}read(){return se(this)?void 0===this._ownerReadableStream?D(V("read from")):oe(this):D(ce("read"))}releaseLock(){if(!se(this))throw ce("releaseLock");if(void 0!==this._ownerReadableStream){if(this._readRequests.length>0)throw new TypeError("Tried to release a reader lock when that reader has pending read() calls un-settled");G(this)}}}function se(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_readRequests")}function oe(e){const t=e._ownerReadableStream;return t._disturbed=!0,"closed"===t._state?U(j(void 0,!0,e._forAuthorCode)):"errored"===t._state?D(t._storedError):t._readableStreamController[Q]()}function ce(e){return new TypeError(`ReadableStreamDefaultReader.prototype.${e} can only be used on a ReadableStreamDefaultReader`)}let ue;"symbol"==typeof b.asyncIterator&&(ue={[b.asyncIterator](){return this}},Object.defineProperty(ue,b.asyncIterator,{enumerable:!1}));const he={next(){if(!1===de(this))return D(fe("next"));const e=this._asyncIteratorReader;return void 0===e._ownerReadableStream?D(V("iterate")):N(oe(e),t=>{const r=t.done;return r&&G(e),j(t.value,r,!0)})},return(e){if(!1===de(this))return D(fe("next"));const t=this._asyncIteratorReader;if(void 0===t._ownerReadableStream)return D(V("finish iterating"));if(t._readRequests.length>0)return D(new TypeError("Tried to release a reader lock when that reader has pending read() calls un-settled"));if(!1===this._preventCancel){const r=W(t,e);return G(t),N(r,()=>j(e,!0,!0))}return G(t),U(j(e,!0,!0))}};function de(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_asyncIteratorReader")}function fe(e){return new TypeError(`ReadableStreamAsyncIterator.${e} can only be used on a ReadableSteamAsyncIterator`)}function le(e){const t=e._queue.shift();return e._queueTotalSize-=t.size,e._queueTotalSize<0&&(e._queueTotalSize=0),t.value}function pe(e,t,r){if(!k(r=Number(r)))throw new RangeError("Size must be a finite, non-NaN, non-negative number.");e._queue.push({value:t,size:r}),e._queueTotalSize+=r}function ye(e){e._queue=new L,e._queueTotalSize=0}void 0!==ue&&Object.setPrototypeOf(he,ue),Object.defineProperty(he,"next",{enumerable:!1}),Object.defineProperty(he,"return",{enumerable:!1});const be=b("[[AbortSteps]]"),me=b("[[ErrorSteps]]");class ge{constructor(e={},t={}){ve(this);const r=t.size;let i=t.highWaterMark;if(void 0!==e.type)throw new RangeError("Invalid type is specified");const n=M(r);void 0===i&&(i=1),i=P(i),function(e,t,r,i){const n=Object.create(qe.prototype);const a=S(t,"write",1,[n]),s=S(t,"close",0,[]),o=S(t,"abort",1,[]);Oe(e,n,(function(){return E(t,"start",[n])}),a,s,o,r,i)}(this,e,i,n)}get locked(){if(!1===_e(this))throw Ge("locked");return ke(this)}abort(e){return!1===_e(this)?D(Ge("abort")):!0===ke(this)?D(new TypeError("Cannot abort a stream that already has a writer")):Ae(this,e)}close(){return!1===_e(this)?D(Ge("close")):!0===ke(this)?D(new TypeError("Cannot close a stream that already has a writer")):!0===Me(this)?D(new TypeError("Cannot close an already-closing stream")):Se(this)}getWriter(){if(!1===_e(this))throw Ge("getWriter");return we(this)}}function we(e){return new Re(e)}function ve(e){e._state="writable",e._storedError=void 0,e._writer=void 0,e._writableStreamController=void 0,e._writeRequests=new L,e._inFlightWriteRequest=void 0,e._closeRequest=void 0,e._inFlightCloseRequest=void 0,e._pendingAbortRequest=void 0,e._backpressure=!1}function _e(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_writableStreamController")}function ke(e){return void 0!==e._writer}function Ae(e,t){const r=e._state;if("closed"===r||"errored"===r)return U(void 0);if(void 0!==e._pendingAbortRequest)return e._pendingAbortRequest._promise;let i=!1;"erroring"===r&&(i=!0,t=void 0);const n=B((r,n)=>{e._pendingAbortRequest={_promise:void 0,_resolve:r,_reject:n,_reason:t,_wasAlreadyErroring:i}});return e._pendingAbortRequest._promise=n,!1===i&&xe(e,t),n}function Se(e){const t=e._state;if("closed"===t||"errored"===t)return D(new TypeError(`The stream (in ${t} state) is not in the writable state and cannot be closed`));const r=B((t,r)=>{const i={_resolve:t,_reject:r};e._closeRequest=i}),i=e._writer;var n;return void 0!==i&&!0===e._backpressure&&"writable"===t&&it(i),pe(n=e._writableStreamController,"close",0),Le(n),r}function Ee(e,t){"writable"!==e._state?Pe(e):xe(e,t)}function xe(e,t){const r=e._writableStreamController;e._state="erroring",e._storedError=t;const i=e._writer;void 0!==i&&De(i,t),!1===function(e){if(void 0===e._inFlightWriteRequest&&void 0===e._inFlightCloseRequest)return!1;return!0}(e)&&!0===r._started&&Pe(e)}function Pe(e){e._state="errored",e._writableStreamController[me]();const t=e._storedError;if(e._writeRequests.forEach(e=>{e._reject(t)}),e._writeRequests=new L,void 0===e._pendingAbortRequest)return void Ce(e);const r=e._pendingAbortRequest;if(e._pendingAbortRequest=void 0,!0===r._wasAlreadyErroring)return r._reject(t),void Ce(e);z(e._writableStreamController[be](r._reason),()=>{r._resolve(),Ce(e)},t=>{r._reject(t),Ce(e)})}function Me(e){return void 0!==e._closeRequest||void 0!==e._inFlightCloseRequest}function Ce(e){void 0!==e._closeRequest&&(e._closeRequest._reject(e._storedError),e._closeRequest=void 0);const t=e._writer;void 0!==t&&Xe(t,e._storedError)}function Ke(e,t){const r=e._writer;void 0!==r&&t!==e._backpressure&&(!0===t?function(e){Qe(e)}(r):it(r)),e._backpressure=t}class Re{constructor(e){if(!1===_e(e))throw new TypeError("WritableStreamDefaultWriter can only be constructed with a WritableStream instance");if(!0===ke(e))throw new TypeError("This stream has already been locked for exclusive writing by another writer");this._ownerWritableStream=e,e._writer=this;const t=e._state;if("writable"===t)!1===Me(e)&&!0===e._backpressure?Qe(this):tt(this),Ye(this);else if("erroring"===t)et(this,e._storedError),Ye(this);else if("closed"===t)tt(this),Ye(r=this),Je(r);else{const t=e._storedError;et(this,t),$e(this,t)}var r}get closed(){return!1===Ie(this)?D(Ve("closed")):this._closedPromise}get desiredSize(){if(!1===Ie(this))throw Ve("desiredSize");if(void 0===this._ownerWritableStream)throw Ze("desiredSize");return function(e){const t=e._ownerWritableStream,r=t._state;if("errored"===r||"erroring"===r)return null;if("closed"===r)return 0;return Fe(t._writableStreamController)}(this)}get ready(){return!1===Ie(this)?D(Ve("ready")):this._readyPromise}abort(e){return!1===Ie(this)?D(Ve("abort")):void 0===this._ownerWritableStream?D(Ze("abort")):function(e,t){return Ae(e._ownerWritableStream,t)}(this,e)}close(){if(!1===Ie(this))return D(Ve("close"));const e=this._ownerWritableStream;return void 0===e?D(Ze("close")):!0===Me(e)?D(new TypeError("Cannot close an already-closing stream")):Be(this)}releaseLock(){if(!1===Ie(this))throw Ve("releaseLock");void 0!==this._ownerWritableStream&&Te(this)}write(e){return!1===Ie(this)?D(Ve("write")):void 0===this._ownerWritableStream?D(Ze("write to")):ze(this,e)}}function Ie(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_ownerWritableStream")}function Be(e){return Se(e._ownerWritableStream)}function Ue(e,t){"pending"===e._closedPromiseState?Xe(e,t):function(e,t){$e(e,t)}(e,t)}function De(e,t){"pending"===e._readyPromiseState?rt(e,t):function(e,t){et(e,t)}(e,t)}function Te(e){const t=e._ownerWritableStream,r=new TypeError("Writer was released and can no longer be used to monitor the stream's closedness");De(e,r),Ue(e,r),t._writer=void 0,e._ownerWritableStream=void 0}function ze(e,t){const r=e._ownerWritableStream,i=r._writableStreamController,n=function(e,t){try{return e._strategySizeAlgorithm(t)}catch(t){return je(e,t),1}}(i,t);if(r!==e._ownerWritableStream)return D(Ze("write to"));const a=r._state;if("errored"===a)return D(r._storedError);if(!0===Me(r)||"closed"===a)return D(new TypeError("The stream is closing or closed and cannot be written to"));if("erroring"===a)return D(r._storedError);const s=function(e){return B((t,r)=>{const i={_resolve:t,_reject:r};e._writeRequests.push(i)})}(r);return function(e,t,r){const i={chunk:t};try{pe(e,i,r)}catch(t){return void je(e,t)}const n=e._controlledWritableStream;if(!1===Me(n)&&"writable"===n._state){const t=He(e);Ke(n,t)}Le(e)}(i,t,n),s}class qe{constructor(){throw new TypeError("WritableStreamDefaultController cannot be constructed explicitly")}error(e){if(!1===function(e){if(!v(e))return!1;if(!Object.prototype.hasOwnProperty.call(e,"_controlledWritableStream"))return!1;return!0}(this))throw new TypeError("WritableStreamDefaultController.prototype.error can only be used on a WritableStreamDefaultController");"writable"===this._controlledWritableStream._state&&We(this,e)}[be](e){const t=this._abortAlgorithm(e);return Ne(this),t}[me](){ye(this)}}function Oe(e,t,r,i,n,a,s,o){t._controlledWritableStream=e,e._writableStreamController=t,t._queue=void 0,t._queueTotalSize=void 0,ye(t),t._started=!1,t._strategySizeAlgorithm=o,t._strategyHWM=s,t._writeAlgorithm=i,t._closeAlgorithm=n,t._abortAlgorithm=a;const c=He(t);Ke(e,c),z(U(r()),()=>{t._started=!0,Le(t)},r=>{t._started=!0,Ee(e,r)})}function Ne(e){e._writeAlgorithm=void 0,e._closeAlgorithm=void 0,e._abortAlgorithm=void 0,e._strategySizeAlgorithm=void 0}function Fe(e){return e._strategyHWM-e._queueTotalSize}function Le(e){const t=e._controlledWritableStream;if(!1===e._started)return;if(void 0!==t._inFlightWriteRequest)return;if("erroring"===t._state)return void Pe(t);if(0===e._queue.length)return;const r=e._queue.peek().value;"close"===r?function(e){const t=e._controlledWritableStream;(function(e){e._inFlightCloseRequest=e._closeRequest,e._closeRequest=void 0})(t),le(e);const r=e._closeAlgorithm();Ne(e),z(r,()=>{!function(e){e._inFlightCloseRequest._resolve(void 0),e._inFlightCloseRequest=void 0,"erroring"===e._state&&(e._storedError=void 0,void 0!==e._pendingAbortRequest&&(e._pendingAbortRequest._resolve(),e._pendingAbortRequest=void 0)),e._state="closed";const t=e._writer;void 0!==t&&Je(t)}(t)},e=>{!function(e,t){e._inFlightCloseRequest._reject(t),e._inFlightCloseRequest=void 0,void 0!==e._pendingAbortRequest&&(e._pendingAbortRequest._reject(t),e._pendingAbortRequest=void 0),Ee(e,t)}(t,e)})}(e):function(e,t){const r=e._controlledWritableStream;(function(e){e._inFlightWriteRequest=e._writeRequests.shift()})(r),z(e._writeAlgorithm(t),()=>{!function(e){e._inFlightWriteRequest._resolve(void 0),e._inFlightWriteRequest=void 0}(r);const t=r._state;if(le(e),!1===Me(r)&&"writable"===t){const t=He(e);Ke(r,t)}Le(e)},t=>{"writable"===r._state&&Ne(e),function(e,t){e._inFlightWriteRequest._reject(t),e._inFlightWriteRequest=void 0,Ee(e,t)}(r,t)})}(e,r.chunk)}function je(e,t){"writable"===e._controlledWritableStream._state&&We(e,t)}function He(e){return Fe(e)<=0}function We(e,t){const r=e._controlledWritableStream;Ne(e),xe(r,t)}function Ge(e){return new TypeError(`WritableStream.prototype.${e} can only be used on a WritableStream`)}function Ve(e){return new TypeError(`WritableStreamDefaultWriter.prototype.${e} can only be used on a WritableStreamDefaultWriter`)}function Ze(e){return new TypeError("Cannot "+e+" a stream using a released writer")}function Ye(e){e._closedPromise=B((t,r)=>{e._closedPromise_resolve=t,e._closedPromise_reject=r,e._closedPromiseState="pending"})}function $e(e,t){Ye(e),Xe(e,t)}function Xe(e,t){F(e._closedPromise),e._closedPromise_reject(t),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0,e._closedPromiseState="rejected"}function Je(e){e._closedPromise_resolve(void 0),e._closedPromise_resolve=void 0,e._closedPromise_reject=void 0,e._closedPromiseState="resolved"}function Qe(e){e._readyPromise=B((t,r)=>{e._readyPromise_resolve=t,e._readyPromise_reject=r}),e._readyPromiseState="pending"}function et(e,t){Qe(e),rt(e,t)}function tt(e){Qe(e),it(e)}function rt(e,t){F(e._readyPromise),e._readyPromise_reject(t),e._readyPromise_resolve=void 0,e._readyPromise_reject=void 0,e._readyPromiseState="rejected"}function it(e){e._readyPromise_resolve(void 0),e._readyPromise_resolve=void 0,e._readyPromise_reject=void 0,e._readyPromiseState="fulfilled"}function nt(e){if("object"!=typeof e||null===e)return!1;try{return"boolean"==typeof e.aborted}catch(e){return!1}}const at="undefined"!=typeof DOMException?DOMException:void 0;const st=function(e){if("function"!=typeof e&&"object"!=typeof e)return!1;try{return new e,!0}catch(e){return!1}}(at)?at:function(){const e=function(e,t){this.message=e||"",this.name=t||"Error",Error.captureStackTrace&&Error.captureStackTrace(this,this.constructor)};return Object.defineProperty(e.prototype=Object.create(Error.prototype),"constructor",{value:e,writable:!0,configurable:!0}),e}();function ot(e,t,r,i,n,a){const s=ee(e),o=we(t);e._disturbed=!0;let c=!1,u=U(void 0);return B((h,d)=>{let f;if(void 0!==a){if(f=()=>{const r=new st("Aborted","AbortError"),a=[];!1===i&&a.push(()=>"writable"===t._state?Ae(t,r):U(void 0)),!1===n&&a.push(()=>"readable"===e._state?Qt(e,r):U(void 0)),y(()=>Promise.all(a.map(e=>e())),!0,r)},!0===a.aborted)return void f();a.addEventListener("abort",f)}if(p(e,s._closedPromise,e=>{!1===i?y(()=>Ae(t,e),!0,e):b(!0,e)}),p(t,o._closedPromise,t=>{!1===n?y(()=>Qt(e,t),!0,t):b(!0,t)}),function(e,t,r){"closed"===e._state?r():q(t,r)}(e,s._closedPromise,()=>{!1===r?y(()=>function(e){const t=e._ownerWritableStream,r=t._state;return!0===Me(t)||"closed"===r?U(void 0):"errored"===r?D(t._storedError):Be(e)}(o)):b()}),!0===Me(t)||"closed"===t._state){const t=new TypeError("the destination writable stream closed before all data could be piped to it");!1===n?y(()=>Qt(e,t),!0,t):b(!0,t)}function l(){const e=u;return T(u,()=>e!==u?l():void 0)}function p(e,t,r){"errored"===e._state?r(e._storedError):O(t,r)}function y(e,r,i){function n(){z(e(),()=>g(r,i),e=>g(!0,e))}!0!==c&&(c=!0,"writable"===t._state&&!1===Me(t)?q(l(),n):n())}function b(e,r){!0!==c&&(c=!0,"writable"===t._state&&!1===Me(t)?q(l(),()=>g(e,r)):g(e,r))}function g(e,t){Te(o),G(s),void 0!==a&&a.removeEventListener("abort",f),e?d(t):h(void 0)}F(B((e,t)=>{!function r(i){i?e():T(!0===c?U(!0):T(o._readyPromise,()=>T(oe(s),e=>!0===e.done||(u=T(ze(o,e.value),void 0,m),!1))),r,t)}(!1)}))})}class ct{constructor(){throw new TypeError}get desiredSize(){if(!1===ut(this))throw wt("desiredSize");return bt(this)}close(){if(!1===ut(this))throw wt("close");if(!1===mt(this))throw new TypeError("The stream is not in a state that permits close");lt(this)}enqueue(e){if(!1===ut(this))throw wt("enqueue");if(!1===mt(this))throw new TypeError("The stream is not in a state that permits enqueue");return pt(this,e)}error(e){if(!1===ut(this))throw wt("error");yt(this,e)}[J](e){ye(this);const t=this._cancelAlgorithm(e);return ft(this),t}[Q](){const e=this._controlledReadableStream;if(this._queue.length>0){const t=le(this);return!0===this._closeRequested&&0===this._queue.length?(ft(this),er(e)):ht(this),U(j(t,!1,e._reader._forAuthorCode))}const t=te(e);return ht(this),t}}function ut(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_controlledReadableStream")}function ht(e){!1!==dt(e)&&(!0!==e._pulling?(e._pulling=!0,z(e._pullAlgorithm(),()=>{e._pulling=!1,!0===e._pullAgain&&(e._pullAgain=!1,ht(e))},t=>{yt(e,t)})):e._pullAgain=!0)}function dt(e){const t=e._controlledReadableStream;return!1!==mt(e)&&(!1!==e._started&&(!0===Jt(t)&&ie(t)>0||bt(e)>0))}function ft(e){e._pullAlgorithm=void 0,e._cancelAlgorithm=void 0,e._strategySizeAlgorithm=void 0}function lt(e){const t=e._controlledReadableStream;e._closeRequested=!0,0===e._queue.length&&(ft(e),er(t))}function pt(e,t){const r=e._controlledReadableStream;if(!0===Jt(r)&&ie(r)>0)re(r,t,!1);else{let r;try{r=e._strategySizeAlgorithm(t)}catch(t){throw yt(e,t),t}try{pe(e,t,r)}catch(t){throw yt(e,t),t}}ht(e)}function yt(e,t){const r=e._controlledReadableStream;"readable"===r._state&&(ye(e),ft(e),tr(r,t))}function bt(e){const t=e._controlledReadableStream._state;return"errored"===t?null:"closed"===t?0:e._strategyHWM-e._queueTotalSize}function mt(e){const t=e._controlledReadableStream._state;return!1===e._closeRequested&&"readable"===t}function gt(e,t,r,i,n,a,s){t._controlledReadableStream=e,t._queue=void 0,t._queueTotalSize=void 0,ye(t),t._started=!1,t._closeRequested=!1,t._pullAgain=!1,t._pulling=!1,t._strategySizeAlgorithm=s,t._strategyHWM=a,t._pullAlgorithm=i,t._cancelAlgorithm=n,e._readableStreamController=t,z(U(r()),()=>{t._started=!0,ht(t)},e=>{yt(t,e)})}function wt(e){return new TypeError(`ReadableStreamDefaultController.prototype.${e} can only be used on a ReadableStreamDefaultController`)}const vt=Number.isInteger||function(e){return"number"==typeof e&&isFinite(e)&&Math.floor(e)===e};class _t{constructor(){throw new TypeError("ReadableStreamBYOBRequest cannot be used directly")}get view(){if(!1===St(this))throw Nt("view");return this._view}respond(e){if(!1===St(this))throw Nt("respond");if(void 0===this._associatedReadableByteStreamController)throw new TypeError("This BYOB request has been invalidated");this._view.buffer,function(e,t){if(!1===k(t=Number(t)))throw new RangeError("bytesWritten must be a finite");Ut(e,t)}(this._associatedReadableByteStreamController,e)}respondWithNewView(e){if(!1===St(this))throw Nt("respond");if(void 0===this._associatedReadableByteStreamController)throw new TypeError("This BYOB request has been invalidated");if(!ArrayBuffer.isView(e))throw new TypeError("You can only respond with array buffer views");e.buffer,function(e,t){const r=e._pendingPullIntos.peek();if(r.byteOffset+r.bytesFilled!==t.byteOffset)throw new RangeError("The region specified by view does not match byobRequest");if(r.byteLength!==t.byteLength)throw new RangeError("The buffer of view has different capacity than byobRequest");r.buffer=t.buffer,Ut(e,t.byteLength)}(this._associatedReadableByteStreamController,e)}}class kt{constructor(){throw new TypeError("ReadableByteStreamController constructor cannot be used directly")}get byobRequest(){if(!1===At(this))throw Ft("byobRequest");if(void 0===this._byobRequest&&this._pendingPullIntos.length>0){const e=this._pendingPullIntos.peek(),t=new Uint8Array(e.buffer,e.byteOffset+e.bytesFilled,e.byteLength-e.bytesFilled),r=Object.create(_t.prototype);!function(e,t,r){e._associatedReadableByteStreamController=t,e._view=r}(r,this,t),this._byobRequest=r}return this._byobRequest}get desiredSize(){if(!1===At(this))throw Ft("desiredSize");return qt(this)}close(){if(!1===At(this))throw Ft("close");if(!0===this._closeRequested)throw new TypeError("The stream has already been closed; do not close it again!");const e=this._controlledReadableByteStream._state;if("readable"!==e)throw new TypeError(`The stream (in ${e} state) is not in the readable state and cannot be closed`);!function(e){const t=e._controlledReadableByteStream;if(e._queueTotalSize>0)return void(e._closeRequested=!0);if(e._pendingPullIntos.length>0){if(e._pendingPullIntos.peek().bytesFilled>0){const t=new TypeError("Insufficient bytes to fill elements in the given buffer");throw zt(e,t),t}}Tt(e),er(t)}(this)}enqueue(e){if(!1===At(this))throw Ft("enqueue");if(!0===this._closeRequested)throw new TypeError("stream is closed or draining");const t=this._controlledReadableByteStream._state;if("readable"!==t)throw new TypeError(`The stream (in ${t} state) is not in the readable state and cannot be enqueued to`);if(!ArrayBuffer.isView(e))throw new TypeError("You can only enqueue array buffer views when using a ReadableByteStreamController");e.buffer,function(e,t){const r=e._controlledReadableByteStream,i=t.buffer,n=t.byteOffset,a=t.byteLength,s=i;if(!0===ne(r))if(0===ie(r))Mt(e,s,n,a);else{const e=new Uint8Array(s,n,a);re(r,e,!1)}else!0===Ht(r)?(Mt(e,s,n,a),Bt(e)):Mt(e,s,n,a);Et(e)}(this,e)}error(e){if(!1===At(this))throw Ft("error");zt(this,e)}[J](e){if(this._pendingPullIntos.length>0){this._pendingPullIntos.peek().bytesFilled=0}ye(this);const t=this._cancelAlgorithm(e);return Tt(this),t}[Q](){const e=this._controlledReadableByteStream;if(this._queueTotalSize>0){const t=this._queue.shift();let r;this._queueTotalSize-=t.byteLength,Rt(this);try{r=new Uint8Array(t.buffer,t.byteOffset,t.byteLength)}catch(e){return D(e)}return U(j(r,!1,e._reader._forAuthorCode))}const t=this._autoAllocateChunkSize;if(void 0!==t){let e;try{e=new ArrayBuffer(t)}catch(e){return D(e)}const r={buffer:e,byteOffset:0,byteLength:t,bytesFilled:0,elementSize:1,ctor:Uint8Array,readerType:"default"};this._pendingPullIntos.push(r)}const r=te(e);return Et(this),r}}function At(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_controlledReadableByteStream")}function St(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_associatedReadableByteStreamController")}function Et(e){!1!==function(e){const t=e._controlledReadableByteStream;if("readable"!==t._state)return!1;if(!0===e._closeRequested)return!1;if(!1===e._started)return!1;if(!0===ne(t)&&ie(t)>0)return!0;if(!0===Ht(t)&&jt(t)>0)return!0;if(qt(e)>0)return!0;return!1}(e)&&(!0!==e._pulling?(e._pulling=!0,z(e._pullAlgorithm(),()=>{e._pulling=!1,!0===e._pullAgain&&(e._pullAgain=!1,Et(e))},t=>{zt(e,t)})):e._pullAgain=!0)}function xt(e,t){let r=!1;"closed"===e._state&&(r=!0);const i=Pt(t);"default"===t.readerType?re(e,i,r):function(e,t,r){const i=e._reader;i._readIntoRequests.shift()._resolve(j(t,r,i._forAuthorCode))}(e,i,r)}function Pt(e){const t=e.bytesFilled,r=e.elementSize;return new e.ctor(e.buffer,e.byteOffset,t/r)}function Mt(e,t,r,i){e._queue.push({buffer:t,byteOffset:r,byteLength:i}),e._queueTotalSize+=i}function Ct(e,t){const r=t.elementSize,i=t.bytesFilled-t.bytesFilled%r,n=Math.min(e._queueTotalSize,t.byteLength-t.bytesFilled),a=t.bytesFilled+n,s=a-a%r;let o=n,c=!1;s>i&&(o=s-t.bytesFilled,c=!0);const u=e._queue;for(;o>0;){const r=u.peek(),i=Math.min(o,r.byteLength),n=t.byteOffset+t.bytesFilled;h=t.buffer,d=n,f=r.buffer,l=r.byteOffset,p=i,new Uint8Array(h).set(new Uint8Array(f,l,p),d),r.byteLength===i?u.shift():(r.byteOffset+=i,r.byteLength-=i),e._queueTotalSize-=i,Kt(e,i,t),o-=i}var h,d,f,l,p;return c}function Kt(e,t,r){It(e),r.bytesFilled+=t}function Rt(e){0===e._queueTotalSize&&!0===e._closeRequested?(Tt(e),er(e._controlledReadableByteStream)):Et(e)}function It(e){void 0!==e._byobRequest&&(e._byobRequest._associatedReadableByteStreamController=void 0,e._byobRequest._view=void 0,e._byobRequest=void 0)}function Bt(e){for(;e._pendingPullIntos.length>0;){if(0===e._queueTotalSize)return;const t=e._pendingPullIntos.peek();!0===Ct(e,t)&&(Dt(e),xt(e._controlledReadableByteStream,t))}}function Ut(e,t){const r=e._pendingPullIntos.peek();if("closed"===e._controlledReadableByteStream._state){if(0!==t)throw new TypeError("bytesWritten must be 0 when calling respond() on a closed stream");!function(e,t){t.buffer=t.buffer;const r=e._controlledReadableByteStream;if(!0===Ht(r))for(;jt(r)>0;){xt(r,Dt(e))}}(e,r)}else!function(e,t,r){if(r.bytesFilled+t>r.byteLength)throw new RangeError("bytesWritten out of range");if(Kt(e,t,r),r.bytesFilled<r.elementSize)return;Dt(e);const i=r.bytesFilled%r.elementSize;if(i>0){const t=r.byteOffset+r.bytesFilled,n=r.buffer.slice(t-i,t);Mt(e,n,0,n.byteLength)}r.buffer=r.buffer,r.bytesFilled-=i,xt(e._controlledReadableByteStream,r),Bt(e)}(e,t,r);Et(e)}function Dt(e){const t=e._pendingPullIntos.shift();return It(e),t}function Tt(e){e._pullAlgorithm=void 0,e._cancelAlgorithm=void 0}function zt(e,t){const r=e._controlledReadableByteStream;"readable"===r._state&&(!function(e){It(e),e._pendingPullIntos=new L}(e),ye(e),Tt(e),tr(r,t))}function qt(e){const t=e._controlledReadableByteStream._state;return"errored"===t?null:"closed"===t?0:e._strategyHWM-e._queueTotalSize}function Ot(e,t,r){const i=Object.create(kt.prototype);const n=S(t,"pull",0,[i]),a=S(t,"cancel",1,[]);let s=t.autoAllocateChunkSize;if(void 0!==s&&(s=Number(s),!1===vt(s)||s<=0))throw new RangeError("autoAllocateChunkSize must be a positive integer");!function(e,t,r,i,n,a,s){t._controlledReadableByteStream=e,t._pullAgain=!1,t._pulling=!1,t._byobRequest=void 0,t._queue=t._queueTotalSize=void 0,ye(t),t._closeRequested=!1,t._started=!1,t._strategyHWM=P(a),t._pullAlgorithm=i,t._cancelAlgorithm=n,t._autoAllocateChunkSize=s,t._pendingPullIntos=new L,e._readableStreamController=t,z(U(r()),()=>{t._started=!0,Et(t)},e=>{zt(t,e)})}(e,i,(function(){return E(t,"start",[i])}),n,a,r,s)}function Nt(e){return new TypeError(`ReadableStreamBYOBRequest.prototype.${e} can only be used on a ReadableStreamBYOBRequest`)}function Ft(e){return new TypeError(`ReadableByteStreamController.prototype.${e} can only be used on a ReadableByteStreamController`)}function Lt(e){return B((t,r)=>{const i={_resolve:t,_reject:r};e._reader._readIntoRequests.push(i)})}function jt(e){return e._reader._readIntoRequests.length}function Ht(e){const t=e._reader;return void 0!==t&&!!Gt(t)}class Wt{constructor(e){if(!Xt(e))throw new TypeError("ReadableStreamBYOBReader can only be constructed with a ReadableStream instance given a byte source");if(!1===At(e._readableStreamController))throw new TypeError("Cannot construct a ReadableStreamBYOBReader for a stream not constructed with a byte source");if(Jt(e))throw new TypeError("This stream has already been locked for exclusive reading by another reader");H(this,e),this._readIntoRequests=new L}get closed(){return Gt(this)?this._closedPromise:D(Vt("closed"))}cancel(e){return Gt(this)?void 0===this._ownerReadableStream?D(V("cancel")):W(this,e):D(Vt("cancel"))}read(e){return Gt(this)?void 0===this._ownerReadableStream?D(V("read from")):ArrayBuffer.isView(e)?(e.buffer,0===e.byteLength?D(new TypeError("view must have non-zero byteLength")):function(e,t){const r=e._ownerReadableStream;if(r._disturbed=!0,"errored"===r._state)return D(r._storedError);return function(e,t){const r=e._controlledReadableByteStream;let i=1;t.constructor!==DataView&&(i=t.constructor.BYTES_PER_ELEMENT);const n=t.constructor,a={buffer:t.buffer,byteOffset:t.byteOffset,byteLength:t.byteLength,bytesFilled:0,elementSize:i,ctor:n,readerType:"byob"};if(e._pendingPullIntos.length>0)return e._pendingPullIntos.push(a),Lt(r);if("closed"===r._state){return U(j(new n(a.buffer,a.byteOffset,0),!0,r._reader._forAuthorCode))}if(e._queueTotalSize>0){if(!0===Ct(e,a)){const t=Pt(a);return Rt(e),U(j(t,!1,r._reader._forAuthorCode))}if(!0===e._closeRequested){const t=new TypeError("Insufficient bytes to fill elements in the given buffer");return zt(e,t),D(t)}}e._pendingPullIntos.push(a);const s=Lt(r);return Et(e),s}(r._readableStreamController,t)}(this,e)):D(new TypeError("view must be an array buffer view")):D(Vt("read"))}releaseLock(){if(!Gt(this))throw Vt("releaseLock");if(void 0!==this._ownerReadableStream){if(this._readIntoRequests.length>0)throw new TypeError("Tried to release a reader lock when that reader has pending read() calls un-settled");G(this)}}}function Gt(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_readIntoRequests")}function Vt(e){return new TypeError(`ReadableStreamBYOBReader.prototype.${e} can only be used on a ReadableStreamBYOBReader`)}class Zt{constructor(e={},t={}){$t(this);const r=t.size;let i=t.highWaterMark;const n=e.type;if("bytes"===n+""){if(void 0!==r)throw new RangeError("The strategy for a byte stream cannot have a size function");void 0===i&&(i=0),i=P(i),Ot(this,e,i)}else{if(void 0!==n)throw new RangeError("Invalid type is specified");{const t=M(r);void 0===i&&(i=1),i=P(i),function(e,t,r,i){const n=Object.create(ct.prototype),a=S(t,"pull",0,[n]),s=S(t,"cancel",1,[]);gt(e,n,(function(){return E(t,"start",[n])}),a,s,r,i)}(this,e,i,t)}}}get locked(){if(!1===Xt(this))throw rr("locked");return Jt(this)}cancel(e){return!1===Xt(this)?D(rr("cancel")):!0===Jt(this)?D(new TypeError("Cannot cancel a stream that already has a reader")):Qt(this,e)}getReader({mode:e}={}){if(!1===Xt(this))throw rr("getReader");if(void 0===e)return ee(this,!0);if("byob"===(e+=""))return function(e,t=!1){const r=new Wt(e);return r._forAuthorCode=t,r}(this,!0);throw new RangeError("Invalid mode is specified")}pipeThrough({writable:e,readable:t},{preventClose:r,preventAbort:i,preventCancel:n,signal:a}={}){if(!1===Xt(this))throw rr("pipeThrough");if(!1===_e(e))throw new TypeError("writable argument to pipeThrough must be a WritableStream");if(!1===Xt(t))throw new TypeError("readable argument to pipeThrough must be a ReadableStream");if(r=!!r,i=!!i,n=!!n,void 0!==a&&!nt(a))throw new TypeError("ReadableStream.prototype.pipeThrough's signal option must be an AbortSignal");if(!0===Jt(this))throw new TypeError("ReadableStream.prototype.pipeThrough cannot be used on a locked ReadableStream");if(!0===ke(e))throw new TypeError("ReadableStream.prototype.pipeThrough cannot be used on a locked WritableStream");return F(ot(this,e,r,i,n,a)),t}pipeTo(e,{preventClose:t,preventAbort:r,preventCancel:i,signal:n}={}){return!1===Xt(this)?D(rr("pipeTo")):!1===_e(e)?D(new TypeError("ReadableStream.prototype.pipeTo's first argument must be a WritableStream")):(t=!!t,r=!!r,i=!!i,void 0===n||nt(n)?!0===Jt(this)?D(new TypeError("ReadableStream.prototype.pipeTo cannot be used on a locked ReadableStream")):!0===ke(e)?D(new TypeError("ReadableStream.prototype.pipeTo cannot be used on a locked WritableStream")):ot(this,e,t,r,i,n):D(new TypeError("ReadableStream.prototype.pipeTo's signal option must be an AbortSignal")))}tee(){if(!1===Xt(this))throw rr("tee");const e=function(e,t){const r=ee(e);let i,n,a,s,o,c=!1,u=!1,h=!1;const d=B(e=>{o=e});function f(){if(!0===c)return U(void 0);return c=!0,F(N(oe(r),e=>{if(c=!1,!0===e.done)return!1===u&&lt(a._readableStreamController),void(!1===h&&lt(s._readableStreamController));const t=e.value,r=t,i=t;!1===u&&pt(a._readableStreamController,r),!1===h&&pt(s._readableStreamController,i)})),U(void 0)}function l(){}return a=Yt(l,f,(function(t){if(u=!0,i=t,!0===h){const t=_([i,n]),r=Qt(e,t);o(r)}return d})),s=Yt(l,f,(function(t){if(h=!0,n=t,!0===u){const t=_([i,n]),r=Qt(e,t);o(r)}return d})),O(r._closedPromise,e=>{yt(a._readableStreamController,e),yt(s._readableStreamController,e)}),[a,s]}(this);return _(e)}getIterator({preventCancel:e=!1}={}){if(!1===Xt(this))throw rr("getIterator");return function(e,t=!1){const r=ee(e),i=Object.create(he);return i._asyncIteratorReader=r,i._preventCancel=!!t,i}(this,e)}}function Yt(e,t,r,i=1,n=(()=>1)){const a=Object.create(Zt.prototype);return $t(a),gt(a,Object.create(ct.prototype),e,t,r,i,n),a}function $t(e){e._state="readable",e._reader=void 0,e._storedError=void 0,e._disturbed=!1}function Xt(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_readableStreamController")}function Jt(e){return void 0!==e._reader}function Qt(e,t){if(e._disturbed=!0,"closed"===e._state)return U(void 0);if("errored"===e._state)return D(e._storedError);return er(e),N(e._readableStreamController[J](t),m)}function er(e){e._state="closed";const t=e._reader;void 0!==t&&(se(t)&&(t._readRequests.forEach(e=>{e._resolve(j(void 0,!0,t._forAuthorCode))}),t._readRequests=new L),X(t))}function tr(e,t){e._state="errored",e._storedError=t;const r=e._reader;void 0!==r&&(se(r)?(r._readRequests.forEach(e=>{e._reject(t)}),r._readRequests=new L):(r._readIntoRequests.forEach(e=>{e._reject(t)}),r._readIntoRequests=new L),$(r,t))}function rr(e){return new TypeError(`ReadableStream.prototype.${e} can only be used on a ReadableStream`)}"symbol"==typeof b.asyncIterator&&Object.defineProperty(Zt.prototype,b.asyncIterator,{value:Zt.prototype.getIterator,enumerable:!1,writable:!0,configurable:!0});function ir(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_transformStreamController")}function nr(e,t){yt(e._readable._readableStreamController,t),ar(e,t)}function ar(e,t){ur(e._transformStreamController),je(e._writable._writableStreamController,t),!0===e._backpressure&&sr(e,!1)}function sr(e,t){void 0!==e._backpressureChangePromise&&e._backpressureChangePromise_resolve(),e._backpressureChangePromise=B(t=>{e._backpressureChangePromise_resolve=t}),e._backpressure=t}class or{constructor(){throw new TypeError("TransformStreamDefaultController instances cannot be created directly")}get desiredSize(){if(!1===cr(this))throw fr("desiredSize");return bt(this._controlledTransformStream._readable._readableStreamController)}enqueue(e){if(!1===cr(this))throw fr("enqueue");hr(this,e)}error(e){if(!1===cr(this))throw fr("error");var t;t=e,nr(this._controlledTransformStream,t)}terminate(){if(!1===cr(this))throw fr("terminate");!function(e){const t=e._controlledTransformStream,r=t._readable._readableStreamController;!0===mt(r)&&lt(r);ar(t,new TypeError("TransformStream terminated"))}(this)}}function cr(e){return!!v(e)&&!!Object.prototype.hasOwnProperty.call(e,"_controlledTransformStream")}function ur(e){e._transformAlgorithm=void 0,e._flushAlgorithm=void 0}function hr(e,t){const r=e._controlledTransformStream,i=r._readable._readableStreamController;if(!1===mt(i))throw new TypeError("Readable side is not in a state that permits enqueue");try{pt(i,t)}catch(e){throw ar(r,e),r._readable._storedError}(function(e){return!0!==dt(e)})(i)!==r._backpressure&&sr(r,!0)}function dr(e,t){return N(e._transformAlgorithm(t),void 0,t=>{throw nr(e._controlledTransformStream,t),t})}function fr(e){return new TypeError(`TransformStreamDefaultController.prototype.${e} can only be used on a TransformStreamDefaultController`)}function lr(e){return new TypeError(`TransformStream.prototype.${e} can only be used on a TransformStream`)}
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -13624,7 +13624,7 @@ function pendGo(self, fn) {
 
 
 
-var buffer = __nccwpck_require__(4293)
+var buffer = __nccwpck_require__(4300)
 var Buffer = buffer.Buffer
 
 var safer = {}
@@ -13715,13 +13715,13 @@ module.exports = __nccwpck_require__(4219);
 "use strict";
 
 
-var net = __nccwpck_require__(1631);
-var tls = __nccwpck_require__(4016);
-var http = __nccwpck_require__(8605);
-var https = __nccwpck_require__(7211);
-var events = __nccwpck_require__(8614);
-var assert = __nccwpck_require__(2357);
-var util = __nccwpck_require__(1669);
+var net = __nccwpck_require__(1808);
+var tls = __nccwpck_require__(4404);
+var http = __nccwpck_require__(3685);
+var https = __nccwpck_require__(5687);
+var events = __nccwpck_require__(2361);
+var assert = __nccwpck_require__(9491);
+var util = __nccwpck_require__(3837);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -14020,7 +14020,7 @@ module.exports = bytesToUuid;
 // Unique ID creation requires a high quality random # generator.  In node.js
 // this is pretty straight-forward - we use the crypto API.
 
-var crypto = __nccwpck_require__(6417);
+var crypto = __nccwpck_require__(6113);
 
 module.exports = function nodeRNG() {
   return crypto.randomBytes(16);
@@ -14518,15 +14518,15 @@ try {
 /***/ 8781:
 /***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
 
-var fs = __nccwpck_require__(5747);
-var zlib = __nccwpck_require__(8761);
+var fs = __nccwpck_require__(7147);
+var zlib = __nccwpck_require__(9796);
 var fd_slicer = __nccwpck_require__(5010);
 var crc32 = __nccwpck_require__(4794);
-var util = __nccwpck_require__(1669);
-var EventEmitter = __nccwpck_require__(8614).EventEmitter;
-var Transform = __nccwpck_require__(2413).Transform;
-var PassThrough = __nccwpck_require__(2413).PassThrough;
-var Writable = __nccwpck_require__(2413).Writable;
+var util = __nccwpck_require__(3837);
+var EventEmitter = (__nccwpck_require__(2361).EventEmitter);
+var Transform = (__nccwpck_require__(2781).Transform);
+var PassThrough = (__nccwpck_require__(2781).PassThrough);
+var Writable = (__nccwpck_require__(2781).Writable);
 
 exports.open = open;
 exports.fromFd = fromFd;
@@ -15318,131 +15318,131 @@ function defaultCallback(err) {
 
 /***/ }),
 
-/***/ 2357:
+/***/ 9491:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("assert");;
+module.exports = require("assert");
 
 /***/ }),
 
-/***/ 4293:
+/***/ 4300:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("buffer");;
+module.exports = require("buffer");
 
 /***/ }),
 
-/***/ 3129:
+/***/ 2081:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("child_process");;
+module.exports = require("child_process");
 
 /***/ }),
 
-/***/ 6417:
+/***/ 6113:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("crypto");;
+module.exports = require("crypto");
 
 /***/ }),
 
-/***/ 8614:
+/***/ 2361:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("events");;
+module.exports = require("events");
 
 /***/ }),
 
-/***/ 5747:
+/***/ 7147:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("fs");;
+module.exports = require("fs");
 
 /***/ }),
 
-/***/ 8605:
+/***/ 3685:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("http");;
+module.exports = require("http");
 
 /***/ }),
 
-/***/ 7211:
+/***/ 5687:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("https");;
+module.exports = require("https");
 
 /***/ }),
 
-/***/ 1631:
+/***/ 1808:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("net");;
+module.exports = require("net");
 
 /***/ }),
 
-/***/ 2087:
+/***/ 2037:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("os");;
+module.exports = require("os");
 
 /***/ }),
 
-/***/ 5622:
+/***/ 1017:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("path");;
+module.exports = require("path");
 
 /***/ }),
 
-/***/ 2413:
+/***/ 2781:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("stream");;
+module.exports = require("stream");
 
 /***/ }),
 
-/***/ 4016:
+/***/ 4404:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("tls");;
+module.exports = require("tls");
 
 /***/ }),
 
-/***/ 8835:
+/***/ 7310:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("url");;
+module.exports = require("url");
 
 /***/ }),
 
-/***/ 1669:
+/***/ 3837:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("util");;
+module.exports = require("util");
 
 /***/ }),
 
-/***/ 8761:
+/***/ 9796:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("zlib");;
+module.exports = require("zlib");
 
 /***/ })
 
@@ -15493,7 +15493,9 @@ module.exports = require("zlib");;
 /******/ 	
 /******/ 	/* webpack/runtime/compat */
 /******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";/************************************************************************/
+/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+/******/ 	
+/************************************************************************/
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
