@@ -6495,8 +6495,11 @@ const crypto = __nccwpck_require__(6113);
 const fs = __nccwpck_require__(7147);
 const openpgp = __nccwpck_require__(7946);
 const semver = __nccwpck_require__(2221);
+const stream = __nccwpck_require__(2781);
 const yauzl = __nccwpck_require__(8781);
+const util_1 = __nccwpck_require__(3837);
 const utils_1 = __nccwpck_require__(698);
+const finished = (0, util_1.promisify)(stream.finished);
 const hashiPublicKeyId = '72D7468F';
 const hashiPublicKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -6621,7 +6624,7 @@ ZF5q4h4I33PSGDdSvGXn9UMY5Isjpg==
 =7pIB
 
 -----END PGP PUBLIC KEY BLOCK-----`;
-const releasesUrl = "https://releases.hashicorp.com";
+const releasesUrl = 'https://releases.hashicorp.com';
 class Release {
     constructor(release) {
         this.name = release.name;
@@ -6629,33 +6632,29 @@ class Release {
         this.builds = release.builds;
         this.shasums = release.shasums;
         if (release.shasums_signatures) {
-            this.shasums_signature = release.shasums_signatures.find(sig => sig.endsWith(`_SHA256SUMS.${hashiPublicKeyId}.sig`));
+            this.shasums_signature = release.shasums_signatures.find((sig) => sig.endsWith(`_SHA256SUMS.${hashiPublicKeyId}.sig`));
         }
         else {
             this.shasums_signature = release.shasums_signature;
         }
     }
     getBuild(platform, arch) {
-        return this.builds.find(b => b.os === platform && b.arch === arch);
+        return this.builds.find((b) => b.os === platform && b.arch === arch);
     }
     download(downloadUrl, installPath, identifier) {
-        const headers = { 'User-Agent': identifier };
-        return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
-            try {
-                const result = yield (0, utils_1.request)(downloadUrl, { headers: Object.assign({}, headers), responseType: 'stream' });
-                result.pipe(fs.createWriteStream(installPath));
-                resolve();
-            }
-            catch (e) {
-                return reject(e.message);
-            }
-        }));
+        return __awaiter(this, void 0, void 0, function* () {
+            const headers = { 'User-Agent': identifier };
+            const writer = fs.createWriteStream(installPath);
+            const result = yield (0, utils_1.request)(downloadUrl, { headers: Object.assign({}, headers), responseType: 'stream' });
+            result.pipe(writer);
+            yield finished(writer);
+        });
     }
     verify(pkg, buildName) {
         return __awaiter(this, void 0, void 0, function* () {
             const [localSum, remoteSum] = yield Promise.all([
                 this.calculateFileSha256Sum(pkg),
-                this.downloadSha256Sum(buildName)
+                this.downloadSha256Sum(buildName),
             ]);
             if (remoteSum !== localSum) {
                 throw new Error(`Install error: SHA sum for ${buildName} does not match.\n` +
@@ -6668,15 +6667,19 @@ class Release {
             const hash = crypto.createHash('sha256');
             fs.createReadStream(path)
                 .on('error', reject)
-                .on('data', data => hash.update(data))
+                .on('data', (data) => hash.update(data))
                 .on('end', () => resolve(hash.digest('hex')));
         });
     }
     downloadSha256Sum(buildName) {
         return __awaiter(this, void 0, void 0, function* () {
             const [shasumsResponse, shasumsSignature] = yield Promise.all([
-                (0, utils_1.request)(`${releasesUrl}/${this.name}/${this.version}/${this.shasums}`),
-                (0, utils_1.request)(`${releasesUrl}/${this.name}/${this.version}/${this.shasums_signature}`),
+                (0, utils_1.request)(`${releasesUrl}/${this.name}/${this.version}/${this.shasums}`, {
+                    responseType: 'text',
+                }),
+                (0, utils_1.request)(`${releasesUrl}/${this.name}/${this.version}/${this.shasums_signature}`, {
+                    responseType: 'arraybuffer',
+                }),
             ]);
             const publicKey = yield openpgp.readKey({ armoredKey: hashiPublicKey });
             const signature = yield openpgp.readSignature({ binarySignature: Buffer.from(shasumsSignature, 'hex') });
@@ -6684,16 +6687,16 @@ class Release {
             const verified = yield openpgp.verify({
                 message: message,
                 verificationKeys: publicKey,
-                signature: signature
+                signature: signature,
             });
             if (!verified) {
                 throw new Error('signature could not be verified');
             }
-            const shasumLine = shasumsResponse.split(`\n`).find(line => line.includes(buildName));
+            const shasumLine = shasumsResponse.split(`\n`).find((line) => line.includes(buildName));
             if (!shasumLine) {
                 throw new Error(`Install error: no matching SHA sum for ${buildName}`);
             }
-            return shasumLine.split("  ")[0];
+            return shasumLine.split('  ')[0];
         });
     }
     unpack(directory, pkgName) {
@@ -6735,8 +6738,9 @@ function getRelease(product, version, userAgent, includePrerelease) {
         const headers = userAgent ? { 'User-Agent': userAgent } : null;
         const response = yield (0, utils_1.request)(indexUrl, { headers });
         let release;
-        if (!validVersion) { // pick the latest release (prereleases will be skipped for safety, set an explicit version instead)
-            const releaseVersions = Object.keys(response.versions).filter(v => !semver.prerelease(v));
+        if (!validVersion) {
+            // pick the latest release (prereleases will be skipped for safety, set an explicit version instead)
+            const releaseVersions = Object.keys(response.versions).filter((v) => !semver.prerelease(v));
             version = releaseVersions.sort((a, b) => semver.rcompare(a, b))[0];
             release = new Release(response.versions[version]);
         }
@@ -6756,7 +6760,7 @@ function matchVersion(versions, range, includePrerelease) {
         return new Release(versions[version]);
     }
     else {
-        throw new Error("No matching version found");
+        throw new Error('No matching version found');
     }
 }
 //# sourceMappingURL=index.js.map
@@ -6781,8 +6785,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.request = void 0;
 const axios_1 = __nccwpck_require__(6545);
 const ProxyAgent = __nccwpck_require__(7367);
-const httpProxy = process.env["HTTP_PROXY"] || process.env["http_proxy"];
-const httpsProxy = process.env["HTTPS_PROXY"] || process.env["https_proxy"];
+const httpProxy = process.env['HTTP_PROXY'] || process.env['http_proxy'];
+const httpsProxy = process.env['HTTPS_PROXY'] || process.env['https_proxy'];
 let proxyConf = {};
 if (httpProxy || httpsProxy) {
     proxyConf = {
