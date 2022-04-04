@@ -1,0 +1,26 @@
+changelog:
+  categories:
+    - title: NOTES
+      labels:
+        - note
+        - documentation
+    - title: FEATURES
+      labels:
+        - feature
+    - title: ENHANCEMENTS
+      labels:
+        - enhancement
+        - documentation
+    - title: BUG FIXES
+      labels:
+        - bug
+    - title: INTERNAL
+      labels:
+        - dependencies
+        - "*"
+  exclude:
+    labels:
+      - duplicate
+      - wontfix
+      - question
+      - invalid
