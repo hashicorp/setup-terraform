@@ -36,47 +36,47 @@ INTERNAL:
 
 ENHANCEMENTS:
 
-- Update js-releases to fix missing dep in bundle (#78)
+ - Update js-releases to fix missing dep in bundle ([#78](https://github.com/hashicorp/setup-terraform/pull/78))
 
 # [1.3.1] (2020-12-08)
 
 BUG FIXES:
 
-- Fix build dependency (#76)
+ - Fix build dependency ([#76](https://github.com/hashicorp/setup-terraform/pull/76))
 
 # [1.3.0] (2020-12-08)
 
 ENHANCEMENTS:
 
-- Use `@hashicorp/js-releases` package to identify and download the specified version of Terraform. This will ensure that our tooling is consistent in how it works with the releases API, especially when handling pre-releases. (#70, #73)
+ - Use `@hashicorp/js-releases` package to identify and download the specified version of Terraform. This will ensure that our tooling is consistent in how it works with the releases API, especially when handling pre-releases. ([#70](https://github.com/hashicorp/setup-terraform/pull/70), [#73](https://github.com/hashicorp/setup-terraform/pull/73))
 
 # [1.2.1] (2020-10-30)
 
 INTERNAL:
 
-- Update dependencies to resolve CVE-2020-15228 (#63)
+ - Update dependencies to resolve CVE-2020-15228 ([#63](https://github.com/hashicorp/setup-terraform/pull/63))
 
 # [1.2.0]
 
 ENHANCEMENTS:
 
-- Allow `terraform_version` to take a version constraint. ([#38](https://github.com/hashicorp/setup-terraform/pull/38))
+ - Allow `terraform_version` to take a version constraint. ([#38](https://github.com/hashicorp/setup-terraform/pull/38))
 
 # [1.1.0]
 
 ENHANCEMENTS:
 
-- Ignore pre-release versions when `terraform_version` is set to `latest`. ([#19](https://github.com/hashicorp/setup-terraform/pull/19))
+ - Ignore pre-release versions when `terraform_version` is set to `latest`. ([#19](https://github.com/hashicorp/setup-terraform/pull/19))
 
 # [1.0.1]
 
 INTERNAL:
 
-- Bump @actions/http-client from 1.0.6 to 1.0.8. ([#1](https://github.com/hashicorp/setup-terraform/pull/1))
+ - Bump @actions/http-client from 1.0.6 to 1.0.8. ([#1](https://github.com/hashicorp/setup-terraform/pull/1))
 
 # [1.0.0]
 
-- Initial release.
+ - Initial release.
 
 <!-- Links to tag comparisons -->
 [Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v1.3.2...main
