@@ -30,10 +30,10 @@ A specific version of Terraform CLI can be installed.
 steps:
 - uses: hashicorp/setup-terraform@v1
   with:
-    terraform_version: 0.12.25
+    terraform_version: 1.1.7
 ```
 
-Credentials for Terraform Cloud (app.terraform.io) can be configured.
+Credentials for Terraform Cloud ([app.terraform.io](https://app.terraform.io/)) can be configured.
 
 ```yaml
 steps:
@@ -42,7 +42,7 @@ steps:
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 ```
 
-Credentials for Terraform Enterprise can be configured.
+Credentials for Terraform Enterprise (TFE) can be configured:
 
 ```yaml
 steps:
@@ -52,7 +52,7 @@ steps:
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 ```
 
-The wrapper script installation can be skipped.
+The wrapper script installation can be skipped by setting the `terraform_wrapper` variable to `false`:
 
 ```yaml
 steps:
@@ -243,8 +243,8 @@ The action supports the following inputs:
 
 - `terraform_version` - (optional) The version of Terraform CLI to install. Instead of a full version string,
    you can also specify a constraint string (see [Semver Ranges](https://www.npmjs.com/package/semver#ranges)
-   for available range specifications). Examples are: `<0.14.0`, `~0.13.0`, `0.13.x` (all three installing
-   the latest available 0.13 version). Prerelease versions can be specified and a range will stay within the
+   for available range specifications). Examples are: `<1.2.0`, `~1.1.0`, `1.1.7` (all three installing
+   the latest available `1.1` version). Prerelease versions can be specified and a range will stay within the
    given tag such as `beta` or `rc`. If no version is given, it will default to `latest`.
 
 - `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of 
