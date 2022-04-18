@@ -21,14 +21,14 @@ The default configuration installs the latest version of Terraform CLI and insta
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
 ```
 
 A specific version of Terraform CLI can be installed.
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
   with:
     terraform_version: 1.1.7
 ```
@@ -37,7 +37,7 @@ Credentials for Terraform Cloud ([app.terraform.io](https://app.terraform.io/)) 
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
   with:
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 ```
@@ -46,7 +46,7 @@ Credentials for Terraform Enterprise (TFE) can be configured:
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
   with:
     cli_config_credentials_hostname: 'terraform.example.com'
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
@@ -56,7 +56,7 @@ The wrapper script installation can be skipped by setting the `terraform_wrapper
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
   with:
     terraform_wrapper: false
 ```
@@ -66,7 +66,7 @@ Subsequent steps can access outputs when the wrapper script is installed.
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
 
 - run: terraform init
 
@@ -86,7 +86,7 @@ defaults:
     working-directory: ${{ env.tf_actions_working_dir }}
 steps:
 - uses: actions/checkout@v2
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
 
 - name: Terraform fmt
   id: fmt
@@ -152,7 +152,7 @@ defaults:
     working-directory: ${{ env.tf_actions_working_dir }}
 steps:
 - uses: actions/checkout@v2
-- uses: hashicorp/setup-terraform@v1
+- uses: hashicorp/setup-terraform@v2
 
 - name: Terraform fmt
   id: fmt

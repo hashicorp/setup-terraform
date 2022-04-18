@@ -1,3 +1,20 @@
+# [2.0.0] (2022-04-18)
+
+BREAKING CHANGES:
+
+* Support Actions Runners v2.285.0 or later by upgrading to Nodejs v16 runtime by @chenrui333 in https://github.com/hashicorp/setup-terraform/pull/170
+
+NOTES:
+
+* docs: Update existing PR comments example by @tobiasbueschel in https://github.com/hashicorp/setup-terraform/pull/178
+* Update Terraform versions and usage in README examples by @ksatirli in https://github.com/hashicorp/setup-terraform/pull/176
+* Update grammar in README.md by @dustindortch in https://github.com/hashicorp/setup-terraform/pull/180
+
+INTERNAL:
+
+* Bump @actions/github from 5.0.0 to 5.0.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/177
+* dependabot: track github-actions dependency changes by @chenrui333 in https://github.com/hashicorp/setup-terraform/pull/179
+
 # [1.4.0] (2022-04-04)
 
 NOTES:
@@ -79,7 +96,9 @@ INTERNAL:
  - Initial release.
 
 <!-- Links to tag comparisons -->
-[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v1.3.2...main
+[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.0.0...main
+[2.0.0]: https://github.com/hashicorp/setup-terraform/compare/v1.4.0...v2.0.0
+[1.4.0]: https://github.com/hashicorp/setup-terraform/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/hashicorp/setup-terraform/compare/v1.3.1...v1.3.2
 [1.3.1]: https://github.com/hashicorp/setup-terraform/compare/v1.3.0...v1.3.1
 [1.3.0]: https://github.com/hashicorp/setup-terraform/compare/v1.2.1...v1.3.0
