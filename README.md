@@ -254,7 +254,7 @@ The action supports the following inputs:
 ## Outputs
 
 This action does not configure any outputs directly. However, when you set the `terraform_wrapper` input
-to `true`, the following outputs is available for subsequent steps that call the `terraform` binary.
+to `true`, the following outputs are available for subsequent steps that call the `terraform` binary.
 
 - `stdout` - The STDOUT stream of the call to the `terraform` binary.
 
