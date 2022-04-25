@@ -28,7 +28,7 @@
   "devDependencies": {
     "@vercel/ncc": "0.33.3",
     "husky": "^7.0.1",
-    "jest": "^27.5.1",
+    "jest": "^28.0.0",
     "nock": "^13.2.4",
     "semistandard": "^16.0.1"
   },
