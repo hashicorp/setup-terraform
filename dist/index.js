@@ -38,9 +38,10 @@ async function downloadCLI (url) {
   core.debug(`Downloading Terraform CLI from ${url}`);
   const pathToCLIZip = await tc.downloadTool(url);
 
-  core.info(`Terraform CLI Download Path is ${pathToCLIZip}`)
+  core.debug(`Terraform CLI Download Path is ${pathToCLIZip}`)
   fixedPathToCLIZip=`${pathToCLIZip}.zip`
   io.mv(pathToCLIZip,fixedPathToCLIZip)
+  core.debug(`Moved download to ${fixedPathToCLIZip}`)
 
   core.debug('Extracting Terraform CLI zip file');
   const pathToCLI = await tc.extractZip(fixedPathToCLIZip);
