@@ -39,7 +39,6 @@ async function downloadCLI (url) {
   const pathToCLIZip = await tc.downloadTool(url);
 
   core.info(`Terraform CLI Download Path is ${pathToCLIZip}`)
-  const files = await readdir(path);
   try {
     const files = await fs.readdir(pathToCLIZip);
     for (const file of files)
