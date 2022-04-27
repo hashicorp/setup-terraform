@@ -26,7 +26,7 @@
     "@hashicorp/js-releases": "^1.5.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "0.33.3",
+    "@vercel/ncc": "0.33.4",
     "husky": "^7.0.1",
     "jest": "^27.5.1",
     "nock": "^13.2.4",
