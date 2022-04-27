@@ -3040,7 +3040,7 @@ async function checkTerraform () {
   return io.which(pathToCLI, check);
 }
 
-async () => {
+(async () => {
   // This will fail if Terraform isn't found, which is what we want
   await checkTerraform();
 
@@ -3079,7 +3079,7 @@ async () => {
 
   // A non-zero exitCode is considered an error
   core.setFailed(`Terraform exited with code ${exitCode}.`);
-};
+})();
 
 })();
 
