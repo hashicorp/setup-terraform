@@ -37,6 +37,7 @@ function mapOS (os) {
 async function downloadCLI (url) {
   core.debug(`Downloading Terraform CLI from ${url}`);
   const pathToCLIZip = await tc.downloadTool(url);
+  core.info(`Terraform CLI Download Path is ${pathToCLIZip}`)
 
   core.debug('Extracting Terraform CLI zip file');
   const pathToCLI = await tc.extractZip(pathToCLIZip);
