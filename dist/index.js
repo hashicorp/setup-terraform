@@ -45,8 +45,8 @@ async function downloadCLI (url) {
       core.info(file);
 
   } catch (error) {
-    core.error(err);
-    throw err;
+    core.error(error);
+    throw error;
   }
 
   core.debug('Extracting Terraform CLI zip file');
