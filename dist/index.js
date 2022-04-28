@@ -38,13 +38,13 @@ async function downloadCLI (url) {
   core.debug(`Downloading Terraform CLI from ${url}`);
   const pathToCLIZip = await tc.downloadTool(url);
 
-  let pathToCLI = "";
+  let pathToCLI = '';
 
   if (os.platform().startsWith('win')) {
-    core.debug(`Terraform CLI Download Path is ${pathToCLIZip}`)
-    fixedPathToCLIZip = `${pathToCLIZip}.zip`
-    io.mv(pathToCLIZip, fixedPathToCLIZip)
-    core.debug(`Moved download to ${fixedPathToCLIZip}`)
+    core.debug(`Terraform CLI Download Path is ${pathToCLIZip}`);
+    const fixedPathToCLIZip = `${pathToCLIZip}.zip`;
+    io.mv(pathToCLIZip, fixedPathToCLIZip);
+    core.debug(`Moved download to ${fixedPathToCLIZip}`);
     pathToCLI = await tc.extractZip(fixedPathToCLIZip);
   } else {
     pathToCLI = await tc.extractZip(pathToCLIZip);
