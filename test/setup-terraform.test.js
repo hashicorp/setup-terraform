@@ -94,6 +94,8 @@ describe('Setup Terraform', () => {
       .fn()
       .mockReturnValueOnce('file.zip');
 
+    io.mv = jest.fn();
+
     tc.extractZip = jest
       .fn()
       .mockReturnValueOnce('file');
