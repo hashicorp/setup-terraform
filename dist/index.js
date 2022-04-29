@@ -40,6 +40,7 @@ async function downloadCLI (url) {
 
   let pathToCLI = '';
 
+  core.debug('Extracting Terraform CLI zip file');
   if (os.platform().startsWith('win')) {
     core.debug(`Terraform CLI Download Path is ${pathToCLIZip}`);
     const fixedPathToCLIZip = `${pathToCLIZip}.zip`;
@@ -50,7 +51,6 @@ async function downloadCLI (url) {
     pathToCLI = await tc.extractZip(pathToCLIZip);
   }
 
-  core.debug('Extracting Terraform CLI zip file');
   core.debug(`Terraform CLI path is ${pathToCLI}.`);
 
   if (!pathToCLIZip || !pathToCLI) {
