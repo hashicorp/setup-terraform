@@ -82,7 +82,7 @@ defaults:
   run:
     working-directory: ${{ env.tf_actions_working_dir }}
 steps:
-- uses: actions/checkout@v2
+- uses: actions/checkout@v3
 - uses: hashicorp/setup-terraform@v2
 
 - name: Terraform fmt
@@ -148,7 +148,7 @@ defaults:
   run:
     working-directory: ${{ env.tf_actions_working_dir }}
 steps:
-- uses: actions/checkout@v2
+- uses: actions/checkout@v3
 - uses: hashicorp/setup-terraform@v2
 
 - name: Terraform fmt
