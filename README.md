@@ -1,9 +1,7 @@
 # setup-terraform
 
-<p align="left">
-  <a href="https://github.com/hashicorp/setup-terraform/actions"><img alt="Continuous Integration" src="https://github.com/hashicorp/setup-terraform/workflows/Continuous%20Integration/badge.svg" /></a>
-  <a href="https://github.com/hashicorp/setup-terraform/actions"><img alt="Setup Terraform" src="https://github.com/hashicorp/setup-terraform/workflows/Setup%20Terraform/badge.svg" /></a>
-</p>
+[![Continuous Integration](https://github.com/hashicorp/setup-terraform/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/hashicorp/setup-terraform/actions/workflows/continuous-integration.yml)
+[![Setup Terraform](https://github.com/hashicorp/setup-terraform/actions/workflows/setup-terraform.yml/badge.svg)](https://github.com/hashicorp/setup-terraform/actions/workflows/setup-terraform.yml)
 
 The `hashicorp/setup-terraform` action is a JavaScript action that sets up Terraform CLI in your GitHub Actions workflow by:
 
