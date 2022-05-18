@@ -1,3 +1,30 @@
+# [2.1.0] (2022-05-25)
+
+ENHANCEMENTS:
+
+* Do not fail when there is an exit-code 2 by @dannyibishev in https://github.com/hashicorp/setup-terraform/pull/125
+
+BUG FIXES:
+
+* Fix terraform extract on Windows runners by @cpc-camarj in https://github.com/hashicorp/setup-terraform/pull/187
+
+INTERNAL:
+
+* Bump @actions/core from 1.6.0 to 1.7.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/185
+* Bump @vercel/ncc from 0.33.3 to 0.33.4 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/182
+* Bump jest from 27.5.1 to 28.0.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/184
+* Bump jest from 28.0.0 to 28.0.3 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/190
+* Bump husky from 7.0.4 to 8.0.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/193
+* Bump jest from 28.0.3 to 28.1.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/194
+* Bump @actions/github from 5.0.1 to 5.0.3 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/201
+* Bump @actions/core from 1.7.0 to 1.8.2 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/200
+
+## New Contributors
+
+* @cpc-camarj made their first contribution in https://github.com/hashicorp/setup-terraform/pull/187
+* @dannyibishev made their first contribution in https://github.com/hashicorp/setup-terraform/pull/125
+
+
 # [2.0.0] (2022-04-18)
 
 BREAKING CHANGES:
@@ -96,7 +123,8 @@ INTERNAL:
  - Initial release.
 
 <!-- Links to tag comparisons -->
-[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.0.0...main
+[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.1.0...main
+[2.1.0]: https://github.com/hashicorp/setup-terraform/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/hashicorp/setup-terraform/compare/v1.4.0...v2.0.0
 [1.4.0]: https://github.com/hashicorp/setup-terraform/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/hashicorp/setup-terraform/compare/v1.3.1...v1.3.2
