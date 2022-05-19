@@ -1,0 +1,40 @@
+# Based on https://github.com/leonsteinhaeuser/project-beta-automations
+
+name: "Add Issues/PRs to TF Provider DevEx team board"
+
+on:
+  issues:
+    types: [opened, reopened]
+  pull_request_target:
+    # NOTE: The way content is added to project board is equivalent to an "upsert".
+    # Calling it multiple times will be idempotent.
+    #
+    # See https://securitylab.github.com/research/github-actions-preventing-pwn-requests/
+    # to see the reasoning behind using `pull_request_target` instead of `pull_request`
+    types: [opened, reopened, ready_for_review]
+
+jobs:
+  add-content-to-project:
+    name: "Add Content to project"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Set Issue to 'Priority = Triage Next'"
+        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        if: github.event_name == 'issues'
+        with:
+          gh_token: ${{ secrets.TF_DEVEX_PROJECT_GITHUB_TOKEN }}
+          organization: "hashicorp"
+          project_id: 99      #< https://github.com/orgs/hashicorp/projects/99
+          resource_node_id: ${{ github.event.issue.node_id }}
+          operation_mode: custom_field
+          custom_field_values: '[{\"name\":\"Priority\",\"type\":\"single_select\",\"value\":\"Triage Next\"}]'
+      - name: "Set Pull Request to 'Priority = Triage Next'"
+        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        if: github.event_name == 'pull_request'
+        with:
+          gh_token: ${{ secrets.TF_DEVEX_PROJECT_GITHUB_TOKEN }}
+          organization: "hashicorp"
+          project_id: 99      #< https://github.com/orgs/hashicorp/projects/99
+          resource_node_id: ${{ github.event.pull_request.node_id }}
+          operation_mode: custom_field
+          custom_field_values: '[{\"name\":\"Priority\",\"type\":\"single_select\",\"value\":\"Triage Next\"}]'
