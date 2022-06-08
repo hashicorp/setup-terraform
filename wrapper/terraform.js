@@ -49,6 +49,8 @@ async function checkTerraform () {
     return;
   }
 
+  core.exportVariable(`TF_DETAILED_EXITCODE`,${exitCode})
+
   // A non-zero exitCode is considered an error
   core.setFailed(`Terraform exited with code ${exitCode}.`);
 })();
