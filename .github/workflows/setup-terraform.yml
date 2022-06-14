@@ -1,4 +1,4 @@
-name: 'Setup Terraform'
+name: Setup Terraform
 
 on:
   push:
@@ -12,7 +12,7 @@ defaults:
 
 jobs:
   terraform-versions:
-    name: 'Terraform Versions'
+    name: Terraform Versions
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -36,7 +36,7 @@ jobs:
       run: terraform version | grep 'Terraform v'
 
   terraform-versions-no-wrapper:
-    name: 'Terraform Versions No Wrapper'
+    name: Terraform Versions No Wrapper
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -61,7 +61,7 @@ jobs:
       run: terraform version | grep 'Terraform v'
 
   terraform-versions-constraints:
-    name: 'Terraform Versions Constraints'
+    name: Terraform Versions Constraints
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -80,7 +80,7 @@ jobs:
       run: terraform version | grep 'Terraform v0\.12'
 
   terraform-versions-constraints-no-wrapper:
-    name: 'Terraform Versions Constraints No Wrapper'
+    name: Terraform Versions Constraints No Wrapper
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -100,7 +100,7 @@ jobs:
       run: terraform version | grep 'Terraform v0\.12'
 
   terraform-credentials-cloud:
-    name: 'Terraform Cloud Credentials'
+    name: Terraform Cloud Credentials
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -129,7 +129,7 @@ jobs:
         cat ${HOME}/.terraformrc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
 
   terraform-credentials-enterprise:
-    name: 'Terraform Enterprise Credentials'
+    name: Terraform Enterprise Credentials
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -159,7 +159,7 @@ jobs:
         cat ${HOME}/.terraformrc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
 
   terraform-credentials-none:
-    name: 'Terraform No Credentials'
+    name: Terraform No Credentials
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -182,7 +182,7 @@ jobs:
         [[ -f ${HOME}/.terraformrc ]] || exit 0
 
   terraform-arguments:
-    name: 'Terraform Arguments'
+    name: Terraform Arguments
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -213,7 +213,7 @@ jobs:
       run: terraform fmt -check -list=true -no-color
 
   terraform-arguments-no-wrapper:
-    name: 'Terraform Arguments No Wrapper'
+    name: Terraform Arguments No Wrapper
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -246,7 +246,7 @@ jobs:
       run: terraform fmt -check -list=true -no-color
 
   terraform-run-local:
-    name: 'Terraform Run Local'
+    name: Terraform Run Local
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -279,7 +279,7 @@ jobs:
       run: echo "${{ steps.plan.outputs.stdout }}"
 
   terraform-run-local-no-wrapper:
-    name: 'Terraform Run Local No Wrapper'
+    name: Terraform Run Local No Wrapper
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
