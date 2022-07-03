@@ -84,6 +84,8 @@ Outputs can be used in subsequent steps to comment on the pull request:
 defaults:
   run:
     working-directory: ${{ env.tf_actions_working_dir }}
+permissions:
+  pull-requests: write
 steps:
 - uses: actions/checkout@v2
 - uses: hashicorp/setup-terraform@v2
@@ -150,6 +152,8 @@ Instead of creating a new comment each time, you can also update an existing one
 defaults:
   run:
     working-directory: ${{ env.tf_actions_working_dir }}
+permissions:
+  pull-requests: write
 steps:
 - uses: actions/checkout@v2
 - uses: hashicorp/setup-terraform@v2
