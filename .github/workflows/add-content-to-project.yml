@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Set Issue to 'Priority = Triage Next'"
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v1.3.0
         if: github.event_name == 'issues'
         with:
           gh_token: ${{ secrets.TF_DEVEX_PROJECT_GITHUB_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
           operation_mode: custom_field
           custom_field_values: '[{\"name\":\"Priority\",\"type\":\"single_select\",\"value\":\"Triage Next\"}]'
       - name: "Set Pull Request to 'Priority = Triage Next'"
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
+        uses: leonsteinhaeuser/project-beta-automations@v1.3.0
         if: github.event_name == 'pull_request'
         with:
           gh_token: ${{ secrets.TF_DEVEX_PROJECT_GITHUB_TOKEN }}
