@@ -12,7 +12,7 @@
   },
   "author": "",
   "dependencies": {
-    "@actions/core": "^1.6.0",
+    "@actions/core": "^1.9.1",
     "@actions/exec": "^1.1.0",
     "@actions/io": "^1.1.1"
   },
