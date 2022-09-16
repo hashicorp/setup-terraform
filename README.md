@@ -77,6 +77,12 @@ steps:
 
 Outputs can be used in subsequent steps to comment on the pull request:
 
+> **Notice:** There's a limit to the number of characters inside a GitHub comment (65535).
+>
+> Due to that limitation, you might end up with a failed workflow run even if the plan succeeded.
+>
+> Another approach is to append your plan into the $GITHUB_JOB_SUMMARY environment variable which supports markdown.
+
 ```yaml
 defaults:
   run:
