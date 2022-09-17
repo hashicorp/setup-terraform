@@ -262,11 +262,11 @@ to `true`, the following outputs are available for subsequent steps that call th
 
 ## License
 
-[Mozilla Public License v2.0](https://github.com/hashicorp/setup-terraform/blob/master/LICENSE)
+[Mozilla Public License v2.0](LICENSE)
 
 ## Code of Conduct
 
-[Code of Conduct](https://github.com/hashicorp/setup-terraform/blob/master/CODE_OF_CONDUCT.md)
+[Code of Conduct](CODE_OF_CONDUCT.md)
 
 ## Experimental Status
 
