@@ -1,5 +1,16 @@
 # [2.0.1] (2022-10-12)
 
+### BUG FIXES
+
+* Update 2.0.1 release metadata by @jpogran in https://github.com/hashicorp/setup-terraform/pull/253
+* `README.md` updates - direct links to license and code of conduct, updated GitHub documents link by @magnetikonline in https://github.com/hashicorp/setup-terraform/pull/244
+
+### INTERNAL
+
+* Bump jest from 29.0.3 to 29.1.2 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/248
+
+# [2.0.1] (2022-10-12)
+
 ### ENHANCEMENTS
 
 * Do not fail when theres an exit-code 2 by @dannyibishev in https://github.com/hashicorp/setup-terraform/pull/125
@@ -138,7 +149,8 @@ INTERNAL:
  - Initial release.
 
 <!-- Links to tag comparisons -->
-[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.0.1...main
+[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.0.2...main
+[2.0.2]: https://github.com/hashicorp/setup-terraform/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/hashicorp/setup-terraform/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/hashicorp/setup-terraform/compare/v1.4.0...v2.0.0
 [1.4.0]: https://github.com/hashicorp/setup-terraform/compare/v1.3.2...v1.4.0
