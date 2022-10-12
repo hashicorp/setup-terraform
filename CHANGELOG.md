@@ -1,3 +1,45 @@
+# [2.0.1] (2022-10-12)
+
+### ENHANCEMENTS
+
+* Do not fail when theres an exit-code 2 by @dannyibishev in https://github.com/hashicorp/setup-terraform/pull/125
+* Updated README to reflect GitHub limitations by @rnsc in https://github.com/hashicorp/setup-terraform/pull/205
+
+### BUG FIXES
+
+* Fix terraform extract by @cpc-camarj in https://github.com/hashicorp/setup-terraform/pull/187
+* Add new-style readme build badges, bump `actions/checkout` in `README.md` examples by @magnetikonline in https://github.com/hashicorp/setup-terraform/pull/188
+* Fixed `master` to `main` workflow branch triggers by @magnetikonline in https://github.com/hashicorp/setup-terraform/pull/216
+* Fix the example of how to comment on pull request. by @acarmel in https://github.com/hashicorp/setup-terraform/pull/220
+
+### INTERNAL
+
+* Bump @actions/core from 1.6.0 to 1.7.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/185
+* Bump @vercel/ncc from 0.33.3 to 0.33.4 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/182
+* Bump jest from 27.5.1 to 28.0.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/184
+* Bump jest from 28.0.0 to 28.0.3 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/190
+* Bump husky from 7.0.4 to 8.0.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/193
+* Bump jest from 28.0.3 to 28.1.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/194
+* Bump @actions/github from 5.0.1 to 5.0.3 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/201
+* Bump @actions/core from 1.7.0 to 1.8.2 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/200
+* Bump @actions/tool-cache from 1.7.2 to 2.0.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/199
+* TF DevEx: repo adoption by @detro in https://github.com/hashicorp/setup-terraform/pull/204
+* Bump nock from 13.2.4 to 13.2.6 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/212
+* Bump @vercel/ncc from 0.33.4 to 0.34.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/210
+* Bump jest from 28.1.0 to 28.1.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/215
+* Bump nock from 13.2.6 to 13.2.7 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/217
+* Bump jest from 28.1.1 to 28.1.2 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/221
+* Bump jest from 28.1.2 to 28.1.3 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/224
+* Bump nock from 13.2.7 to 13.2.9 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/225
+* Bump leonsteinhaeuser/project-beta-automations from 1.2.1 to 1.3.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/233
+* Bump leonsteinhaeuser/project-beta-automations from 1.3.0 to 2.0.0 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/243
+* Bump jest from 28.1.3 to 29.0.3 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/242
+* Bump @hashicorp/js-releases from 1.5.1 to 1.6.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/226
+* Bump @actions/core from 1.8.2 to 1.9.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/235
+* Bump @actions/core from 1.6.0 to 1.9.1 in /wrapper by @dependabot in https://github.com/hashicorp/setup-terraform/pull/236
+* Bump @actions/github from 5.0.3 to 5.1.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/249
+* Bump leonsteinhaeuser/project-beta-automations from 2.0.0 to 2.0.1 by @dependabot in https://github.com/hashicorp/setup-terraform/pull/250
+
 # [2.0.0] (2022-04-18)
 
 BREAKING CHANGES:
@@ -96,7 +138,8 @@ INTERNAL:
  - Initial release.
 
 <!-- Links to tag comparisons -->
-[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.0.0...main
+[Unreleased]: https://github.com/hashicorp/setup-terraform/compare/v2.0.1...main
+[2.0.1]: https://github.com/hashicorp/setup-terraform/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/hashicorp/setup-terraform/compare/v1.4.0...v2.0.0
 [1.4.0]: https://github.com/hashicorp/setup-terraform/compare/v1.3.2...v1.4.0
 [1.3.2]: https://github.com/hashicorp/setup-terraform/compare/v1.3.1...v1.3.2
