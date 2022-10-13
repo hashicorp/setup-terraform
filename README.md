@@ -207,7 +207,7 @@ steps:
         issue_number: context.issue.number,
       })
       const botComment = comments.find(comment => {
-        return comment.body.includes('Terraform Format and Style')
+        return comment.user.type === 'Bot' && comment.body.includes('Terraform Format and Style')
       })
 
       // 2. Prepare format of the comment
