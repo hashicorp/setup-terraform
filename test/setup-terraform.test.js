@@ -23,18 +23,12 @@ const setup = require('../lib/setup-terraform');
 //   .fn(console.error);
 
 describe('Setup Terraform', () => {
-  const HOME = process.env.HOME;
-  const APPDATA = process.env.APPDATA;
-
   beforeEach(() => {
-    process.env.HOME = '/tmp/asdf';
-    process.env.APPDATA = '/tmp/asdf';
+    process.env.RUNNER_TEMP = '/tmp/asdf'
   });
 
   afterEach(async () => {
-    await io.rmRF(process.env.HOME);
-    process.env.HOME = HOME;
-    process.env.APPDATA = APPDATA;
+    await io.rmRF(process.env.RUNNER_TEMP);
   });
 
   test('gets specific version and adds token and hostname on linux, amd64', async () => {
@@ -73,8 +67,8 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -118,8 +112,8 @@ describe('Setup Terraform', () => {
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
 
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/terraform.rc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -161,8 +155,8 @@ describe('Setup Terraform', () => {
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
 
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -204,8 +198,8 @@ describe('Setup Terraform', () => {
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
 
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -246,8 +240,8 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -288,8 +282,8 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -330,8 +324,8 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -372,8 +366,8 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
@@ -414,8 +408,8 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
-    // expect credentials are in ${HOME}.terraformrc
-    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // expect credentials are in ${RUNNER_TEMP}/setup-terraform.tfrc
+    const creds = await fs.readFile(`${process.env.RUNNER_TEMP}/setup-terraform.tfrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
