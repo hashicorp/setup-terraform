@@ -24,7 +24,7 @@ const setup = require('../lib/setup-terraform');
 
 describe('Setup Terraform', () => {
   beforeEach(() => {
-    process.env.RUNNER_TEMP = '/tmp/asdf'
+    process.env.RUNNER_TEMP = '/tmp/asdf';
   });
 
   afterEach(async () => {
