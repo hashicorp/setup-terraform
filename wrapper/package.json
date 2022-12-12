@@ -17,7 +17,7 @@
     "@actions/io": "^1.1.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "0.34.0",
+    "@vercel/ncc": "0.36.0",
     "jest": "^29.3.1",
     "semistandard": "^16.0.1"
   },
