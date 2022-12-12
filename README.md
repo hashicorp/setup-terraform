@@ -28,7 +28,7 @@ A specific version of Terraform CLI can be installed:
 steps:
 - uses: hashicorp/setup-terraform@v2
   with:
-    terraform_version: 1.1.7
+    terraform_version: "1.1.7"
 ```
 
 Credentials for Terraform Cloud ([app.terraform.io](https://app.terraform.io/)) can be configured:
@@ -248,7 +248,7 @@ The action supports the following inputs:
    place within the credentials block of the Terraform CLI configuration file.
 - `terraform_version` - (optional) The version of Terraform CLI to install. Instead of a full version string,
    you can also specify a constraint string (see [Semver Ranges](https://www.npmjs.com/package/semver#ranges)
-   for available range specifications). Examples are: `<1.2.0`, `~1.1.0`, `1.1.7` (all three installing
+   for available range specifications). Examples are: `"<1.2.0"`, `"~1.1.0"`, `"1.1.7"` (all three installing
    the latest available `1.1` version). Prerelease versions can be specified and a range will stay within the
    given tag such as `beta` or `rc`. If no version is given, it will default to `latest`.
 - `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of
