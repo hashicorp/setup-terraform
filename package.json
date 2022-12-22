@@ -14,7 +14,8 @@
     "lint": "cd wrapper && npm run lint && cd .. && semistandard --env jest --fix",
     "build": "cd wrapper && npm run build && cd .. && ncc build index.js --out dist",
     "postinstall": "cd wrapper && npm install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "format-check": "echo \"unimplemented for actions/reusable-workflows basic-validation\""
   },
   "keywords": [],
   "author": "",
