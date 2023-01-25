@@ -1,0 +1,37 @@
+on:
+  issues:
+    types: [labeled]
+
+name: Jira Sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    name: Jira sync
+    steps:
+
+    - name: Login
+      uses: atlassian/gajira-login@45fd029b9f1d6d8926c6f04175aa80c0e42c9026 # v3.0.1
+      if: github.event.label.name == 'tf-devex-triage'
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+    - name: Search for existing issue
+      id: search
+      if: github.event.label.name == 'tf-devex-triage'
+      uses: tomhjp/gh-action-jira-search@04700b457f317c3e341ce90da5a3ff4ce058f2fa # v0.2.2
+      with:
+        jql: 'project="TFECO" and "Team (R&D)[Labels]"="TF-DevEx" and description ~ "${{ github.event.issue.html_url || github.event.pull_request.html_url }}" and labels in (Github)'
+
+    - name: Create task in DevEx board
+      if: github.event.label.name == 'tf-devex-triage' && !steps.search.outputs.issue
+      uses: atlassian/gajira-create@1ff0b6bd115a780592b47bfbb63fc4629132e6ec #v3
+      with:
+        project: TFECO
+        issuetype: "Task"
+        summary: "[GH] ${{ github.event.issue.title || github.event.pull_request.title }}"
+        description: "${{ github.event.issue.html_url || github.event.pull_request.html_url }} \n Synced by Github Actions, tagged by ${{ github.actor }}"
+        # customfield_10091 is Team (R&D)
+        fields: '{"customfield_10091": ["TF-DevEx"], "labels": ["Github"]}'
+
