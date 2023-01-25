@@ -12,7 +12,7 @@
   "scripts": {
     "test": "cd wrapper && npm test && cd .. && semistandard --env jest && jest --coverage",
     "lint": "cd wrapper && npm run lint && cd .. && semistandard --env jest --fix",
-    "build": "cd wrapper && npm run build && cd .. && ncc build index.js --out dist",
+    "build": "cd wrapper && npm run build && cd .. && ncc build --no-cache index.js --out dist",
     "postinstall": "cd wrapper && npm ci",
     "prepare": "husky install",
     "format-check": "echo \"unimplemented for actions/reusable-workflows basic-validation\""

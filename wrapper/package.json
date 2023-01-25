@@ -8,7 +8,7 @@
   "scripts": {
     "test": "semistandard --env jest && jest --coverage",
     "lint": "semistandard --env jest --fix",
-    "build": "ncc build terraform.js --out dist"
+    "build": "ncc build --no-cache terraform.js --out dist"
   },
   "author": "",
   "dependencies": {
