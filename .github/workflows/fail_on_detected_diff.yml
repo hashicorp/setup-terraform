@@ -1,0 +1,47 @@
+name: "build-test"
+
+on: # rebuild any PRs and main branch changes
+  pull_request:
+  push:
+    branches:
+      - main
+      - develop
+      - fail_on_detected_diff
+jobs:
+
+  exitcode:
+    name: 'Terraform Run Local Exitcode'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./.github/workflows/data/local
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform
+        uses: ./
+        with:
+          fail_on_detected_diff: true
+
+      - name: Terraform Init
+        shell: bash
+        run: terraform init
+
+#      - name: Terraform Format
+#        shell: bash
+#        run: terraform fmt -check
+#
+      - name: Terraform Plan
+        id: plan
+        shell: bash
+        run: terraform plan
+
+      - name: Terraform Plan (fail)
+        id: plan_fail
+        shell: bash
+        run: terraform plan -detailed-exitcode
+#
+#      - name: Print Terraform Plan
+#        shell: bash
+#        run: echo "${{ steps.plan.outputs.stdout }}"

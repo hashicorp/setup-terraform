@@ -17,6 +17,10 @@ inputs:
     description: 'Whether or not to install a wrapper to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.'
     default: 'true'
     required: false
+  fail_on_detected_diff:
+    description: 'Using -detailed-exitcode option returns exit code 0 or 2 for a detected change. Normally these are accepted as success. If doing specific handling (failing on drift, for example), this option will fail when exit code 2 is returned. Defaults to `pass`. Accepts `fail` in any case.'
+    default: 'pass'
+    required: false
 runs:
   using: 'node20'
   main: 'dist/index.js'
