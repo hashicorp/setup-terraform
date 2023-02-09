@@ -19,6 +19,13 @@ permissions:
   issues: write
 
 jobs:
+  major-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.major-version.outputs.version }}
+    steps:
+      - id: major-version
+        run: echo "version=$(echo "${{ inputs.versionNumber }}" | cut -d. -f1)" >> "$GITHUB_OUTPUT"
   changelog-version:
     runs-on: ubuntu-latest
     outputs:
@@ -56,7 +63,7 @@ jobs:
           git commit -a -m "Update changelog"
           git push
   release-tag:
-    needs: changelog
+    needs: [ changelog, major-version ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -69,7 +76,9 @@ jobs:
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
           git pull
           git tag "${{ inputs.versionNumber }}"
-          git push origin "${{ inputs.versionNumber }}
+          git tag -f "${{ needs.major-version.outputs.version }}" 
+          git push origin "${{ inputs.versionNumber }}"
+          git push origin -f "${{ needs.major-version.outputs.version }}"
   release:
     needs: [ changelog-version, changelog, release-tag ]
     runs-on: "ubuntu-latest"
