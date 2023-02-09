@@ -10,10 +10,9 @@
     "url": "https://github.com/hashicorp/setup-terraform.git"
   },
   "scripts": {
-    "test": "cd wrapper && npm test && cd .. && semistandard --env jest && jest --coverage",
-    "lint": "cd wrapper && npm run lint && cd .. && semistandard --env jest --fix",
-    "build": "cd wrapper && npm run build && cd .. && ncc build index.js --out dist",
-    "postinstall": "cd wrapper && npm install",
+    "test": "semistandard --env jest && jest --coverage",
+    "lint": "semistandard --env jest --fix",
+    "build": "ncc build wrapper/terraform.js --out wrapper/dist && ncc build index.js --out dist",
     "prepare": "husky install",
     "format-check": "echo \"unimplemented for actions/reusable-workflows basic-validation\""
   },
@@ -33,17 +32,9 @@
     "nock": "^13.3.0",
     "semistandard": "^16.0.1"
   },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "<rootDir>/dist/",
-      "<rootDir>/node_modules/",
-      "<rootDir>/wrapper/"
-    ]
-  },
   "semistandard": {
     "ignore": [
-      "dist/**",
-      "wrapper/**"
+      "**/dist/**"
     ]
   }
 }
