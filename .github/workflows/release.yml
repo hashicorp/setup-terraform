@@ -70,6 +70,9 @@ jobs:
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
           fetch-depth: 0
+          # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
+          # to ensure we get the latest commit we use the ref for checkout: 'refs/heads/<branch_name>'
+          ref: ${{ github.ref }}
       - name: Set up Node.js
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
@@ -80,7 +83,6 @@ jobs:
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
-          git pull
           git add .
           git commit -a -m "Update package version"
           git push
@@ -92,11 +94,13 @@ jobs:
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
           fetch-depth: 0
+          # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
+          # to ensure we get the latest commit we use the ref for checkout: 'refs/heads/<branch_name>'
+          ref: ${{ github.ref }}
       - name: Git push release tag
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
-          git pull
           git tag "${{ inputs.versionNumber }}"
           git tag -f "${{ needs.major-version.outputs.version }}" 
           git push origin "${{ inputs.versionNumber }}"
