@@ -1,4 +1,10 @@
-# [2.0.1] (2022-10-12)
+# [2.0.3] (2022-11-01)
+
+### NOTES
+
+* Reduced occurrences of GitHub Actions warnings for setting output [#247](https://github.com/hashicorp/setup-terraform/pull/247)
+
+# [2.0.2] (2022-10-12)
 
 ### BUG FIXES
 
