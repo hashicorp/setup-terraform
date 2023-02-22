@@ -1,20 +1,124 @@
-name: Publish GitHub Release
-
-permissions:
-  contents: write # for creating a release and uploading release artifacts
+name: release
 
 on:
-  push:
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*'
+  workflow_dispatch:
+    inputs:
+      versionNumber:
+        description: 'Release version number (v#.#.#)'
+        type: string
+        required: true
+
+env:
+  CI_COMMIT_AUTHOR: hc-github-team-tf-provider-devex
+  CI_COMMIT_EMAIL: github-team-tf-provider-devex@hashicorp.com
+
+permissions:
+  # Allow creating GitHub release
+  contents: write
+  # Allow closing associated milestone
+  issues: write
 
 jobs:
+  major-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.major-version.outputs.version }}
+    steps:
+      - id: major-version
+        run: echo "version=$(echo "${{ inputs.versionNumber }}" | cut -d. -f1)" >> "$GITHUB_OUTPUT"
+  changelog-version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.changelog-version.outputs.version }}
+    steps:
+      - id: changelog-version
+        run: echo "version=$(echo "${{ inputs.versionNumber }}" | cut -c 2-)" >> "$GITHUB_OUTPUT"
+  changelog:
+    needs: changelog-version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          fetch-depth: 0
+      - name: Batch changes
+        uses: miniscruff/changie-action@7d8e4c245da691d57ca34019a0504321fa7b7e07 # v1.0.0
+        with:
+          version: latest
+          args: batch ${{ needs.changelog-version.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge changes
+        uses: miniscruff/changie-action@7d8e4c245da691d57ca34019a0504321fa7b7e07 # v1.0.0
+        with:
+          version: latest
+          args: merge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Git push changelog
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git add .
+          git commit -a -m "Update changelog"
+          git push
+  update-package-version:
+    needs: changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          fetch-depth: 0
+          # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
+          # to ensure we get the latest commit we use the ref for checkout: 'refs/heads/<branch_name>'
+          ref: ${{ github.ref }}
+      - name: Set up Node.js
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: 18
+      - name: Update package version
+        run: npm version "${{ inputs.versionNumber }}" --git-tag-version false
+      - name: Git push
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git add .
+          git commit -a -m "Update package version"
+          git push
+  release-tag:
+    needs: [ update-package-version, major-version ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          fetch-depth: 0
+          # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
+          # to ensure we get the latest commit we use the ref for checkout: 'refs/heads/<branch_name>'
+          ref: ${{ github.ref }}
+      - name: Git push release tag
+        run: |
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git tag "${{ inputs.versionNumber }}"
+          git tag -f "${{ needs.major-version.outputs.version }}" 
+          git push origin "${{ inputs.versionNumber }}"
+          git push origin -f "${{ needs.major-version.outputs.version }}"
   release:
+    needs: [ changelog-version, release-tag ]
     runs-on: "ubuntu-latest"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          ref: ${{ inputs.versionNumber }}
+          fetch-depth: 0
+      - name: Generate Release Notes
+        run: |
+          cd .changes
+          sed -e "1{/# /d;}" -e "2{/^$/d;}" ${{ needs.changelog-version.outputs.version }}.md > /tmp/release-notes.txt
       - name: GH Release
         run: |
-          gh release create "${GITHUB_REF#refs/tags/}" --generate-notes
+          gh release create "${{ inputs.versionNumber }}" --notes-file /tmp/release-notes.txt
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

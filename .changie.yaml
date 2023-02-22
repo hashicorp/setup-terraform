@@ -1,0 +1,22 @@
+changesDir: .changes
+unreleasedDir: unreleased
+changelogPath: CHANGELOG.md
+versionExt: md
+versionFormat: '## {{.Version}} ({{.Time.Format "2006-01-02"}})'
+kindFormat: '{{.Kind}}:'
+changeFormat: '* {{.Body}} ([#{{.Custom.Issue}}](https://github.com/hashicorp/setup-terraform/issues/{{.Custom.Issue}}))'
+custom:
+  - key: Issue
+    label: Issue/PR Number
+    type: int
+    minInt: 1
+kinds:
+  - label: BREAKING CHANGES
+  - label: NOTES
+  - label: FEATURES
+  - label: ENHANCEMENTS
+  - label: BUG FIXES
+newlines:
+  afterKind: 1
+  beforeKind: 1
+  endOfVersion: 2
