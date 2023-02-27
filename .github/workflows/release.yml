@@ -42,14 +42,14 @@ jobs:
         with:
           fetch-depth: 0
       - name: Batch changes
-        uses: miniscruff/changie-action@7d8e4c245da691d57ca34019a0504321fa7b7e07 # v1.0.0
+        uses: miniscruff/changie-action@b6d52c80deb236a5b548f8774cd5a18b87da9e9a # v1.0.1
         with:
           version: latest
           args: batch ${{ needs.changelog-version.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Merge changes
-        uses: miniscruff/changie-action@7d8e4c245da691d57ca34019a0504321fa7b7e07 # v1.0.0
+        uses: miniscruff/changie-action@b6d52c80deb236a5b548f8774cd5a18b87da9e9a # v1.0.1
         with:
           version: latest
           args: merge
