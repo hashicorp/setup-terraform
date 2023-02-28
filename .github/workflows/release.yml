@@ -119,6 +119,6 @@ jobs:
           sed -e "1{/# /d;}" -e "2{/^$/d;}" ${{ needs.changelog-version.outputs.version }}.md > /tmp/release-notes.txt
       - name: GH Release
         run: |
-          gh release create "${{ inputs.versionNumber }}" --notes-file /tmp/release-notes.txt
+          gh release create "${{ inputs.versionNumber }}" --notes-file /tmp/release-notes.txt --title "${{ inputs.versionNumber }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
