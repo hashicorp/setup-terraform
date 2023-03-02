@@ -120,7 +120,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # Needed to create GitHub release
-      issues: write # Needed to close associated milestone
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
