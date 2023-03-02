@@ -8,15 +8,12 @@ on:
         type: string
         required: true
 
+permissions:
+  contents: read # Changelog commit operations use service account PAT
+
 env:
   CI_COMMIT_AUTHOR: hc-github-team-tf-provider-devex
   CI_COMMIT_EMAIL: github-team-tf-provider-devex@hashicorp.com
-
-permissions:
-  # Allow creating GitHub release
-  contents: write
-  # Allow closing associated milestone
-  issues: write
 
 jobs:
   major-version:
@@ -26,6 +23,7 @@ jobs:
     steps:
       - id: major-version
         run: echo "version=$(echo "${{ inputs.versionNumber }}" | cut -d. -f1)" >> "$GITHUB_OUTPUT"
+
   changelog-version:
     runs-on: ubuntu-latest
     outputs:
@@ -33,6 +31,7 @@ jobs:
     steps:
       - id: changelog-version
         run: echo "version=$(echo "${{ inputs.versionNumber }}" | cut -c 2-)" >> "$GITHUB_OUTPUT"
+
   changelog:
     needs: changelog-version
     runs-on: ubuntu-latest
@@ -41,27 +40,27 @@ jobs:
         uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
           fetch-depth: 0
+          # Avoid persisting GITHUB_TOKEN credentials as they take priority over our service account PAT for `git push` operations
+          # More details: https://github.com/actions/checkout/blob/b4626ce19ce1106186ddf9bb20e706842f11a7c3/adrs/0153-checkout-v2.md#persist-credentials
+          persist-credentials: false
       - name: Batch changes
         uses: miniscruff/changie-action@b6d52c80deb236a5b548f8774cd5a18b87da9e9a # v1.0.1
         with:
           version: latest
           args: batch ${{ needs.changelog-version.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Merge changes
         uses: miniscruff/changie-action@b6d52c80deb236a5b548f8774cd5a18b87da9e9a # v1.0.1
         with:
           version: latest
           args: merge
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Git push changelog
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
           git add .
           git commit -a -m "Update changelog"
-          git push
+          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+
   update-package-version:
     needs: changelog
     runs-on: ubuntu-latest
@@ -73,6 +72,10 @@ jobs:
           # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
           # to ensure we get the latest commit we use the ref for checkout: 'refs/heads/<branch_name>'
           ref: ${{ github.ref }}
+          # Avoid persisting GITHUB_TOKEN credentials as they take priority over our service account PAT for `git push` operations
+          # More details: https://github.com/actions/checkout/blob/b4626ce19ce1106186ddf9bb20e706842f11a7c3/adrs/0153-checkout-v2.md#persist-credentials
+          persist-credentials: false
+
       - name: Set up Node.js
         uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
@@ -85,7 +88,8 @@ jobs:
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
           git add .
           git commit -a -m "Update package version"
-          git push
+          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+
   release-tag:
     needs: [ update-package-version, major-version ]
     runs-on: ubuntu-latest
@@ -97,26 +101,37 @@ jobs:
           # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
           # to ensure we get the latest commit we use the ref for checkout: 'refs/heads/<branch_name>'
           ref: ${{ github.ref }}
+          # Avoid persisting GITHUB_TOKEN credentials as they take priority over our service account PAT for `git push` operations
+          # More details: https://github.com/actions/checkout/blob/b4626ce19ce1106186ddf9bb20e706842f11a7c3/adrs/0153-checkout-v2.md#persist-credentials
+          persist-credentials: false
+
       - name: Git push release tag
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          
           git tag "${{ inputs.versionNumber }}"
           git tag -f "${{ needs.major-version.outputs.version }}" 
-          git push origin "${{ inputs.versionNumber }}"
-          git push origin -f "${{ needs.major-version.outputs.version }}"
+          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "${{ inputs.versionNumber }}"
+          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" -f "${{ needs.major-version.outputs.version }}"
+
   release:
     needs: [ changelog-version, release-tag ]
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Needed to create GitHub release
+      issues: write # Needed to close associated milestone
     steps:
       - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
         with:
           ref: ${{ inputs.versionNumber }}
           fetch-depth: 0
+
       - name: Generate Release Notes
         run: |
           cd .changes
           sed -e "1{/# /d;}" -e "2{/^$/d;}" ${{ needs.changelog-version.outputs.version }}.md > /tmp/release-notes.txt
+
       - name: GH Release
         run: |
           gh release create "${{ inputs.versionNumber }}" --notes-file /tmp/release-notes.txt --title "${{ inputs.versionNumber }}"
