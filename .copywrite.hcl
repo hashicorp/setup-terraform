@@ -22,6 +22,6 @@ project {
     ".release/*.hcl",
 
     # Auto-generated /dist
-    "/dist/**",
+    "dist/**",
   ]
 }
