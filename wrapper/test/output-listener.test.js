@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 const OutputListener = require('../lib/output-listener');
 
 describe('output-listener', () => {
