@@ -23,5 +23,8 @@ project {
 
     # Auto-generated /dist
     "dist/**",
+
+    # GitHub Action metadata file
+    "action.yml",
   ]
 }

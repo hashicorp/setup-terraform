@@ -1,6 +1,3 @@
-# Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: MPL-2.0
-
 name: 'HashiCorp - Setup Terraform'
 description: 'Sets up Terraform CLI in your GitHub Actions workflow.'
 author: 'HashiCorp, Inc.'
