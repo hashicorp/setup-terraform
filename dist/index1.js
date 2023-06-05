@@ -3924,6 +3924,11 @@ exports.debug = debug; // for test
 /***/ ((module) => {
 
 /**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+/**
  * Acts as a listener for @actions/exec, by capturing STDOUT and STDERR
  * streams, and exposing them via a contents attribute.
  *
@@ -3965,6 +3970,11 @@ module.exports = OutputListener;
 
 /***/ 650:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
 
 const os = __nccwpck_require__(37);
 const path = __nccwpck_require__(17);
@@ -4132,6 +4142,11 @@ module.exports = require("util");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 const io = __nccwpck_require__(351);
 const core = __nccwpck_require__(186);
 const { exec } = __nccwpck_require__(514);

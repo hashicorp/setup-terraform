@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 const io = require('@actions/io');
 const core = require('@actions/core');
 const { exec } = require('@actions/exec');
