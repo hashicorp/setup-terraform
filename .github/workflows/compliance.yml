@@ -1,0 +1,17 @@
+name: compliance
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  # Reference: ENGSRV-059
+  copywrite:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: hashicorp/setup-copywrite@867a1a2a064a0626db322392806428f7dc59cb3e # v1.1.2
+      - run: copywrite headers --plan
+      - run: copywrite license --plan
