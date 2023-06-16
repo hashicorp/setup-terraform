@@ -1,4 +1,9 @@
 /**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
+/**
  * Acts as a listener for @actions/exec, by capturing STDOUT and STDERR
  * streams, and exposing them via a contents attribute.
  *

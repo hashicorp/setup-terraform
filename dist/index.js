@@ -4,6 +4,11 @@
 /***/ 3117:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 // Node.js core
 const fs = (__nccwpck_require__(7147).promises);
 const os = __nccwpck_require__(2037);
@@ -21865,6 +21870,11 @@ module.exports = require("zlib");
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 const core = __nccwpck_require__(2186);
 
 const setup = __nccwpck_require__(3117);
