@@ -75,7 +75,13 @@ async function checkTerraform () {
     const failOnDetectedDiffString = core.getInput('fail_on_detected_diff');
     // const failOnDetectedDiff = core.getBooleanInput('fail_on_detected_diff');
 //#    getInput('my-input').toUpper() === 'true'
-    const failOnDetectedDiff = (failOnDetectedDiffString.toLowerCase() === 'fail');
+
+    ///////////////////////////////
+    failOnDetectedDiff = (failOnDetectedDiffString.toLowerCase() === 'fail');
+    failOnDetectedDiff = true;
+    core.info(`FORCING fail_on_detected_diff. Fix later when you can.`); // TODO: fix issue and remove override
+    //////////////////////////////
+
     core.debug(`Terraform detected a difference. (2) failOnDetectedDiffString=${failOnDetectedDiffString} failOnDetectedDiff=${failOnDetectedDiff}`);
     core.info(`Terraform detected a difference. 4 (2) is_wrapper=${is_wrapper} terraform_version=${terraform_version} failOnDetectedDiffString=${failOnDetectedDiffString} failOnDetectedDiff=${failOnDetectedDiff}`);
     if (!failOnDetectedDiff) {
