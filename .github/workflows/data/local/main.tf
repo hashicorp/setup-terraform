@@ -1,5 +1,3 @@
-resource "null_resource" "null" {
-  triggers = {
-    value = timestamp()
-  }
+resource "terraform_data" "replacement" {
+  triggers_replace = timestamp()
 }
