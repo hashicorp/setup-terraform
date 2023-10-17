@@ -253,6 +253,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     defaults:
       run:
+        shell: bash
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
@@ -282,6 +283,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     defaults:
       run:
+        shell: bash
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
