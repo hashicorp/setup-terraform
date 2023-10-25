@@ -1,3 +1,9 @@
+# [3.0.0] (unreleased)
+
+### NOTES
+
+* feat: bump to use node20 runtime @chenrui333 [#346](https://github.com/hashicorp/setup-terraform/pull/346)
+
 # [2.0.3] (2022-11-01)
 
 ### NOTES
