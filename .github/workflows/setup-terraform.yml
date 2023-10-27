@@ -306,7 +306,7 @@ jobs:
 
 
   terraform-stdout-wrapper:
-    name: 'Terraform Run Local'
+    name: 'Terraform STDOUT'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -339,7 +339,7 @@ jobs:
       run: terraform output -json | jq '.pet.value'
 
   terraform-stdout-no-wrapper:
-    name: 'Terraform Run Local No Wrapper'
+    name: 'Terraform STDOUT No Wrapper'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
