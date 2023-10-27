@@ -1,0 +1,5 @@
+kind: BUG FIXES
+body: Fixed malformed stdout when wrapper is enabled
+time: 2023-10-27T09:26:14.675402-04:00
+custom:
+  Issue: "367"

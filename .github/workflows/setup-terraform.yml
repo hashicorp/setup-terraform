@@ -1,4 +1,4 @@
-name: 'Setup Terraform'
+name: 'setup-terraform tests'
 
 on:
   push:
@@ -303,3 +303,70 @@ jobs:
     - name: Terraform Plan
       id: plan
       run: terraform plan
+
+
+  terraform-stdout-wrapper:
+    name: 'Terraform STDOUT'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/local
+    steps:
+    - name: Checkout
+      uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+
+    - name: Setup Terraform
+      uses: ./
+      with:
+        terraform_wrapper: true
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+
+    - name: Terraform Output to JQ
+      id: output
+      run: terraform output -json | jq '.pet.value'
+
+  terraform-stdout-no-wrapper:
+    name: 'Terraform STDOUT No Wrapper'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/local
+    steps:
+    - name: Checkout
+      uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+
+    - name: Setup Terraform
+      uses: ./
+      with:
+        terraform_wrapper: false
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+
+    - name: Terraform Output to JQ
+      id: output
+      run: terraform output -json | jq '.pet.value'
