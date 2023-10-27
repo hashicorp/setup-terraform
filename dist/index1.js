@@ -27222,18 +27222,13 @@ async function checkTerraform () {
   const options = {
     listeners,
     ignoreReturnCode: true,
-    silent: true, // work around github.com/actions/toolkit#649
+    silent: true, // avoid printing command in stdout: https://github.com/actions/toolkit/issues/649
   };
   const exitCode = await exec(pathToCLI, args, options);
 
   // Pass-through stdout/err as `exec` won't due to `silent: true` option
   process.stdout.write(stdout.contents);
   process.stderr.write(stderr.contents);
-
-  core.debug(`Terraform exited with code ${exitCode}.`);
-  core.debug(`stdout: ${stdout.contents}`);
-  core.debug(`stderr: ${stderr.contents}`);
-  core.debug(`exitcode: ${exitCode}`);
 
   // Set outputs, result, exitcode, and stderr
   core.setOutput('stdout', stdout.contents);
