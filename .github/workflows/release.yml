@@ -79,7 +79,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
         with:
-          node-version: 18
+          node-version: 20
       - name: Update package version
         run: npm version "${{ inputs.versionNumber }}" --git-tag-version false
       - name: Git push
@@ -109,9 +109,9 @@ jobs:
         run: |
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
-          
+
           git tag "${{ inputs.versionNumber }}"
-          git tag -f "${{ needs.major-version.outputs.version }}" 
+          git tag -f "${{ needs.major-version.outputs.version }}"
           git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "${{ inputs.versionNumber }}"
           git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" -f "${{ needs.major-version.outputs.version }}"
 
