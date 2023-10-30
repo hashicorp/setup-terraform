@@ -1,6 +1,6 @@
 {
   "name": "setup-terraform",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Setup Terraform CLI for GitHub Actions",
   "license": "MPL-2.0",
   "publisher": "hashicorp",
