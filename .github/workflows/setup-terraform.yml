@@ -1,4 +1,4 @@
-name: 'Setup Terraform'
+name: 'setup-terraform tests'
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         terraform-versions: [0.11.14, latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -44,7 +44,7 @@ jobs:
         terraform-versions: [0.11.14, latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform (no wrapper) - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -69,7 +69,7 @@ jobs:
         terraform-versions: [~0.12, 0.12.x, <0.13.0]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -88,7 +88,7 @@ jobs:
         terraform-versions: [~0.12, 0.12.x, <0.13.0]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform (no wrapper) - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -109,7 +109,7 @@ jobs:
       TF_CLOUD_API_TOKEN: 'XXXXXXXXXXXXXX.atlasv1.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
@@ -138,7 +138,7 @@ jobs:
       TF_CLOUD_API_TOKEN: 'XXXXXXXXXXXXXX.atlasv1.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
@@ -166,7 +166,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
@@ -189,7 +189,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
@@ -220,7 +220,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
@@ -253,29 +253,26 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     defaults:
       run:
+        shell: bash
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
 
     - name: Terraform Init
-      shell: bash
       run: terraform init
 
     - name: Terraform Format
-      shell: bash
       run: terraform fmt -check
 
     - name: Terraform Plan
       id: plan
-      shell: bash
       run: terraform plan
 
     - name: Print Terraform Plan
-      shell: bash
       run: echo "${{ steps.plan.outputs.stdout }}"
 
   terraform-run-local-no-wrapper:
@@ -286,10 +283,11 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     defaults:
       run:
+        shell: bash
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
-      uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
     - name: Setup Terraform
       uses: ./
@@ -297,14 +295,78 @@ jobs:
         terraform_wrapper: false
 
     - name: Terraform Init
-      shell: bash
       run: terraform init
 
     - name: Terraform Format
-      shell: bash
       run: terraform fmt -check
 
     - name: Terraform Plan
       id: plan
-      shell: bash
       run: terraform plan
+
+
+  terraform-stdout-wrapper:
+    name: 'Terraform STDOUT'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/local
+    steps:
+    - name: Checkout
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+    - name: Setup Terraform
+      uses: ./
+      with:
+        terraform_wrapper: true
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+
+    - name: Terraform Output to JQ
+      id: output
+      run: terraform output -json | jq '.pet.value'
+
+  terraform-stdout-no-wrapper:
+    name: 'Terraform STDOUT No Wrapper'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/local
+    steps:
+    - name: Checkout
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+    - name: Setup Terraform
+      uses: ./
+      with:
+        terraform_wrapper: false
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
+
+    - name: Terraform Output to JQ
+      id: output
+      run: terraform output -json | jq '.pet.value'
