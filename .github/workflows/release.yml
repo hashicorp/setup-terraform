@@ -11,10 +11,6 @@ on:
 permissions:
   contents: read # Changelog commit operations use service account PAT
 
-env:
-  CI_COMMIT_AUTHOR: hc-github-team-tf-provider-devex
-  CI_COMMIT_EMAIL: github-team-tf-provider-devex@hashicorp.com
-
 jobs:
   major-version:
     runs-on: ubuntu-latest
@@ -55,11 +51,11 @@ jobs:
           args: merge
       - name: Git push changelog
         run: |
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git config --global user.name "${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ vars.TF_DEVEX_CI_COMMIT_EMAIL }}"
           git add .
           git commit -a -m "Update changelog"
-          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
 
   update-package-version:
     needs: changelog
@@ -84,11 +80,11 @@ jobs:
         run: npm version "${{ inputs.versionNumber }}" --git-tag-version false
       - name: Git push
         run: |
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git config --global user.name "${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ vars.TF_DEVEX_CI_COMMIT_EMAIL }}"
           git add .
           git commit -a -m "Update package version"
-          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
 
   release-tag:
     needs: [ update-package-version, major-version ]
@@ -107,13 +103,13 @@ jobs:
 
       - name: Git push release tag
         run: |
-          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git config --global user.name "${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}"
+          git config --global user.email "${{ vars.TF_DEVEX_CI_COMMIT_EMAIL }}"
 
           git tag "${{ inputs.versionNumber }}"
           git tag -f "${{ needs.major-version.outputs.version }}"
-          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "${{ inputs.versionNumber }}"
-          git push "https://${{ env.CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" -f "${{ needs.major-version.outputs.version }}"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "${{ inputs.versionNumber }}"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" -f "${{ needs.major-version.outputs.version }}"
 
   release:
     needs: [ changelog-version, release-tag ]
