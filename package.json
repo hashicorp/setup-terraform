@@ -12,7 +12,7 @@
   "scripts": {
     "test": "semistandard --env jest && jest --coverage",
     "lint": "semistandard --env jest --fix",
-    "build": "ncc build wrapper/terraform.js --out wrapper/dist && ncc build index.js --out dist",
+    "build": "ncc build cleanup/cleanup.js --out cleanup/dist && ncc build wrapper/terraform.js --out wrapper/dist && ncc build index.js --out dist",
     "prepare": "husky install",
     "format-check": "echo \"unimplemented for actions/reusable-workflows basic-validation\""
   },

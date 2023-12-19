@@ -264,7 +264,7 @@ The action supports the following inputs:
    the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs
    named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.
 - `cleanup_workspace` - (optional) The Terraform binary file is downloaded to a temporary directory.
-   This parameter will be used to clean that directory. Defaults to `true`.
+   This parameter controls whether to clean that directory. Defaults to `false`.
 
 ## Outputs
 
