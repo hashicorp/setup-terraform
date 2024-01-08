@@ -40,12 +40,12 @@ jobs:
           # More details: https://github.com/actions/checkout/blob/b4626ce19ce1106186ddf9bb20e706842f11a7c3/adrs/0153-checkout-v2.md#persist-credentials
           persist-credentials: false
       - name: Batch changes
-        uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2.0.0
+        uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2
         with:
           version: latest
           args: batch ${{ needs.changelog-version.outputs.version }}
       - name: Merge changes
-        uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2.0.0
+        uses: miniscruff/changie-action@6dcc2533cac0495148ed4046c438487e4dceaa23 # v2
         with:
           version: latest
           args: merge
@@ -73,7 +73,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
         with:
           node-version: 20
       - name: Update package version
