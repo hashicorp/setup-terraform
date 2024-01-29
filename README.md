@@ -90,7 +90,7 @@ defaults:
 permissions:
   pull-requests: write
 steps:
-- uses: actions/checkout@v3
+- uses: actions/checkout@v4
 - uses: hashicorp/setup-terraform@v3
 
 - name: Terraform fmt
@@ -158,7 +158,7 @@ defaults:
 permissions:
   pull-requests: write
 steps:
-- uses: actions/checkout@v3
+- uses: actions/checkout@v4
 - uses: hashicorp/setup-terraform@v3
 
 - name: Terraform fmt
