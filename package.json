@@ -13,7 +13,7 @@
     "test": "semistandard --env jest && jest --coverage",
     "lint": "semistandard --env jest --fix",
     "build": "ncc build wrapper/terraform.js --out wrapper/dist && ncc build index.js --out dist",
-    "prepare": "husky install",
+    "prepare": "husky",
     "format-check": "echo \"unimplemented for actions/reusable-workflows basic-validation\""
   },
   "keywords": [],
