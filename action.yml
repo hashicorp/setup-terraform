@@ -17,9 +17,14 @@ inputs:
     description: 'Whether or not to install a wrapper to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.'
     default: 'true'
     required: false
+  cleanup_workspace:
+    description: 'The Terraform binary file is downloaded to a temporary directory. This parameter controls whether to clean that directory. Defaults to `false`.'
+    default: 'false'
+    required: false
 runs:
   using: 'node20'
   main: 'dist/index.js'
+  post: 'cleanup/dist/index.js'
 branding:
   icon: 'terminal'
   color: 'purple'

@@ -75,6 +75,15 @@ steps:
 - run: echo ${{ steps.plan.outputs.exitcode }}
 ```
 
+Temporary directory could be deleted after all steps by setting the `cleanup_workspace` variable to `true`:
+
+```yaml
+steps:
+- uses: hashicorp/setup-terraform@v3
+  with:
+     cleanup_workspace: true
+```
+
 Outputs can be used in subsequent steps to comment on the pull request:
 
 > **Notice:** There's a limit to the number of characters inside a GitHub comment (65535).
@@ -254,6 +263,8 @@ The action supports the following inputs:
 - `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of
    the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs
    named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.
+- `cleanup_workspace` - (optional) The Terraform binary file is downloaded to a temporary directory.
+   This parameter controls whether to clean that directory. Defaults to `false`.
 
 ## Outputs
 
