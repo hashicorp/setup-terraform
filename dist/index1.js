@@ -27222,7 +27222,7 @@ async function checkTerraform () {
   const options = {
     listeners,
     ignoreReturnCode: true,
-    silent: true, // avoid printing command in stdout: https://github.com/actions/toolkit/issues/649
+    silent: true // avoid printing command in stdout: https://github.com/actions/toolkit/issues/649
   };
   const exitCode = await exec(pathToCLI, args, options);
 
