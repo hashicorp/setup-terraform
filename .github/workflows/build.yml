@@ -1,0 +1,15 @@
+name: build
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: [self-hosted,ts-large-x64-docker-large]
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      # Actually build stuff here
