@@ -1,0 +1,1 @@
+{"description": "Sets up Terraform CLI in your GitHub Actions workflow.", "maintainers": ["infrastructure-security"], "checks": ["build", "SonarQube"]}
