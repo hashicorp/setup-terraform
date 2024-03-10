@@ -14,4 +14,13 @@ describe('output-listener', () => {
     listen(Buffer.from('baz'));
     expect(listener.contents).toEqual('foobarbaz');
   });
+
+  it('escape backticks', () => {
+    const listener = new OutputListener();
+    const listen = listener.listener;
+    listen(Buffer.from('foo'));
+    listen(Buffer.from('`bar`'));
+    listen(Buffer.from('baz'));
+    expect(listener.contents).toEqual('foo\\`bar\\`baz');
+  });
 });
