@@ -27398,7 +27398,8 @@ class OutputListener {
   get contents () {
     return this._buff
       .map(chunk => chunk.toString())
-      .join('');
+      .join('')
+      .replace(/`/g, '\\`');
   }
 }
 
