@@ -144,7 +144,8 @@ async function run () {
     const platform = mapOS(osPlatform);
     let arch = mapArch(osArch);
 
-    // Terraform was not available for darwin/arm64 until 1.0.2
+    // Terraform was not available for darwin/arm64 until 1.0.2, however macOS
+    // runners can emulate darwin/amd64.
     if (platform === 'darwin' && arch === 'arm64' && semver.valid(release.version) && semver.lt(release.version, '1.0.2')) {
       core.warning('Terraform is not available for darwin/arm64 until version 1.0.2. Falling back to darwin/amd64.');
       arch = 'amd64';
