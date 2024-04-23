@@ -1,3 +1,9 @@
+## 3.1.0 (2024-04-23)
+
+ENHANCEMENTS:
+
+* Automatically fallback to darwin/amd64 for Terraform versions before 1.0.2 as releases for darwin/arm64 are not available ([#409](https://github.com/hashicorp/setup-terraform/issues/409))
+
 ## 3.0.0 (2023-10-30)
 
 NOTES:
