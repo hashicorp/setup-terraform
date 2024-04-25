@@ -21,9 +21,9 @@ async function checkTerraform () {
   // This will fail if Terraform isn't found, which is what we want
   await checkTerraform();
 
-  // Create listeners to receive output (in memory) as well
-  const stdout = new OutputListener();
-  const stderr = new OutputListener();
+  // Create listeners to receive output (in memory)
+  const stdout = new OutputListener(process.stdout);
+  const stderr = new OutputListener(process.stderr);
   const listeners = {
     stdout: stdout.listener,
     stderr: stderr.listener
@@ -37,10 +37,6 @@ async function checkTerraform () {
     silent: true // avoid printing command in stdout: https://github.com/actions/toolkit/issues/649
   };
   const exitCode = await exec(pathToCLI, args, options);
-
-  // Pass-through stdout/err as `exec` won't due to `silent: true` option
-  process.stdout.write(stdout.contents);
-  process.stderr.write(stderr.contents);
 
   // Set outputs, result, exitcode, and stderr
   core.setOutput('stdout', stdout.contents);
