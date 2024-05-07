@@ -304,7 +304,6 @@ jobs:
       id: plan
       run: terraform plan
 
-
   terraform-stdout-wrapper:
     name: 'Terraform STDOUT'
     runs-on: ${{ matrix.os }}
@@ -370,3 +369,33 @@ jobs:
     - name: Terraform Output to JQ
       id: output
       run: terraform output -json | jq '.pet.value'
+
+  # This test has an artificial delay for testing the streaming of STDOUT 
+  terraform-wrapper-delayed-apply:
+    name: 'Terraform Delayed Apply'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/delay
+    steps:
+    - name: Checkout
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+    - name: Setup Terraform
+      uses: ./
+      with:
+        terraform_wrapper: true
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
