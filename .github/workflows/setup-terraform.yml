@@ -100,7 +100,7 @@ jobs:
       run: terraform version | grep 'Terraform v0\.12'
 
   terraform-credentials-cloud:
-    name: 'Terraform Cloud Credentials'
+    name: 'HCP Terraform Credentials'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
