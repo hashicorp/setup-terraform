@@ -1,0 +1,14 @@
+# DO NOT EDIT - This GitHub Workflow is managed by automation
+# https://github.com/hashicorp/terraform-devex-repos
+name: Issue Comment Triage
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  issue_comment_triage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Remove stale and waiting-response on comment'
+        run: gh issue edit ${{ github.event.issue.number }} --remove-label stale,waiting-response
