@@ -13,4 +13,4 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - name: 'Remove stale and waiting-response on comment'
-        run: gh issue edit ${{ github.event.issue.number }} --remove-label stale,waiting-response
+        run: gh issue edit ${{ github.event.issue.html_url }} --remove-label stale,waiting-response
