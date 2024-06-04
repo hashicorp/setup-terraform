@@ -34,4 +34,3 @@ jobs:
         description: "${{ github.event.issue.html_url || github.event.pull_request.html_url }} \n Synced by Github Actions, tagged by ${{ github.actor }}"
         # customfield_10091 is Team (R&D)
         fields: '{"customfield_10091": ["TF-DevEx"], "labels": ["Github"]}'
-
