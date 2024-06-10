@@ -6,7 +6,7 @@
 The `hashicorp/setup-terraform` action is a JavaScript action that sets up Terraform CLI in your GitHub Actions workflow by:
 
 - Downloading a specific version of Terraform CLI and adding it to the `PATH`.
-- Configuring the [Terraform CLI configuration file](https://www.terraform.io/docs/commands/cli-config.html) with a Terraform Cloud/Enterprise hostname and API token.
+- Configuring the [Terraform CLI configuration file](https://www.terraform.io/docs/commands/cli-config.html) with a HCP Terraform/Terraform Enterprise hostname and API token.
 - Installing a wrapper script to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively. (This can be optionally skipped if subsequent steps in the same job do not need to access the results of Terraform commands.)
 
 After you've used the action, subsequent steps in the same job can run arbitrary Terraform commands using [the GitHub Actions `run` syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun). This allows most Terraform commands to work exactly like they do on your local command line.
@@ -31,7 +31,7 @@ steps:
     terraform_version: "1.1.7"
 ```
 
-Credentials for Terraform Cloud ([app.terraform.io](https://app.terraform.io/)) can be configured:
+Credentials for HCP Terraform ([app.terraform.io](https://app.terraform.io/)) can be configured:
 
 ```yaml
 steps:
@@ -111,7 +111,7 @@ steps:
   run: terraform plan -no-color
   continue-on-error: true
 
-- uses: actions/github-script@v6
+- uses: actions/github-script@v7
   if: github.event_name == 'pull_request'
   env:
     PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
@@ -179,7 +179,7 @@ steps:
   run: terraform plan -no-color
   continue-on-error: true
 
-- uses: actions/github-script@v6
+- uses: actions/github-script@v7
   if: github.event_name == 'pull_request'
   env:
     PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
@@ -242,9 +242,9 @@ steps:
 
 The action supports the following inputs:
 
-- `cli_config_credentials_hostname` - (optional) The hostname of a Terraform Cloud/Enterprise instance to
+- `cli_config_credentials_hostname` - (optional) The hostname of a HCP Terraform/Terraform Enterprise instance to
    place within the credentials block of the Terraform CLI configuration file. Defaults to `app.terraform.io`.
-- `cli_config_credentials_token` - (optional) The API token for a Terraform Cloud/Enterprise instance to
+- `cli_config_credentials_token` - (optional) The API token for a HCP Terraform/Terraform Enterprise instance to
    place within the credentials block of the Terraform CLI configuration file.
 - `terraform_version` - (optional) The version of Terraform CLI to install. Instead of a full version string,
    you can also specify a constraint string (see [Semver Ranges](https://www.npmjs.com/package/semver#ranges)

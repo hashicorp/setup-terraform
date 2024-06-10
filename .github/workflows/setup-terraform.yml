@@ -20,7 +20,7 @@ jobs:
         terraform-versions: [0.11.14, latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -44,7 +44,7 @@ jobs:
         terraform-versions: [0.11.14, latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform (no wrapper) - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -69,7 +69,7 @@ jobs:
         terraform-versions: [~0.12, 0.12.x, <0.13.0]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -88,7 +88,7 @@ jobs:
         terraform-versions: [~0.12, 0.12.x, <0.13.0]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform (no wrapper) - ${{ matrix['terraform-versions'] }}
       uses: ./
@@ -100,7 +100,7 @@ jobs:
       run: terraform version | grep 'Terraform v0\.12'
 
   terraform-credentials-cloud:
-    name: 'Terraform Cloud Credentials'
+    name: 'HCP Terraform Credentials'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -109,7 +109,7 @@ jobs:
       TF_CLOUD_API_TOKEN: 'XXXXXXXXXXXXXX.atlasv1.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -138,7 +138,7 @@ jobs:
       TF_CLOUD_API_TOKEN: 'XXXXXXXXXXXXXX.atlasv1.XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -166,7 +166,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -189,7 +189,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -220,7 +220,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -257,7 +257,7 @@ jobs:
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -287,7 +287,7 @@ jobs:
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -304,7 +304,6 @@ jobs:
       id: plan
       run: terraform plan
 
-
   terraform-stdout-wrapper:
     name: 'Terraform STDOUT'
     runs-on: ${{ matrix.os }}
@@ -317,7 +316,7 @@ jobs:
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -350,7 +349,7 @@ jobs:
         working-directory: ./.github/workflows/data/local
     steps:
     - name: Checkout
-      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
     - name: Setup Terraform
       uses: ./
@@ -370,3 +369,33 @@ jobs:
     - name: Terraform Output to JQ
       id: output
       run: terraform output -json | jq '.pet.value'
+
+  # This test has an artificial delay for testing the streaming of STDOUT 
+  terraform-wrapper-delayed-apply:
+    name: 'Terraform Delayed Apply'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/delay
+    steps:
+    - name: Checkout
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+
+    - name: Setup Terraform
+      uses: ./
+      with:
+        terraform_wrapper: true
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Apply
+      id: apply
+      run: terraform apply -auto-approve
