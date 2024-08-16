@@ -1,0 +1,6 @@
+kind: NOTES
+body: This release introduces no functional changes. It does however include dependency
+  updates which address upstream CVEs.
+time: 2024-08-16T14:48:30.449057-04:00
+custom:
+  Issue: "430"
