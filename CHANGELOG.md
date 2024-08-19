@@ -1,3 +1,9 @@
+## 3.1.2 (2024-08-19)
+
+NOTES:
+
+* This release introduces no functional changes. It does however include dependency updates which address upstream CVEs. ([#430](https://github.com/hashicorp/setup-terraform/issues/430))
+
 ## 3.1.1 (2024-05-07)
 
 BUG FIXES:
