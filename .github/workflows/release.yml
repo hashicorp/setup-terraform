@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
           # Avoid persisting GITHUB_TOKEN credentials as they take priority over our service account PAT for `git push` operations
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
           # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
@@ -73,7 +73,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           node-version: 20
       - name: Update package version
@@ -91,7 +91,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           fetch-depth: 0
           # Default input is the SHA that initially triggered the workflow. As we created a new commit in the previous job,
@@ -117,7 +117,7 @@ jobs:
     permissions:
       contents: write # Needed to create GitHub release
     steps:
-      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           ref: ${{ inputs.versionNumber }}
           fetch-depth: 0
