@@ -270,7 +270,38 @@ jobs:
 
     - name: Terraform Plan
       id: plan
-      run: terraform plan
+      run: terraform plan -detailed-exitcode
+
+    - name: Print Terraform Plan
+      run: echo "${{ steps.plan.outputs.stdout }}"
+    
+  terraform-run-local-failures:
+    name: 'Terraform Run Local Failures'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/data/failure
+    steps:
+    - name: Checkout
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+    - name: Setup Terraform
+      uses: ./
+
+      # coerce initial command exit code in order to verify it did fail
+    - name: Terraform Init
+      run: terraform init || $(exit 10) && $(exit 1) || [ $? -eq 10 ]
+
+    - name: Terraform Format
+      run: terraform fmt -check || $(exit 10) && $(exit 1) || [ $? -eq 10 ]
+
+    - name: Terraform Plan
+      id: plan
+      run: terraform plan -detailed-exitcode || $(exit 10) && $(exit 1) || [ $? -eq 10 ]
 
     - name: Print Terraform Plan
       run: echo "${{ steps.plan.outputs.stdout }}"
