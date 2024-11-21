@@ -6,6 +6,6 @@ partition: tf-ecosystem
 category: library
 
 summary:
-  owner: team-tf-editor-experience
+  owner: team-tf-devex
   description: JavaScript action that sets up Terraform CLI in your GitHub Actions workflow
   visibility: external
