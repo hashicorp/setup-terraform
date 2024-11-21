@@ -3,7 +3,7 @@
 
 schema: 1.1
 partition: tf-ecosystem
-category: library
+category: github-action
 
 summary:
   owner: team-tf-devex
