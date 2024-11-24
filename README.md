@@ -100,7 +100,7 @@ steps:
 
 - name: Terraform Init
   id: init
-  run: terraform init
+  run: terraform init -input=false
 
 - name: Terraform Validate
   id: validate
@@ -108,7 +108,7 @@ steps:
 
 - name: Terraform Plan
   id: plan
-  run: terraform plan -no-color
+  run: terraform plan -no-color -input=false
   continue-on-error: true
 
 - uses: actions/github-script@v7
@@ -168,7 +168,7 @@ steps:
 
 - name: Terraform Init
   id: init
-  run: terraform init
+  run: terraform init -input=false
 
 - name: Terraform Validate
   id: validate
@@ -176,7 +176,7 @@ steps:
 
 - name: Terraform Plan
   id: plan
-  run: terraform plan -no-color
+  run: terraform plan -no-color -input=false
   continue-on-error: true
 
 - uses: actions/github-script@v7
