@@ -743,4 +743,41 @@ describe('Setup Terraform', () => {
     const versionObj = await setup();
     expect(versionObj.version).toEqual('0.1.0');
   });
+
+  test('gets latest version using empty inputs for versions', async () => {
+    const version = '';
+    const versionFile = '';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    const versionObj = await setup();
+    expect(versionObj.version).toEqual('0.10.0');
+  });
 });
