@@ -31,6 +31,15 @@ steps:
     terraform_version: "1.1.7"
 ```
 
+A specific version of Terraform CLI can be installed using a version file:
+
+```yaml
+steps:
+- uses: hashicorp/setup-terraform@v3
+  with:
+    terraform_version_file: ".tool-versions"
+```
+
 Credentials for HCP Terraform ([app.terraform.io](https://app.terraform.io/)) can be configured:
 
 ```yaml
@@ -251,7 +260,7 @@ The action supports the following inputs:
    for available range specifications). Examples are: `"<1.2.0"`, `"~1.1.0"`, `"1.1.7"` (all three installing
    the latest available `1.1` version). Prerelease versions can be specified and a range will stay within the
    given tag such as `beta` or `rc`. If no version is given, it will default to `latest`.
-- `terraform_version_file` - (optional) The path to a file containing terraform version. Supported file types are `.terraform-version` and `.tool-versions`. See more details in [about version-file](#Terraform-version-file).
+- `terraform_version_file` - (optional) The path to a file containing terraform version. Supported file types are `.tool-versions` or anything else. See more details in [about version-file](#Terraform-version-file).
 - `terraform_wrapper` - (optional) Whether to install a wrapper to wrap subsequent calls of
    the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs
    named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.
@@ -260,10 +269,10 @@ The action supports the following inputs:
 
 If the `terraform_version_file` input is specified, the action will extract the version from the file and install it.
 
-Supported files are `.terraform-version` and `.tool-versions`.
-In `.terraform-version` file, the version should be specified as explainied in the `terraform_version` input.
+Supported files names are `.tool-versions` or anything else.
 In `.tool-versions` file, terraform version should be preceded by the terraform keyword (e.g., `terraform 1.13.0`).
 The `.tool-versions` file supports version specifications in accordance with Semantic Versioning ([semver](https://semver.org/)) and [Semver Ranges](https://www.npmjs.com/package/semver#ranges).
+In other files, the version should be specified as explainied in the `terraform_version` input.
 
 If both `terraform_version` and `terraform_version_file` inputs are provided, the `terraform_version` input will be used.
 
