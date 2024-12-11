@@ -272,7 +272,7 @@ If the `terraform_version_file` input is specified, the action will extract the 
 Supported files names are `.tool-versions` or `.terraform-version`.
 In `.tool-versions` file, terraform version should be preceded by the terraform keyword (e.g., `terraform 1.13.0`).
 The `.tool-versions` file supports version specifications in accordance with Semantic Versioning ([semver](https://semver.org/)) and [Semver Ranges](https://www.npmjs.com/package/semver#ranges).
-In other files, the version should be specified as explainied in the `terraform_version` input.
+The `.terraform-version` file supports version specifications as explained in the `terraform_version` input.
 
 If both `terraform_version` and `terraform_version_file` inputs are provided, the `terraform_version` input will be used.
 
