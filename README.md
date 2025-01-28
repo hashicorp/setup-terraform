@@ -108,16 +108,23 @@ steps:
 
 - name: Terraform Plan
   id: plan
-  run: terraform plan -no-color
+  run: |
+     terraform plan -no-color > plan.out
+     cat plan.out
   continue-on-error: true
 
 - uses: actions/github-script@v7
   if: github.event_name == 'pull_request'
-  env:
-    PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
+       const fs = require('node:fs');
+       const data = fs.readFileSync('terraform/plan.out', 'utf8');
+       const plan = "terraform\n" + data.length > 65000 ? `${data.substring(data.length - 65000)}...` : data
+       let truncated = '';
+       if (data.length > 65000) {
+         truncated = 'plan was truncated, view the <a href="${{ github.server_url}}/${{ github.repository }}/actions/runs/${{ github.run_id }}">job log</a> for the full plan';
+       }
       const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
       #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
       #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
@@ -134,10 +141,11 @@ steps:
       <details><summary>Show Plan</summary>
 
       \`\`\`\n
-      ${process.env.PLAN}
+      ${plan}
       \`\`\`
 
       </details>
+      ${truncated}
 
       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
 
@@ -176,16 +184,23 @@ steps:
 
 - name: Terraform Plan
   id: plan
-  run: terraform plan -no-color
+  run: |
+     terraform plan -no-color > plan.out
+     cat plan.out
   continue-on-error: true
 
 - uses: actions/github-script@v7
   if: github.event_name == 'pull_request'
-  env:
-    PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
+       const fs = require('node:fs');
+       const data = fs.readFileSync('terraform/plan.out', 'utf8');
+       const plan = "terraform\n" + data.length > 65000 ? `${data.substring(data.length - 65000)}...` : data
+       let truncated = '';
+       if (data.length > 65000) {
+         truncated = 'plan was truncated, view the <a href="${{ github.server_url}}/${{ github.repository }}/actions/runs/${{ github.run_id }}">job log</a> for the full plan';
+       }
       // 1. Retrieve existing bot comments for the PR
       const { data: comments } = await github.rest.issues.listComments({
         owner: context.repo.owner,
@@ -213,10 +228,11 @@ steps:
       <details><summary>Show Plan</summary>
 
       \`\`\`\n
-      ${process.env.PLAN}
+      ${plan}
       \`\`\`
 
       </details>
+       ${truncated}
 
       *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
 
