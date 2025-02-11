@@ -9,14 +9,14 @@ on:
 jobs:
   check-dist:
     name: Check dist/ directory
-    uses: actions/reusable-workflows/.github/workflows/check-dist.yml@a8533f184b279cfc1b2dd6a96ed2f097ccf81189
+    uses: actions/reusable-workflows/.github/workflows/check-dist.yml@95d9656793415e47f574f7967f3850ea3bf5a7ed
     with:
       node-version: 20.x
       node-caching: npm
 
   test:
     name: Test
-    uses: actions/reusable-workflows/.github/workflows/basic-validation.yml@a8533f184b279cfc1b2dd6a96ed2f097ccf81189
+    uses: actions/reusable-workflows/.github/workflows/basic-validation.yml@95d9656793415e47f574f7967f3850ea3bf5a7ed
     with:
       node-version: 20.x
       node-caching: npm
