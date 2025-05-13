@@ -2,6 +2,7 @@
 schema: 1.1
 
 partition: tf-ecosystem
+category: github-action
 
 summary:
   owner: team-tf-core-plugins
