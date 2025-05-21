@@ -6,5 +6,12 @@ updates:
       interval: "weekly"
   - package-ecosystem: "github-actions"
     directory: "/"
+    groups:
+      "github-actions":
+        patterns:
+          - "*" # Group all GitHub Actions dependencies together
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Etc/UTC"
