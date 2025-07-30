@@ -29,7 +29,7 @@
   "devDependencies": {
     "@vercel/ncc": "^0.38.3",
     "jest": "^30.0.4",
-    "nock": "^14.0.5",
+    "nock": "^14.0.6",
     "semistandard": "^17.0.0"
   },
   "semistandard": {
