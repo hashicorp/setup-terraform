@@ -5,6 +5,9 @@
   "license": "MPL-2.0",
   "publisher": "hashicorp",
   "main": "index.js",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hashicorp/setup-terraform.git"
@@ -30,6 +33,7 @@
     "@vercel/ncc": "^0.38.4",
     "jest": "^30.2.0",
     "nock": "^14.0.10",
+    "@types/node": "^24.3.1",
     "semistandard": "^17.0.0"
   },
   "semistandard": {
