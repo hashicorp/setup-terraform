@@ -176,6 +176,46 @@
                     "url": "https://releases.hashicorp.com/terraform/0.10.0/terraform_0.10.0_windows_386.zip"
                 }
             ]
+        },
+        "1.3.7": {
+            "name": "terraform",
+            "version": "1.3.7",
+            "shasums": "terraform_1.3.7_SHA256SUMS",
+            "shasums_signature": "terraform_1.3.7_SHA256SUMS.sig",
+            "builds": [
+                {
+                    "name": "terraform",
+                    "version": "1.3.7",
+                    "os": "darwin",
+                    "arch": "amd64",
+                    "filename": "terraform_1.3.7_darwin_amd64.zip",
+                    "url": "https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_darwin_amd64.zip"
+                },
+                {
+                    "name": "terraform",
+                    "version": "1.3.7",
+                    "os": "linux",
+                    "arch": "386",
+                    "filename": "terraform_1.3.7_linux_386.zip",
+                    "url": "https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_linux_386.zip"
+                },
+                {
+                    "name": "terraform",
+                    "version": "1.3.7",
+                    "os": "linux",
+                    "arch": "amd64",
+                    "filename": "terraform_1.3.7_linux_amd64.zip",
+                    "url": "https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_linux_amd64.zip"
+                },
+                {
+                    "name": "terraform",
+                    "version": "1.3.7",
+                    "os": "windows",
+                    "arch": "386",
+                    "filename": "terraform_1.3.7_windows_386.zip",
+                    "url": "https://releases.hashicorp.com/terraform/1.3.7/terraform_1.3.7_windows_386.zip"
+                }
+            ]
         }
     }
 }
