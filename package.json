@@ -21,7 +21,7 @@
     "@actions/core": "^1.11.1",
     "@actions/exec": "^1.1.1",
     "@actions/github": "^6.0.1",
-    "@actions/io": "^1.1.3",
+    "@actions/io": "^2.0.0",
     "@actions/tool-cache": "^2.0.2",
     "@hashicorp/js-releases": "^1.7.5",
     "semver": "^7.7.3"
