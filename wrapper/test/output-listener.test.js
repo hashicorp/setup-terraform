@@ -31,6 +31,6 @@ describe('output-listener', () => {
     listen(Buffer.from('third write'));
     expect(mockWrite.mock.lastCall[0]).toStrictEqual(Buffer.from('third write'));
 
-    expect(mockWrite).toBeCalledTimes(3);
+    expect(mockWrite).toHaveBeenCalledTimes(3);
   });
 });

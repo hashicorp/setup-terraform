@@ -4,10 +4,14 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  # Dependabot only updates hashicorp GHAs, external GHAs are managed by internal tooling (tsccr)
   - package-ecosystem: "github-actions"
     directory: "/"
+    groups:
+      "github-actions":
+        patterns:
+          - "*" # Group all GitHub Actions dependencies together
     schedule:
-      interval: "daily"
-    allow:
-      - dependency-name: "hashicorp/*"
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Etc/UTC"
