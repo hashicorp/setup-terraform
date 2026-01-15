@@ -22,7 +22,7 @@
     "@actions/exec": "^1.1.1",
     "@actions/github": "^7.0.0",
     "@actions/io": "^2.0.0",
-    "@actions/tool-cache": "^2.0.2",
+    "@actions/tool-cache": "^3.0.0",
     "@hashicorp/js-releases": "^1.7.5",
     "semver": "^7.7.3"
   },
