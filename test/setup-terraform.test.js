@@ -602,7 +602,7 @@ describe('Setup Terraform', () => {
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform`, `file${path.sep}terraform-bin`);
     expect(fsReadFile).toHaveBeenCalledWith(wrapperPath, 'utf8');
-    expect(fsWriteFile).toHaveBeenCalledWith(`file${path.sep}terraform`, expect.any(String));
+    expect(fsWriteFile).toHaveBeenCalledWith(`file${path.sep}terraform`, expect.any(String), { mode: 0o755 });
   });
 
   test('installs wrapper on windows', async () => {
@@ -660,6 +660,6 @@ describe('Setup Terraform', () => {
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform.exe`, `file${path.sep}terraform-bin.exe`);
     expect(fsReadFile).toHaveBeenCalledWith(wrapperPath, 'utf8');
-    expect(fsWriteFile).toHaveBeenCalledWith(`file${path.sep}terraform`, expect.any(String));
+    expect(fsWriteFile).toHaveBeenCalledWith(`file${path.sep}terraform`, expect.any(String), { mode: 0o755 });
   });
 });
