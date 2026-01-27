@@ -264,6 +264,37 @@ to `true`, the following outputs are available for subsequent steps that call th
 - `stderr` - The STDERR stream of the call to the `terraform` binary.
 - `exitcode` - The exit code of the call to the `terraform` binary.
 
+## Examples
+
+### Passing variables to Terraform
+
+Since Terraform cloud does not support run variables at this time.
+Currently the only to way to pass variables is by creating a `*.auto.tfvars` variables file. 
+
+In this example, we will create a `pipeline.auto.tfvars` file and append all of the variables which we need to pass on to Terraform. 
+
+Add the following step in your workflow file
+
+```yaml
+    - name: Setup Terraform variables
+      working-directory: ./terraform
+      id: vars
+      run: |-
+        cat > pipeline.auto.tfvars <<EOF
+        image_tag = "${{ github.sha }}"
+        EOF
+```
+
+And also define these variables in one of your Terraform configuration files. For example, we will add the following in `variables.tf`
+
+```
+variable "image_tag" {
+}
+```
+
+`image_tag` will be available in terraform which you can access via `var.image_tag`
+
+
 ## License
 
 [Mozilla Public License v2.0](LICENSE)
