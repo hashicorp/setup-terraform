@@ -118,9 +118,13 @@ steps:
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
-      const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-      #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-      #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+      function emojiStatus(status) {
+        return (status === 'success') ? '✅' : '❌'
+      }
+
+      const output = `#### ${emojiStatus('${{ steps.fmt.outcome }}')} Terraform Format and Style 🖌
+      #### ${emojiStatus('${{ steps.init.outcome }}')} Terraform Initialization ⚙️
+      #### ${emojiStatus('${{ steps.validate.outcome }}')} Terraform Validation 🤖
       <details><summary>Validation Output</summary>
 
       \`\`\`\n
@@ -129,7 +133,7 @@ steps:
 
       </details>
 
-      #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      #### ${emojiStatus('${{ steps.plan.outcome }}')} Terraform Plan 📖
 
       <details><summary>Show Plan</summary>
 
@@ -147,6 +151,11 @@ steps:
         repo: context.repo.repo,
         body: output
       })
+
+      const statuses = ['${{ steps.fmt.outcome }}', '${{ steps.init.outcome }}', '${{ steps.validate.outcome }}', '${{ steps.plan.outcome }}']
+      if (statuses.includes("failure")) {
+        core.setFailed("Terraform failed, check PR comment for details")
+      }
 ```
 
 Instead of creating a new comment each time, you can also update an existing one:
@@ -186,6 +195,11 @@ steps:
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
+      // 0. Create helper functions
+      function emojiStatus(status) {
+        return (status === 'success') ? '✅' : '❌'
+      }
+
       // 1. Retrieve existing bot comments for the PR
       const { data: comments } = await github.rest.issues.listComments({
         owner: context.repo.owner,
@@ -197,9 +211,9 @@ steps:
       })
 
       // 2. Prepare format of the comment
-      const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-      #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-      #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
+      const output = `#### ${emojiStatus('${{ steps.fmt.outcome }}')} Terraform Format and Style 🖌
+      #### ${emojiStatus('${{ steps.init.outcome }}')} Terraform Initialization ⚙️
+      #### ${emojiStatus('${{ steps.validate.outcome }}')} Terraform Validation 🤖
       <details><summary>Validation Output</summary>
 
       \`\`\`\n
@@ -208,7 +222,7 @@ steps:
 
       </details>
 
-      #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      #### ${emojiStatus('${{ steps.plan.outcome }}')} Terraform Plan 📖
 
       <details><summary>Show Plan</summary>
 
@@ -235,6 +249,12 @@ steps:
           repo: context.repo.repo,
           body: output
         })
+      }
+
+      // 4. Fail the workflow if one of the steps failed
+      const statuses = ['${{ steps.fmt.outcome }}', '${{ steps.init.outcome }}', '${{ steps.validate.outcome }}', '${{ steps.plan.outcome }}']
+      if (statuses.includes("failure")) {
+        core.setFailed("Terraform failed, check PR comment for details")
       }
 ```
 
