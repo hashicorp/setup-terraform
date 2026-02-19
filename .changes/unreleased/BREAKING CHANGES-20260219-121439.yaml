@@ -1,0 +1,5 @@
+kind: BREAKING CHANGES
+body: Upgrade to Node.js 24 - setup-terraform now requires Node.js 24
+time: 2026-02-19T12:14:39.853241+01:00
+custom:
+    Issue: "503"
