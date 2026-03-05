@@ -19,23 +19,23 @@ The default configuration installs the latest version of Terraform CLI and insta
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
 ```
 
 A specific version of Terraform CLI can be installed:
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
   with:
-    terraform_version: "1.1.7"
+    terraform_version: "1.14.6"
 ```
 
 Credentials for HCP Terraform ([app.terraform.io](https://app.terraform.io/)) can be configured:
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
   with:
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 ```
@@ -44,7 +44,7 @@ Credentials for Terraform Enterprise (TFE) can be configured:
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
   with:
     cli_config_credentials_hostname: 'terraform.example.com'
     cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
@@ -54,7 +54,7 @@ The wrapper script installation can be skipped by setting the `terraform_wrapper
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
   with:
     terraform_wrapper: false
 ```
@@ -63,7 +63,7 @@ Subsequent steps can access outputs when the wrapper script is installed:
 
 ```yaml
 steps:
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
 
 - run: terraform init
 
@@ -91,7 +91,7 @@ permissions:
   pull-requests: write
 steps:
 - uses: actions/checkout@v4
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
 
 - name: Terraform fmt
   id: fmt
@@ -159,7 +159,7 @@ permissions:
   pull-requests: write
 steps:
 - uses: actions/checkout@v4
-- uses: hashicorp/setup-terraform@v3
+- uses: hashicorp/setup-terraform@v4
 
 - name: Terraform fmt
   id: fmt
