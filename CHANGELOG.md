@@ -1,3 +1,9 @@
+## 4.0.0 (2026-02-24)
+
+BREAKING CHANGES:
+
+* Upgrade to Node.js 24 - setup-terraform now requires Node.js 24 ([#503](https://github.com/hashicorp/setup-terraform/issues/503))
+
 ## 3.1.2 (2024-08-19)
 
 NOTES:
