@@ -30883,7 +30883,7 @@ module.exports = {
 /***/ ((module) => {
 
 /**
- * Copyright (c) HashiCorp, Inc.
+ * Copyright IBM Corp. 2020, 2026
  * SPDX-License-Identifier: MPL-2.0
  */
 
@@ -30936,7 +30936,7 @@ module.exports = OutputListener;
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 /**
- * Copyright (c) HashiCorp, Inc.
+ * Copyright IBM Corp. 2020, 2026
  * SPDX-License-Identifier: MPL-2.0
  */
 
@@ -31265,7 +31265,7 @@ module.exports = require("util");
 /************************************************************************/
 var __webpack_exports__ = {};
 /**
- * Copyright (c) HashiCorp, Inc.
+ * Copyright IBM Corp. 2020, 2026
  * SPDX-License-Identifier: MPL-2.0
  */
 
