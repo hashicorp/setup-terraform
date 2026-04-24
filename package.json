@@ -21,7 +21,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^3.0.0",
     "@actions/exec": "^1.1.1",
     "@actions/github": "^8.0.1",
     "@actions/io": "^1.1.3",
