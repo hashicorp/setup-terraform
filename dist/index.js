@@ -5937,7 +5937,7 @@ function coerce (version, options) {
 "use strict";
 
 /**
- * Copyright (c) HashiCorp, Inc.
+ * Copyright IBM Corp. 2020, 2026
  * SPDX-License-Identifier: MPL-2.0
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -5975,19 +5975,19 @@ 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
-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
+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
@@ -5999,18 +5999,18 @@ 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
-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
+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
@@ -6056,33 +6056,32 @@ bYaCx+XXIcVB8GTOmJVoAhrTSSVLAZspfCnjwnSxisDn3ZzsYrq3cV6sU8b+QlIX
 ojEyoCk4sMrqrU1jevHyGlDJH9Taux15GILDwnYFfAvPF9WCid4UZ4Ouwjcaxfys
 3LxNiZIlUsXNKwS3mhiMRL4TRsbs4k4QE+LIMOsauIvcvm8/frydvQ/kUwIhVTH8
 0XGOH909bYtJvY3fudK7ShIwm7ZFTduBJUG473E/Fn3VkhTmBX6+PjOC50HR/Hyb
-waRCzfDruMe3TAcE/tSP5CUOb9C7+P+hPzQcDwARAQABiQRyBBgBCgAmFiEEyHQB
-Hwq0BRENAhBVNDZdlHLXRo8FAmCAXCYCGwIFCQlmAYACQAkQNDZdlHLXRo/BdCAE
-GQEKAB0WIQQ3TsdbSFkTYEqDHMfIIMbVzSerhwUCYIBcJgAKCRDIIMbVzSerh0Xw
-D/9ghnUsoNCu1OulcoJdHboMazJvDt/znttdQSnULBVElgM5zk0Uyv87zFBzuCyQ
-JWL3bWesQ2uFx5fRWEPDEfWVdDrjpQGb1OCCQyz1QlNPV/1M1/xhKGS9EeXrL8Dw
-F6KTGkRwn1yXiP4BGgfeFIQHmJcKXEZ9HkrpNb8mcexkROv4aIPAwn+IaE+NHVtt
-IBnufMXLyfpkWJQtJa9elh9PMLlHHnuvnYLvuAoOkhuvs7fXDMpfFZ01C+QSv1dz
-Hm52GSStERQzZ51w4c0rYDneYDniC/sQT1x3dP5Xf6wzO+EhRMabkvoTbMqPsTEP
-xyWr2pNtTBYp7pfQjsHxhJpQF0xjGN9C39z7f3gJG8IJhnPeulUqEZjhRFyVZQ6/
-siUeq7vu4+dM/JQL+i7KKe7Lp9UMrG6NLMH+ltaoD3+lVm8fdTUxS5MNPoA/I8cK
-1OWTJHkrp7V/XaY7mUtvQn5V1yET5b4bogz4nME6WLiFMd+7x73gB+YJ6MGYNuO8
-e/NFK67MfHbk1/AiPTAJ6s5uHRQIkZcBPG7y5PpfcHpIlwPYCDGYlTajZXblyKrw
-BttVnYKvKsnlysv11glSg0DphGxQJbXzWpvBNyhMNH5dffcfvd3eXJAxnD81GD2z
-ZAriMJ4Av2TfeqQ2nxd2ddn0jX4WVHtAvLXfCgLM2Gveho4jD/9sZ6PZz/rEeTvt
-h88t50qPcBa4bb25X0B5FO3TeK2LL3VKLuEp5lgdcHVonrcdqZFobN1CgGJua8TW
-SprIkh+8ATZ/FXQTi01NzLhHXT1IQzSpFaZw0gb2f5ruXwvTPpfXzQrs2omY+7s7
-fkCwGPesvpSXPKn9v8uhUwD7NGW/Dm+jUM+QtC/FqzX7+/Q+OuEPjClUh1cqopCZ
-EvAI3HjnavGrYuU6DgQdjyGT/UDbuwbCXqHxHojVVkISGzCTGpmBcQYQqhcFRedJ
-yJlu6PSXlA7+8Ajh52oiMJ3ez4xSssFgUQAyOB16432tm4erpGmCyakkoRmMUn3p
-wx+QIppxRlsHznhcCQKR3tcblUqH3vq5i4/ZAihusMCa0YrShtxfdSb13oKX+pFr
-aZXvxyZlCa5qoQQBV1sowmPL1N2j3dR9TVpdTyCFQSv4KeiExmowtLIjeCppRBEK
-eeYHJnlfkyKXPhxTVVO6H+dU4nVu0ASQZ07KiQjbI+zTpPKFLPp3/0sPRJM57r1+
-aTS71iR7nZNZ1f8LZV2OvGE6fJVtgJ1J4Nu02K54uuIhU3tg1+7Xt+IqwRc9rbVr
-pHH/hFCYBPW2D2dxB+k2pQlg5NI+TpsXj5Zun8kRw5RtVb+dLuiH/xmxArIee8Jq
-ZF5q4h4I33PSGDdSvGXn9UMY5Isjpg==
-=7pIB
-
+waRCzfDruMe3TAcE/tSP5CUOb9C7+P+hPzQcDwARAQABiQRyBBgBCgAmAhsCFiEE
+yHQBHwq0BRENAhBVNDZdlHLXRo8FAmmWSAoFCRCqi+QCQMF0IAQZAQoAHRYhBDdO
+x1tIWRNgSoMcx8ggxtXNJ6uHBQJggFwmAAoJEMggxtXNJ6uHRfAP/2CGdSyg0K7U
+66Vygl0dugxrMm8O3/Oe211BKdQsFUSWAznOTRTK/zvMUHO4LJAlYvdtZ6xDa4XH
+l9FYQ8MR9ZV0OuOlAZvU4IJDLPVCU09X/UzX/GEoZL0R5esvwPAXopMaRHCfXJeI
+/gEaB94UhAeYlwpcRn0eSuk1vyZx7GRE6/hog8DCf4hoT40dW20gGe58xcvJ+mRY
+lC0lr16WH08wuUcee6+dgu+4Cg6SG6+zt9cMyl8VnTUL5BK/V3MebnYZJK0RFDNn
+nXDhzStgOd5gOeIL+xBPXHd0/ld/rDM74SFExpuS+hNsyo+xMQ/HJavak21MFinu
+l9COwfGEmlAXTGMY30Lf3Pt/eAkbwgmGc966VSoRmOFEXJVlDr+yJR6ru+7j50z8
+lAv6Lsop7sun1Qysbo0swf6W1qgPf6VWbx91NTFLkw0+gD8jxwrU5ZMkeSuntX9d
+pjuZS29CflXXIRPlvhuiDPicwTpYuIUx37vHveAH5gnowZg247x780Urrsx8duTX
+8CI9MAnqzm4dFAiRlwE8bvLk+l9wekiXA9gIMZiVNqNlduXIqvAG21Wdgq8qyeXK
+y/XWCVKDQOmEbFAltfNam8E3KEw0fl199x+93d5ckDGcPzUYPbNkCuIwngC/ZN96
+pDafF3Z12fSNfhZUe0C8td8KAszYa96GCRA0Nl2UctdGj1gKD/4jOGhEGTg88Vyu
+PVjeK+zkwrTIZSvHdUHfTt/+rTLSNb/RQiBCUQuEZvafj6FrntS7bAEhccGqH894
+T3St5K0AXWkvsLd6K+cbIQdlnFA2zb6geJUCk6qx5NgWpRc3i0DS7CheGwl+Bwu7
++n9pNjNjiHV+rYDgqbQXG0dtGysB0/3qIRgEDHFO0HJu/dcte4oXrQIqrZrpOwe8
+WxqFqdU918JpSUcc8coiFp9YtwpgqQNxGVZ+rhgnTGdZzk1f/Yhhimh+2B0ReaFv
+k3UzVBj3HQ9C6+Ot3MyDEhSgdhjr9e25Tm9S5YfhwtWmghRw9RKPyLMSXSxm/Uc0
+mK1NucAp8TQBwKqKzNpCk5IdrBSWRUbjOoOFyzyCsY6gS285GCpSIzI39hTf+3gd
+wYPlE6fj+F2TZzdhx62DPnzBzBHnByYTVdJ649bx0FFp4Q+5TbIWtxu/AQkRDxmW
+NQfE+6GgeshlrhXWsh6+PGDzt+2raG6zUT913sdz7Ctw4fLjmsKOTdTz3Xa9pr8l
+xfI/JuukSgt9o/n3GirhTB3zE1w/I/Xt6k7oASiP3zQSuHtB/CYKYHDtOCWwjo7J
+PEGtb/FkreKNxsk/p20jnlrB8WZxxswdr2Vri9NmFeyMDVX7qF3WqT+8aCV9GtS1
+GCHx/5nGBdDwoxEsXqpI3IUqPb6FDg==
+=wtp+
 -----END PGP PUBLIC KEY BLOCK-----`;
 const releasesUrl = 'https://releases.hashicorp.com';
 class Release {
@@ -6233,7 +6232,7 @@ function matchVersion(versions, range, includePrerelease) {
 "use strict";
 
 /**
- * Copyright (c) HashiCorp, Inc.
+ * Copyright IBM Corp. 2020, 2026
  * SPDX-License-Identifier: MPL-2.0
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -6248,15 +6247,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.request = void 0;
 const axios_1 = __nccwpck_require__(7269);
-const HttpsProxyAgent = __nccwpck_require__(3669);
+const https_proxy_agent_1 = __nccwpck_require__(3669);
 const httpProxy = process.env['HTTP_PROXY'] || process.env['http_proxy'];
 const httpsProxy = process.env['HTTPS_PROXY'] || process.env['https_proxy'];
 let proxyConf = {};
 if (httpProxy || httpsProxy) {
     proxyConf = {
         proxy: false,
-        httpAgent: httpProxy ? new HttpsProxyAgent(httpProxy) : undefined,
-        httpsAgent: httpsProxy ? new HttpsProxyAgent(httpsProxy) : undefined,
+        httpAgent: httpProxy ? new https_proxy_agent_1.HttpsProxyAgent(httpProxy) : undefined,
+        httpsAgent: httpsProxy ? new https_proxy_agent_1.HttpsProxyAgent(httpsProxy) : undefined,
     };
 }
 const axios = axios_1.default.create(Object.assign({}, proxyConf));
@@ -6271,238 +6270,261 @@ exports.request = request;
 
 /***/ }),
 
-/***/ 8207:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 5183:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-const events_1 = __nccwpck_require__(4434);
-const debug_1 = __importDefault(__nccwpck_require__(2830));
-const promisify_1 = __importDefault(__nccwpck_require__(8067));
-const debug = debug_1.default('agent-base');
-function isAgent(v) {
-    return Boolean(v) && typeof v.addRequest === 'function';
-}
-function isSecureEndpoint() {
-    const { stack } = new Error();
-    if (typeof stack !== 'string')
-        return false;
-    return stack.split('\n').some(l => l.indexOf('(https.js:') !== -1 || l.indexOf('node:https:') !== -1);
-}
-function createAgent(callback, opts) {
-    return new createAgent.Agent(callback, opts);
-}
-(function (createAgent) {
-    /**
-     * Base `http.Agent` implementation.
-     * No pooling/keep-alive is implemented by default.
-     *
-     * @param {Function} callback
-     * @api public
-     */
-    class Agent extends events_1.EventEmitter {
-        constructor(callback, _opts) {
-            super();
-            let opts = _opts;
-            if (typeof callback === 'function') {
-                this.callback = callback;
-            }
-            else if (callback) {
-                opts = callback;
-            }
-            // Timeout for the socket to be returned from the callback
-            this.timeout = null;
-            if (opts && typeof opts.timeout === 'number') {
-                this.timeout = opts.timeout;
-            }
-            // These aren't actually used by `agent-base`, but are required
-            // for the TypeScript definition files in `@types/node` :/
-            this.maxFreeSockets = 1;
-            this.maxSockets = 1;
-            this.maxTotalSockets = Infinity;
-            this.sockets = {};
-            this.freeSockets = {};
-            this.requests = {};
-            this.options = {};
-        }
-        get defaultPort() {
-            if (typeof this.explicitDefaultPort === 'number') {
-                return this.explicitDefaultPort;
-            }
-            return isSecureEndpoint() ? 443 : 80;
-        }
-        set defaultPort(v) {
-            this.explicitDefaultPort = v;
-        }
-        get protocol() {
-            if (typeof this.explicitProtocol === 'string') {
-                return this.explicitProtocol;
-            }
-            return isSecureEndpoint() ? 'https:' : 'http:';
-        }
-        set protocol(v) {
-            this.explicitProtocol = v;
-        }
-        callback(req, opts, fn) {
-            throw new Error('"agent-base" has no default implementation, you must subclass and override `callback()`');
-        }
-        /**
-         * Called by node-core's "_http_client.js" module when creating
-         * a new HTTP request with this Agent instance.
-         *
-         * @api public
-         */
-        addRequest(req, _opts) {
-            const opts = Object.assign({}, _opts);
-            if (typeof opts.secureEndpoint !== 'boolean') {
-                opts.secureEndpoint = isSecureEndpoint();
-            }
-            if (opts.host == null) {
-                opts.host = 'localhost';
-            }
-            if (opts.port == null) {
-                opts.port = opts.secureEndpoint ? 443 : 80;
-            }
-            if (opts.protocol == null) {
-                opts.protocol = opts.secureEndpoint ? 'https:' : 'http:';
-            }
-            if (opts.host && opts.path) {
-                // If both a `host` and `path` are specified then it's most
-                // likely the result of a `url.parse()` call... we need to
-                // remove the `path` portion so that `net.connect()` doesn't
-                // attempt to open that as a unix socket file.
-                delete opts.path;
-            }
-            delete opts.agent;
-            delete opts.hostname;
-            delete opts._defaultAgent;
-            delete opts.defaultPort;
-            delete opts.createConnection;
-            // Hint to use "Connection: close"
-            // XXX: non-documented `http` module API :(
-            req._last = true;
-            req.shouldKeepAlive = false;
-            let timedOut = false;
-            let timeoutId = null;
-            const timeoutMs = opts.timeout || this.timeout;
-            const onerror = (err) => {
-                if (req._hadError)
-                    return;
-                req.emit('error', err);
-                // For Safety. Some additional errors might fire later on
-                // and we need to make sure we don't double-fire the error event.
-                req._hadError = true;
-            };
-            const ontimeout = () => {
-                timeoutId = null;
-                timedOut = true;
-                const err = new Error(`A "socket" was not created for HTTP request before ${timeoutMs}ms`);
-                err.code = 'ETIMEOUT';
-                onerror(err);
-            };
-            const callbackError = (err) => {
-                if (timedOut)
-                    return;
-                if (timeoutId !== null) {
-                    clearTimeout(timeoutId);
-                    timeoutId = null;
-                }
-                onerror(err);
-            };
-            const onsocket = (socket) => {
-                if (timedOut)
-                    return;
-                if (timeoutId != null) {
-                    clearTimeout(timeoutId);
-                    timeoutId = null;
-                }
-                if (isAgent(socket)) {
-                    // `socket` is actually an `http.Agent` instance, so
-                    // relinquish responsibility for this `req` to the Agent
-                    // from here on
-                    debug('Callback returned another Agent instance %o', socket.constructor.name);
-                    socket.addRequest(req, opts);
-                    return;
-                }
-                if (socket) {
-                    socket.once('free', () => {
-                        this.freeSocket(socket, opts);
-                    });
-                    req.onSocket(socket);
-                    return;
-                }
-                const err = new Error(`no Duplex stream was returned to agent-base for \`${req.method} ${req.path}\``);
-                onerror(err);
-            };
-            if (typeof this.callback !== 'function') {
-                onerror(new Error('`callback` is not defined'));
-                return;
-            }
-            if (!this.promisifiedCallback) {
-                if (this.callback.length >= 3) {
-                    debug('Converting legacy callback function to promise');
-                    this.promisifiedCallback = promisify_1.default(this.callback);
-                }
-                else {
-                    this.promisifiedCallback = this.callback;
-                }
-            }
-            if (typeof timeoutMs === 'number' && timeoutMs > 0) {
-                timeoutId = setTimeout(ontimeout, timeoutMs);
-            }
-            if ('port' in opts && typeof opts.port !== 'number') {
-                opts.port = Number(opts.port);
-            }
-            try {
-                debug('Resolving socket for %o request: %o', opts.protocol, `${req.method} ${req.path}`);
-                Promise.resolve(this.promisifiedCallback(req, opts)).then(onsocket, callbackError);
-            }
-            catch (err) {
-                Promise.reject(err).catch(callbackError);
-            }
-        }
-        freeSocket(socket, opts) {
-            debug('Freeing socket %o %o', socket.constructor.name, opts);
-            socket.destroy();
-        }
-        destroy() {
-            debug('Destroying agent %o', this.constructor.name);
-        }
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
     }
-    createAgent.Agent = Agent;
-    // So that `instanceof` works correctly
-    createAgent.prototype = createAgent.Agent.prototype;
-})(createAgent || (createAgent = {}));
-module.exports = createAgent;
-//# sourceMappingURL=index.js.map
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.req = exports.json = exports.toBuffer = void 0;
+const http = __importStar(__nccwpck_require__(8611));
+const https = __importStar(__nccwpck_require__(5692));
+async function toBuffer(stream) {
+    let length = 0;
+    const chunks = [];
+    for await (const chunk of stream) {
+        length += chunk.length;
+        chunks.push(chunk);
+    }
+    return Buffer.concat(chunks, length);
+}
+exports.toBuffer = toBuffer;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function json(stream) {
+    const buf = await toBuffer(stream);
+    const str = buf.toString('utf8');
+    try {
+        return JSON.parse(str);
+    }
+    catch (_err) {
+        const err = _err;
+        err.message += ` (input: ${str})`;
+        throw err;
+    }
+}
+exports.json = json;
+function req(url, opts = {}) {
+    const href = typeof url === 'string' ? url : url.href;
+    const req = (href.startsWith('https:') ? https : http).request(url, opts);
+    const promise = new Promise((resolve, reject) => {
+        req
+            .once('response', resolve)
+            .once('error', reject)
+            .end();
+    });
+    req.then = promise.then.bind(promise);
+    return req;
+}
+exports.req = req;
+//# sourceMappingURL=helpers.js.map
 
 /***/ }),
 
-/***/ 8067:
-/***/ ((__unused_webpack_module, exports) => {
+/***/ 8894:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
 
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-function promisify(fn) {
-    return function (req, opts) {
-        return new Promise((resolve, reject) => {
-            fn.call(this, req, opts, (err, rtn) => {
-                if (err) {
-                    reject(err);
+exports.Agent = void 0;
+const net = __importStar(__nccwpck_require__(9278));
+const http = __importStar(__nccwpck_require__(8611));
+const https_1 = __nccwpck_require__(5692);
+__exportStar(__nccwpck_require__(5183), exports);
+const INTERNAL = Symbol('AgentBaseInternalState');
+class Agent extends http.Agent {
+    constructor(opts) {
+        super(opts);
+        this[INTERNAL] = {};
+    }
+    /**
+     * Determine whether this is an `http` or `https` request.
+     */
+    isSecureEndpoint(options) {
+        if (options) {
+            // First check the `secureEndpoint` property explicitly, since this
+            // means that a parent `Agent` is "passing through" to this instance.
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            if (typeof options.secureEndpoint === 'boolean') {
+                return options.secureEndpoint;
+            }
+            // If no explicit `secure` endpoint, check if `protocol` property is
+            // set. This will usually be the case since using a full string URL
+            // or `URL` instance should be the most common usage.
+            if (typeof options.protocol === 'string') {
+                return options.protocol === 'https:';
+            }
+        }
+        // Finally, if no `protocol` property was set, then fall back to
+        // checking the stack trace of the current call stack, and try to
+        // detect the "https" module.
+        const { stack } = new Error();
+        if (typeof stack !== 'string')
+            return false;
+        return stack
+            .split('\n')
+            .some((l) => l.indexOf('(https.js:') !== -1 ||
+            l.indexOf('node:https:') !== -1);
+    }
+    // In order to support async signatures in `connect()` and Node's native
+    // connection pooling in `http.Agent`, the array of sockets for each origin
+    // has to be updated synchronously. This is so the length of the array is
+    // accurate when `addRequest()` is next called. We achieve this by creating a
+    // fake socket and adding it to `sockets[origin]` and incrementing
+    // `totalSocketCount`.
+    incrementSockets(name) {
+        // If `maxSockets` and `maxTotalSockets` are both Infinity then there is no
+        // need to create a fake socket because Node.js native connection pooling
+        // will never be invoked.
+        if (this.maxSockets === Infinity && this.maxTotalSockets === Infinity) {
+            return null;
+        }
+        // All instances of `sockets` are expected TypeScript errors. The
+        // alternative is to add it as a private property of this class but that
+        // will break TypeScript subclassing.
+        if (!this.sockets[name]) {
+            // @ts-expect-error `sockets` is readonly in `@types/node`
+            this.sockets[name] = [];
+        }
+        const fakeSocket = new net.Socket({ writable: false });
+        this.sockets[name].push(fakeSocket);
+        // @ts-expect-error `totalSocketCount` isn't defined in `@types/node`
+        this.totalSocketCount++;
+        return fakeSocket;
+    }
+    decrementSockets(name, socket) {
+        if (!this.sockets[name] || socket === null) {
+            return;
+        }
+        const sockets = this.sockets[name];
+        const index = sockets.indexOf(socket);
+        if (index !== -1) {
+            sockets.splice(index, 1);
+            // @ts-expect-error  `totalSocketCount` isn't defined in `@types/node`
+            this.totalSocketCount--;
+            if (sockets.length === 0) {
+                // @ts-expect-error `sockets` is readonly in `@types/node`
+                delete this.sockets[name];
+            }
+        }
+    }
+    // In order to properly update the socket pool, we need to call `getName()` on
+    // the core `https.Agent` if it is a secureEndpoint.
+    getName(options) {
+        const secureEndpoint = this.isSecureEndpoint(options);
+        if (secureEndpoint) {
+            // @ts-expect-error `getName()` isn't defined in `@types/node`
+            return https_1.Agent.prototype.getName.call(this, options);
+        }
+        // @ts-expect-error `getName()` isn't defined in `@types/node`
+        return super.getName(options);
+    }
+    createSocket(req, options, cb) {
+        const connectOpts = {
+            ...options,
+            secureEndpoint: this.isSecureEndpoint(options),
+        };
+        const name = this.getName(connectOpts);
+        const fakeSocket = this.incrementSockets(name);
+        Promise.resolve()
+            .then(() => this.connect(req, connectOpts))
+            .then((socket) => {
+            this.decrementSockets(name, fakeSocket);
+            if (socket instanceof http.Agent) {
+                try {
+                    // @ts-expect-error `addRequest()` isn't defined in `@types/node`
+                    return socket.addRequest(req, connectOpts);
                 }
-                else {
-                    resolve(rtn);
+                catch (err) {
+                    return cb(err);
                 }
-            });
+            }
+            this[INTERNAL].currentSocket = socket;
+            // @ts-expect-error `createSocket()` isn't defined in `@types/node`
+            super.createSocket(req, options, cb);
+        }, (err) => {
+            this.decrementSockets(name, fakeSocket);
+            cb(err);
         });
-    };
+    }
+    createConnection() {
+        const socket = this[INTERNAL].currentSocket;
+        this[INTERNAL].currentSocket = undefined;
+        if (!socket) {
+            throw new Error('No socket was returned in the `connect()` function');
+        }
+        return socket;
+    }
+    get defaultPort() {
+        return (this[INTERNAL].defaultPort ??
+            (this.protocol === 'https:' ? 443 : 80));
+    }
+    set defaultPort(v) {
+        if (this[INTERNAL]) {
+            this[INTERNAL].defaultPort = v;
+        }
+    }
+    get protocol() {
+        return (this[INTERNAL].protocol ??
+            (this.isSecureEndpoint() ? 'https:' : 'http:'));
+    }
+    set protocol(v) {
+        if (this[INTERNAL]) {
+            this[INTERNAL].protocol = v;
+        }
+    }
 }
-exports["default"] = promisify;
-//# sourceMappingURL=promisify.js.map
+exports.Agent = Agent;
+//# sourceMappingURL=index.js.map
 
 /***/ }),
 
@@ -16163,32 +16185,58 @@ module.exports = bind.call(call, $hasOwn);
 
 /***/ }),
 
-/***/ 6904:
+/***/ 3669:
 /***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
 
 "use strict";
 
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const net_1 = __importDefault(__nccwpck_require__(9278));
-const tls_1 = __importDefault(__nccwpck_require__(4756));
-const url_1 = __importDefault(__nccwpck_require__(7016));
+exports.HttpsProxyAgent = void 0;
+const net = __importStar(__nccwpck_require__(9278));
+const tls = __importStar(__nccwpck_require__(4756));
 const assert_1 = __importDefault(__nccwpck_require__(2613));
 const debug_1 = __importDefault(__nccwpck_require__(2830));
-const agent_base_1 = __nccwpck_require__(8207);
-const parse_proxy_response_1 = __importDefault(__nccwpck_require__(7943));
-const debug = debug_1.default('https-proxy-agent:agent');
+const agent_base_1 = __nccwpck_require__(8894);
+const url_1 = __nccwpck_require__(7016);
+const parse_proxy_response_1 = __nccwpck_require__(7943);
+const debug = (0, debug_1.default)('https-proxy-agent');
+const setServernameFromNonIpHost = (options) => {
+    if (options.servername === undefined &&
+        options.host &&
+        !net.isIP(options.host)) {
+        return {
+            ...options,
+            servername: options.host,
+        };
+    }
+    return options;
+};
 /**
  * The `HttpsProxyAgent` implements an HTTP Agent subclass that connects to
  * the specified "HTTP(s) proxy server" in order to proxy HTTPS requests.
@@ -16200,138 +16248,115 @@ const debug = debug_1.default('https-proxy-agent:agent');
  *
  * `https:` requests have their socket connection upgraded to TLS once
  * the connection to the proxy server has been established.
- *
- * @api public
  */
 class HttpsProxyAgent extends agent_base_1.Agent {
-    constructor(_opts) {
-        let opts;
-        if (typeof _opts === 'string') {
-            opts = url_1.default.parse(_opts);
-        }
-        else {
-            opts = _opts;
-        }
-        if (!opts) {
-            throw new Error('an HTTP(S) proxy server `host` and `port` must be specified!');
-        }
-        debug('creating new HttpsProxyAgent instance: %o', opts);
+    constructor(proxy, opts) {
         super(opts);
-        const proxy = Object.assign({}, opts);
-        // If `true`, then connect to the proxy server over TLS.
-        // Defaults to `false`.
-        this.secureProxy = opts.secureProxy || isHTTPS(proxy.protocol);
-        // Prefer `hostname` over `host`, and set the `port` if needed.
-        proxy.host = proxy.hostname || proxy.host;
-        if (typeof proxy.port === 'string') {
-            proxy.port = parseInt(proxy.port, 10);
-        }
-        if (!proxy.port && proxy.host) {
-            proxy.port = this.secureProxy ? 443 : 80;
-        }
-        // ALPN is supported by Node.js >= v5.
-        // attempt to negotiate http/1.1 for proxy servers that support http/2
-        if (this.secureProxy && !('ALPNProtocols' in proxy)) {
-            proxy.ALPNProtocols = ['http 1.1'];
-        }
-        if (proxy.host && proxy.path) {
-            // If both a `host` and `path` are specified then it's most likely
-            // the result of a `url.parse()` call... we need to remove the
-            // `path` portion so that `net.connect()` doesn't attempt to open
-            // that as a Unix socket file.
-            delete proxy.path;
-            delete proxy.pathname;
-        }
-        this.proxy = proxy;
+        this.options = { path: undefined };
+        this.proxy = typeof proxy === 'string' ? new url_1.URL(proxy) : proxy;
+        this.proxyHeaders = opts?.headers ?? {};
+        debug('Creating new HttpsProxyAgent instance: %o', this.proxy.href);
+        // Trim off the brackets from IPv6 addresses
+        const host = (this.proxy.hostname || this.proxy.host).replace(/^\[|\]$/g, '');
+        const port = this.proxy.port
+            ? parseInt(this.proxy.port, 10)
+            : this.proxy.protocol === 'https:'
+                ? 443
+                : 80;
+        this.connectOpts = {
+            // Attempt to negotiate http/1.1 for proxy servers that support http/2
+            ALPNProtocols: ['http/1.1'],
+            ...(opts ? omit(opts, 'headers') : null),
+            host,
+            port,
+        };
     }
     /**
      * Called when the node-core HTTP client library is creating a
      * new HTTP request.
-     *
-     * @api protected
      */
-    callback(req, opts) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const { proxy, secureProxy } = this;
-            // Create a socket connection to the proxy server.
-            let socket;
-            if (secureProxy) {
-                debug('Creating `tls.Socket`: %o', proxy);
-                socket = tls_1.default.connect(proxy);
+    async connect(req, opts) {
+        const { proxy } = this;
+        if (!opts.host) {
+            throw new TypeError('No "host" provided');
+        }
+        // Create a socket connection to the proxy server.
+        let socket;
+        if (proxy.protocol === 'https:') {
+            debug('Creating `tls.Socket`: %o', this.connectOpts);
+            socket = tls.connect(setServernameFromNonIpHost(this.connectOpts));
+        }
+        else {
+            debug('Creating `net.Socket`: %o', this.connectOpts);
+            socket = net.connect(this.connectOpts);
+        }
+        const headers = typeof this.proxyHeaders === 'function'
+            ? this.proxyHeaders()
+            : { ...this.proxyHeaders };
+        const host = net.isIPv6(opts.host) ? `[${opts.host}]` : opts.host;
+        let payload = `CONNECT ${host}:${opts.port} HTTP/1.1\r\n`;
+        // Inject the `Proxy-Authorization` header if necessary.
+        if (proxy.username || proxy.password) {
+            const auth = `${decodeURIComponent(proxy.username)}:${decodeURIComponent(proxy.password)}`;
+            headers['Proxy-Authorization'] = `Basic ${Buffer.from(auth).toString('base64')}`;
+        }
+        headers.Host = `${host}:${opts.port}`;
+        if (!headers['Proxy-Connection']) {
+            headers['Proxy-Connection'] = this.keepAlive
+                ? 'Keep-Alive'
+                : 'close';
+        }
+        for (const name of Object.keys(headers)) {
+            payload += `${name}: ${headers[name]}\r\n`;
+        }
+        const proxyResponsePromise = (0, parse_proxy_response_1.parseProxyResponse)(socket);
+        socket.write(`${payload}\r\n`);
+        const { connect, buffered } = await proxyResponsePromise;
+        req.emit('proxyConnect', connect);
+        this.emit('proxyConnect', connect, req);
+        if (connect.statusCode === 200) {
+            req.once('socket', resume);
+            if (opts.secureEndpoint) {
+                // The proxy is connecting to a TLS server, so upgrade
+                // this socket connection to a TLS connection.
+                debug('Upgrading socket connection to TLS');
+                return tls.connect({
+                    ...omit(setServernameFromNonIpHost(opts), 'host', 'path', 'port'),
+                    socket,
+                });
             }
-            else {
-                debug('Creating `net.Socket`: %o', proxy);
-                socket = net_1.default.connect(proxy);
-            }
-            const headers = Object.assign({}, proxy.headers);
-            const hostname = `${opts.host}:${opts.port}`;
-            let payload = `CONNECT ${hostname} HTTP/1.1\r\n`;
-            // Inject the `Proxy-Authorization` header if necessary.
-            if (proxy.auth) {
-                headers['Proxy-Authorization'] = `Basic ${Buffer.from(proxy.auth).toString('base64')}`;
-            }
-            // The `Host` header should only include the port
-            // number when it is not the default port.
-            let { host, port, secureEndpoint } = opts;
-            if (!isDefaultPort(port, secureEndpoint)) {
-                host += `:${port}`;
-            }
-            headers.Host = host;
-            headers.Connection = 'close';
-            for (const name of Object.keys(headers)) {
-                payload += `${name}: ${headers[name]}\r\n`;
-            }
-            const proxyResponsePromise = parse_proxy_response_1.default(socket);
-            socket.write(`${payload}\r\n`);
-            const { statusCode, buffered } = yield proxyResponsePromise;
-            if (statusCode === 200) {
-                req.once('socket', resume);
-                if (opts.secureEndpoint) {
-                    // The proxy is connecting to a TLS server, so upgrade
-                    // this socket connection to a TLS connection.
-                    debug('Upgrading socket connection to TLS');
-                    const servername = opts.servername || opts.host;
-                    return tls_1.default.connect(Object.assign(Object.assign({}, omit(opts, 'host', 'hostname', 'path', 'port')), { socket,
-                        servername }));
-                }
-                return socket;
-            }
-            // Some other status code that's not 200... need to re-play the HTTP
-            // header "data" events onto the socket once the HTTP machinery is
-            // attached so that the node core `http` can parse and handle the
-            // error status code.
-            // Close the original socket, and a new "fake" socket is returned
-            // instead, so that the proxy doesn't get the HTTP request
-            // written to it (which may contain `Authorization` headers or other
-            // sensitive data).
-            //
-            // See: https://hackerone.com/reports/541502
-            socket.destroy();
-            const fakeSocket = new net_1.default.Socket({ writable: false });
-            fakeSocket.readable = true;
-            // Need to wait for the "socket" event to re-play the "data" events.
-            req.once('socket', (s) => {
-                debug('replaying proxy buffer for failed request');
-                assert_1.default(s.listenerCount('data') > 0);
-                // Replay the "buffered" Buffer onto the fake `socket`, since at
-                // this point the HTTP module machinery has been hooked up for
-                // the user.
-                s.push(buffered);
-                s.push(null);
-            });
-            return fakeSocket;
+            return socket;
+        }
+        // Some other status code that's not 200... need to re-play the HTTP
+        // header "data" events onto the socket once the HTTP machinery is
+        // attached so that the node core `http` can parse and handle the
+        // error status code.
+        // Close the original socket, and a new "fake" socket is returned
+        // instead, so that the proxy doesn't get the HTTP request
+        // written to it (which may contain `Authorization` headers or other
+        // sensitive data).
+        //
+        // See: https://hackerone.com/reports/541502
+        socket.destroy();
+        const fakeSocket = new net.Socket({ writable: false });
+        fakeSocket.readable = true;
+        // Need to wait for the "socket" event to re-play the "data" events.
+        req.once('socket', (s) => {
+            debug('Replaying proxy buffer for failed request');
+            (0, assert_1.default)(s.listenerCount('data') > 0);
+            // Replay the "buffered" Buffer onto the fake `socket`, since at
+            // this point the HTTP module machinery has been hooked up for
+            // the user.
+            s.push(buffered);
+            s.push(null);
         });
+        return fakeSocket;
     }
 }
-exports["default"] = HttpsProxyAgent;
+HttpsProxyAgent.protocols = ['http', 'https'];
+exports.HttpsProxyAgent = HttpsProxyAgent;
 function resume(socket) {
     socket.resume();
-}
-function isDefaultPort(port, secure) {
-    return Boolean((!secure && port === 80) || (secure && port === 443));
-}
-function isHTTPS(protocol) {
-    return typeof protocol === 'string' ? /^https:?$/i.test(protocol) : false;
 }
 function omit(obj, ...keys) {
     const ret = {};
@@ -16343,27 +16368,6 @@ function omit(obj, ...keys) {
     }
     return ret;
 }
-//# sourceMappingURL=agent.js.map
-
-/***/ }),
-
-/***/ 3669:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-const agent_1 = __importDefault(__nccwpck_require__(6904));
-function createHttpsProxyAgent(opts) {
-    return new agent_1.default(opts);
-}
-(function (createHttpsProxyAgent) {
-    createHttpsProxyAgent.HttpsProxyAgent = agent_1.default;
-    createHttpsProxyAgent.prototype = agent_1.default.prototype;
-})(createHttpsProxyAgent || (createHttpsProxyAgent = {}));
-module.exports = createHttpsProxyAgent;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -16377,8 +16381,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.parseProxyResponse = void 0;
 const debug_1 = __importDefault(__nccwpck_require__(2830));
-const debug = debug_1.default('https-proxy-agent:parse-proxy-response');
+const debug = (0, debug_1.default)('https-proxy-agent:parse-proxy-response');
 function parseProxyResponse(socket) {
     return new Promise((resolve, reject) => {
         // we need to buffer any HTTP traffic that happens with the proxy before we get
@@ -16397,14 +16402,12 @@ function parseProxyResponse(socket) {
         function cleanup() {
             socket.removeListener('end', onend);
             socket.removeListener('error', onerror);
-            socket.removeListener('close', onclose);
             socket.removeListener('readable', read);
         }
-        function onclose(err) {
-            debug('onclose had error %o', err);
-        }
         function onend() {
+            cleanup();
             debug('onend');
+            reject(new Error('Proxy connection ended before receiving CONNECT response'));
         }
         function onerror(err) {
             cleanup();
@@ -16422,21 +16425,57 @@ function parseProxyResponse(socket) {
                 read();
                 return;
             }
-            const firstLine = buffered.toString('ascii', 0, buffered.indexOf('\r\n'));
-            const statusCode = +firstLine.split(' ')[1];
-            debug('got proxy server response: %o', firstLine);
+            const headerParts = buffered
+                .slice(0, endOfHeaders)
+                .toString('ascii')
+                .split('\r\n');
+            const firstLine = headerParts.shift();
+            if (!firstLine) {
+                socket.destroy();
+                return reject(new Error('No header received from proxy CONNECT response'));
+            }
+            const firstLineParts = firstLine.split(' ');
+            const statusCode = +firstLineParts[1];
+            const statusText = firstLineParts.slice(2).join(' ');
+            const headers = {};
+            for (const header of headerParts) {
+                if (!header)
+                    continue;
+                const firstColon = header.indexOf(':');
+                if (firstColon === -1) {
+                    socket.destroy();
+                    return reject(new Error(`Invalid header from proxy CONNECT response: "${header}"`));
+                }
+                const key = header.slice(0, firstColon).toLowerCase();
+                const value = header.slice(firstColon + 1).trimStart();
+                const current = headers[key];
+                if (typeof current === 'string') {
+                    headers[key] = [current, value];
+                }
+                else if (Array.isArray(current)) {
+                    current.push(value);
+                }
+                else {
+                    headers[key] = value;
+                }
+            }
+            debug('got proxy server response: %o %o', firstLine, headers);
+            cleanup();
             resolve({
-                statusCode,
-                buffered
+                connect: {
+                    statusCode,
+                    statusText,
+                    headers,
+                },
+                buffered,
             });
         }
         socket.on('error', onerror);
-        socket.on('close', onclose);
         socket.on('end', onend);
         read();
     });
 }
-exports["default"] = parseProxyResponse;
+exports.parseProxyResponse = parseProxyResponse;
 //# sourceMappingURL=parse-proxy-response.js.map
 
 /***/ }),

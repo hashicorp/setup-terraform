@@ -1,0 +1,5 @@
+kind: BUG FIXES
+body: Fix Node 24 DEP0169 url.parse() deprecation warning by updating @hashicorp/js-releases to v1.7.7
+time: 2026-05-11T16:44:52.697144+02:00
+custom:
+    Issue: "549"
