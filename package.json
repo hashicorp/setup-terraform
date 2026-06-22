@@ -44,7 +44,7 @@
   "overrides": {
     "minimatch": "^10.2.1",
     "glob": "^11.0.0",
-    "undici": "^6.23.0",
+    "undici": "^7.28.0",
     "test-exclude": "^7.0.1",
     "babel-plugin-istanbul": "^7.0.0"
   }
