@@ -44,12 +44,14 @@ describe('Setup Terraform', () => {
 
   test('gets specific version and adds token and hostname on linux, amd64', async () => {
     const version = '0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -86,12 +88,14 @@ describe('Setup Terraform', () => {
 
   test('gets specific version and adds token and hostname on windows, 386', async () => {
     const version = '0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -131,12 +135,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version and adds token and hostname on linux, amd64', async () => {
     const version = 'latest';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -174,12 +180,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version matching specification adds token and hostname on linux, amd64', async () => {
     const version = '<0.10.0';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -217,12 +225,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version matching tilde range patch', async () => {
     const version = '~0.1.0';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -259,12 +269,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version matching tilde range minor', async () => {
     const version = '~0.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -301,12 +313,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version matching tilde range minor', async () => {
     const version = '~0';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -343,12 +357,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version matching .X range ', async () => {
     const version = '0.1.x';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -385,12 +401,14 @@ describe('Setup Terraform', () => {
 
   test('gets latest version matching - range ', async () => {
     const version = '0.1.0 - 0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -427,12 +445,14 @@ describe('Setup Terraform', () => {
 
   test('fails when metadata cannot be downloaded', async () => {
     const version = 'latest';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -449,12 +469,14 @@ describe('Setup Terraform', () => {
 
   test('fails when specific version cannot be found', async () => {
     const version = '0.9.9';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -471,12 +493,14 @@ describe('Setup Terraform', () => {
 
   test('fails when CLI for os and architecture cannot be found', async () => {
     const version = '0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -509,12 +533,14 @@ describe('Setup Terraform', () => {
 
   test('fails when CLI cannot be downloaded', async () => {
     const version = '0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
 
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken);
 
@@ -547,6 +573,7 @@ describe('Setup Terraform', () => {
 
   test('installs wrapper on linux', async () => {
     const version = '0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
     const wrapperPath = path.resolve([__dirname, '..', 'wrapper', 'dist', 'index.js'].join(path.sep));
@@ -559,6 +586,7 @@ describe('Setup Terraform', () => {
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken)
       .mockReturnValueOnce('true');
@@ -591,6 +619,7 @@ describe('Setup Terraform', () => {
 
   test('installs wrapper on windows', async () => {
     const version = '0.1.1';
+    const versionFile = '';
     const credentialsHostname = 'app.terraform.io';
     const credentialsToken = 'asdfjkl';
     const wrapperPath = path.resolve([__dirname, '..', 'wrapper', 'dist', 'index.js'].join(path.sep));
@@ -603,6 +632,7 @@ describe('Setup Terraform', () => {
     core.getInput = jest
       .fn()
       .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
       .mockReturnValueOnce(credentialsHostname)
       .mockReturnValueOnce(credentialsToken)
       .mockReturnValueOnce('true');
@@ -631,5 +661,206 @@ describe('Setup Terraform', () => {
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform.exe`, `file${path.sep}terraform-bin.exe`);
     expect(ioCp).toHaveBeenCalledWith(wrapperPath, `file${path.sep}terraform`);
+  });
+
+  test('gets version from .tool-versions file', async () => {
+    const version = '';
+    const versionFile = '.tool-versions';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    fs.readFileSync = jest
+      .fn()
+      .mockReturnValueOnce('terraform 0.1.1');
+
+    const versionObj = await setup();
+    expect(versionObj.version).toEqual('0.1.1');
+  });
+
+  test('gets version from version if both (version and .tool-versions file) are set', async () => {
+    const version = '0.1.0';
+    const versionFile = '.tool-versions';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    fs.readFileSync = jest
+      .fn()
+      .mockReturnValueOnce('terraform 0.10.0');
+
+    const versionObj = await setup();
+    expect(versionObj.version).toEqual('0.1.0');
+  });
+
+  test('gets latest version using empty inputs for versions', async () => {
+    const version = '';
+    const versionFile = '';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    const versionObj = await setup();
+    expect(versionObj.version).toEqual('0.10.0');
+  });
+
+  test('gets version from .terraform-version file', async () => {
+    const version = '';
+    const versionFile = '.terraform-version';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    fs.readFileSync = jest
+      .fn()
+      .mockReturnValueOnce('0.1.1');
+
+    const versionObj = await setup();
+    expect(versionObj.version).toEqual('0.1.1');
+  });
+
+  test('fails when unsupported terraform version file', async () => {
+    const version = '';
+    const versionFile = 'unsupported-file';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(versionFile)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    fs.readFileSync = jest
+      .fn()
+      .mockReturnValueOnce('0.10.0');
+
+    try {
+      await setup();
+    } catch (e) {
+      expect(core.error).toHaveBeenCalled();
+    }
   });
 });
