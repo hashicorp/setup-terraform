@@ -40,6 +40,36 @@ function mapOS (os) {
   return mappings[os] || os;
 }
 
+async function resolveVersion () {
+  let version = core.getInput('terraform_version');
+
+  if (!version) {
+    version = await getToolVersions();
+  }
+
+  return version;
+}
+
+async function getToolVersions () {
+  let version = '';
+  core.debug('Attempting to infer Terraform version from .tool-versions');
+
+  if (await fs.existsSync('.tool-versions')) {
+    const contents = await fs.readFileSync('.tool-versions').toString();
+    const match = contents.match(/^terraform (\d+(\.\d+)*)/m);
+
+    if (!match) {
+      core.debug('Could not find a valid terraform version from .tool-versions');
+    } else {
+      version = match[1];
+    }
+  } else {
+    core.debug('.tool-versions does not exist');
+  }
+
+  return version;
+}
+
 async function downloadCLI (url) {
   core.debug(`Downloading Terraform CLI from ${url}`);
   const pathToCLIZip = await tc.downloadTool(url);
@@ -50,7 +80,7 @@ async function downloadCLI (url) {
   if (os.platform().startsWith('win')) {
     core.debug(`Terraform CLI Download Path is ${pathToCLIZip}`);
     const fixedPathToCLIZip = `${pathToCLIZip}.zip`;
-    io.mv(pathToCLIZip, fixedPathToCLIZip);
+    await io.mv(pathToCLIZip, fixedPathToCLIZip);
     core.debug(`Moved download to ${fixedPathToCLIZip}`);
     pathToCLI = await tc.extractZip(fixedPathToCLIZip);
   } else {
@@ -130,7 +160,7 @@ credentials "${credentialsHostname}" {
 async function run () {
   try {
     // Gather GitHub Actions inputs
-    const version = core.getInput('terraform_version');
+    const version = await resolveVersion();
     const credentialsHostname = core.getInput('cli_config_credentials_hostname');
     const credentialsToken = core.getInput('cli_config_credentials_token');
     const wrapper = core.getInput('terraform_wrapper') === 'true';
