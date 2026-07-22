@@ -116,17 +116,10 @@ jobs:
       with:
         cli_config_credentials_token: ${{ env.TF_CLOUD_API_TOKEN }}
 
-    - name: Validate Terraform Credentials (Windows)
-      if: runner.os == 'Windows'
+    - name: Validate Terraform Credentials
       run: |
-        cat ${APPDATA}/terraform.rc | grep 'credentials "app.terraform.io"'
-        cat ${APPDATA}/terraform.rc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
-
-    - name: Validate Teraform Credentials (Linux & macOS)
-      if: runner.os != 'Windows'
-      run: |
-        cat ${HOME}/.terraformrc | grep 'credentials "app.terraform.io"'
-        cat ${HOME}/.terraformrc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
+        cat ${RUNNER_TEMP}/setup-terraform.tfrc | grep 'credentials "app.terraform.io"'
+        cat ${RUNNER_TEMP}/setup-terraform.tfrc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }
 
   terraform-credentials-enterprise:
     name: 'Terraform Enterprise Credentials'
@@ -146,17 +139,10 @@ jobs:
         cli_config_credentials_hostname: 'terraform.example.com'
         cli_config_credentials_token: ${{ env.TF_CLOUD_API_TOKEN }}
 
-    - name: Validate Terraform Credentials (Windows)
-      if: runner.os == 'Windows'
+    - name: Validate Terraform Credentials
       run: |
-        cat ${APPDATA}/terraform.rc | grep 'credentials "terraform.example.com"'
-        cat ${APPDATA}/terraform.rc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
-
-    - name: Validate Teraform Credentials (Linux & macOS)
-      if: runner.os != 'Windows'
-      run: |
-        cat ${HOME}/.terraformrc | grep 'credentials "terraform.example.com"'
-        cat ${HOME}/.terraformrc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
+        cat ${RUNNER_TEMP}/setup-terraform.tfrc | grep 'credentials "terraform.example.com"'
+        cat ${RUNNER_TEMP}/setup-terraform.tfrc | grep 'token = "${{ env.TF_CLOUD_API_TOKEN }}"'
 
   terraform-credentials-none:
     name: 'Terraform No Credentials'
@@ -171,15 +157,9 @@ jobs:
     - name: Setup Terraform
       uses: ./
 
-    - name: Validate Terraform Credentials (Windows)
-      if: runner.os == 'Windows'
+    - name: Validate Teraform Credentials
       run: |
-        [[ -f ${APPDATA}/terraform.rc ]] || exit 0
-
-    - name: Validate Teraform Credentials (Linux & macOS)
-      if: runner.os != 'Windows'
-      run: |
-        [[ -f ${HOME}/.terraformrc ]] || exit 0
+        [[ -f ${RUNNER_TEMP}/setup-terraform.tfrc ]] || exit 0
 
   terraform-arguments:
     name: 'Terraform Arguments'
