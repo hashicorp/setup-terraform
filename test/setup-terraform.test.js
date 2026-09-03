@@ -17,6 +17,7 @@ const io = require('@actions/io');
 const core = require('@actions/core');
 const tc = require('@actions/tool-cache');
 const nock = require('nock');
+const releases = require('@hashicorp/js-releases');
 
 const json = require('./index.json');
 const setup = require('../lib/setup-terraform');
@@ -34,9 +35,19 @@ describe('Setup Terraform', () => {
   beforeEach(() => {
     process.env.HOME = '/tmp/asdf';
     process.env.APPDATA = '/tmp/asdf';
+
+    // Stub the checksum/signature verification by default. The real
+    // implementation streams the downloaded zip and fetches the signed
+    // SHA256SUMS over the network, neither of which exists under the mocked
+    // download in these tests. Individual tests override this to exercise the
+    // verification path.
+    jest
+      .spyOn(releases.Release.prototype, 'verify')
+      .mockResolvedValue();
   });
 
   afterEach(async () => {
+    jest.restoreAllMocks();
     await io.rmRF(process.env.HOME);
     process.env.HOME = HOME;
     process.env.APPDATA = APPDATA;
@@ -631,5 +642,78 @@ describe('Setup Terraform', () => {
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform.exe`, `file${path.sep}terraform-bin.exe`);
     expect(ioCp).toHaveBeenCalledWith(wrapperPath, `file${path.sep}terraform`);
+  });
+
+  test('verifies the downloaded archive against the published SHA256SUMS', async () => {
+    const version = '0.1.1';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    await setup();
+
+    // The downloaded zip is verified against the platform-specific build name
+    // before it is extracted and added to the path.
+    expect(releases.Release.prototype.verify).toHaveBeenCalledWith('file.zip', 'terraform_0.1.1_linux_amd64.zip');
+    expect(core.addPath).toHaveBeenCalled();
+  });
+
+  test('fails when the downloaded archive does not match the published SHA256SUMS', async () => {
+    const version = '0.1.1';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    releases.Release.prototype.verify
+      .mockReset()
+      .mockRejectedValueOnce(new Error('Install error: SHA sum for terraform_0.1.1_linux_amd64.zip does not match.'));
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    await expect(setup()).rejects.toThrow('does not match');
+
+    // A failed verification must stop the install before the archive is
+    // extracted, so the unverified binary is never placed on the path.
+    expect(tc.extractZip).not.toHaveBeenCalled();
   });
 });
