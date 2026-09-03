@@ -109,15 +109,15 @@ credentials "${credentialsHostname}" {
 }`.trim();
   // eslint-enable
 
-  // default to OS-specific path
-  let credsFile = osPlat === 'win32'
-    ? `${process.env.APPDATA}/terraform.rc`
-    : `${process.env.HOME}/.terraformrc`;
+  // set or use the TF_CLI_CONFIG_FILE environment variable
+  let credsFile = process.env.TF_CLI_CONFIG_FILE;
+  if (!credsFile) {
+    credsFile = path.join(process.env.RUNNER_TEMP, 'setup-terraform.tfrc');
+    core.debug(`Default CLI config created as ${credsFile}`);
+    core.exportVariable('TF_CLI_CONFIG_FILE', credsFile);
+  }
 
-  // override with TF_CLI_CONFIG_FILE environment variable
-  credsFile = process.env.TF_CLI_CONFIG_FILE ? process.env.TF_CLI_CONFIG_FILE : credsFile;
-
-  // get containing folder
+  // create containing folder in case it doesn't exist
   const credsFolder = path.dirname(credsFile);
 
   core.debug(`Creating ${credsFolder}`);
