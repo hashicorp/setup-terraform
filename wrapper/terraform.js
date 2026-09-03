@@ -43,7 +43,8 @@ async function checkTerraform () {
   core.setOutput('stderr', stderr.contents);
   core.setOutput('exitcode', exitCode.toString(10));
 
-  if (exitCode === 0 || exitCode === 2) {
+  const usingDetailedExitcode = args.filter(arg => arg.toLowerCase().endsWith('-detailed-exitcode')).length > 0;
+  if (exitCode === 0 || (exitCode === 2 && usingDetailedExitcode)) {
     // A exitCode of 0 is considered a success
     // An exitCode of 2 may be returned when the '-detailed-exitcode' option
     // is passed to plan. This denotes Success with non-empty
