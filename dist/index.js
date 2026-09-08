@@ -157,8 +157,16 @@ async function run () {
       throw new Error(`Terraform version ${version} not available for ${platform} and ${arch}`);
     }
 
-    // Download requested version
-    const pathToCLI = await downloadCLI(build.url);
+    // Check tool cache first
+    let pathToCLI = tc.find('terraform', release.version, arch);
+
+    if (!pathToCLI) {
+      // Download requested version
+      const downloadedPath = await downloadCLI(build.url);
+
+      // Cache for reuse across runs
+      pathToCLI = await tc.cacheDir(downloadedPath, 'terraform', release.version, arch);
+    }
 
     // Install our wrapper
     if (wrapper) {
