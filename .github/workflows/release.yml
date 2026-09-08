@@ -55,8 +55,10 @@ jobs:
           git config --global user.email "${{ vars.TF_DEVEX_CI_COMMIT_EMAIL }}"
           git add .
           git commit -a -m "Update changelog"
-          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${TF_DEVEX_COMMIT_GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
 
+        env:
+          TF_DEVEX_COMMIT_GITHUB_TOKEN: ${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}
   update-package-version:
     needs: changelog
     runs-on: ubuntu-latest
@@ -84,8 +86,10 @@ jobs:
           git config --global user.email "${{ vars.TF_DEVEX_CI_COMMIT_EMAIL }}"
           git add .
           git commit -a -m "Update package version"
-          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${TF_DEVEX_COMMIT_GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
 
+        env:
+          TF_DEVEX_COMMIT_GITHUB_TOKEN: ${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}
   release-tag:
     needs: [ update-package-version, major-version ]
     runs-on: ubuntu-latest
@@ -108,9 +112,11 @@ jobs:
 
           git tag "${{ inputs.versionNumber }}"
           git tag -f "${{ needs.major-version.outputs.version }}"
-          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" "${{ inputs.versionNumber }}"
-          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" -f "${{ needs.major-version.outputs.version }}"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${TF_DEVEX_COMMIT_GITHUB_TOKEN}@github.com/${{ github.repository }}.git" "${{ inputs.versionNumber }}"
+          git push "https://${{ vars.TF_DEVEX_CI_COMMIT_AUTHOR }}:${TF_DEVEX_COMMIT_GITHUB_TOKEN}@github.com/${{ github.repository }}.git" -f "${{ needs.major-version.outputs.version }}"
 
+        env:
+          TF_DEVEX_COMMIT_GITHUB_TOKEN: ${{ secrets.TF_DEVEX_COMMIT_GITHUB_TOKEN }}
   release:
     needs: [ changelog-version, release-tag ]
     runs-on: ubuntu-latest
