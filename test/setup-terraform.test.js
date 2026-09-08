@@ -425,6 +425,188 @@ describe('Setup Terraform', () => {
     expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
   });
 
+  test('writes exactly the credentials block to a fresh config file', async () => {
+    const version = '0.1.1';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    await setup();
+
+    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    expect(creds).toEqual(`credentials "${credentialsHostname}" {
+  token = "${credentialsToken}"
+}`);
+  });
+
+  test('preserves an existing config file when adding credentials for a different hostname', async () => {
+    const version = '0.1.1';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    const existingConfig = `plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"
+credentials "terraform.example.com" {
+  token = "existing-token"
+}`;
+    await fs.mkdir(process.env.HOME, { recursive: true });
+    await fs.writeFile(`${process.env.HOME}/.terraformrc`, existingConfig);
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    await setup();
+
+    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // the entire existing content is preserved as a prefix
+    expect(creds.indexOf(existingConfig)).toBe(0);
+    // new credentials block was added
+    expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
+    expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
+  });
+
+  test('does not overwrite credentials for the same hostname', async () => {
+    const version = '0.1.1';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    const existingConfig = `credentials "${credentialsHostname}"
+{
+  token = "existing-token"
+}`;
+    await fs.mkdir(process.env.HOME, { recursive: true });
+    await fs.writeFile(`${process.env.HOME}/.terraformrc`, existingConfig);
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    await setup();
+
+    const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
+    // existing config file is left untouched and still contains a single credentials block
+    expect(creds).toEqual(existingConfig);
+    expect(creds.indexOf(credentialsToken)).toBe(-1);
+    expect(creds.split(`credentials "${credentialsHostname}"`).length).toBe(2);
+  });
+
+  test('preserves an existing config file overridden with TF_CLI_CONFIG_FILE', async () => {
+    const version = '0.1.1';
+    const credentialsHostname = 'app.terraform.io';
+    const credentialsToken = 'asdfjkl';
+
+    const configPath = `${process.env.HOME}/terraformrc.tfrc`;
+    process.env.TF_CLI_CONFIG_FILE = configPath;
+    const existingConfig = 'plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"\n';
+    await fs.mkdir(process.env.HOME, { recursive: true });
+    await fs.writeFile(configPath, existingConfig);
+
+    core.getInput = jest
+      .fn()
+      .mockReturnValueOnce(version)
+      .mockReturnValueOnce(credentialsHostname)
+      .mockReturnValueOnce(credentialsToken);
+
+    tc.downloadTool = jest
+      .fn()
+      .mockReturnValueOnce('file.zip');
+
+    tc.extractZip = jest
+      .fn()
+      .mockReturnValueOnce('file');
+
+    os.platform = jest
+      .fn()
+      .mockReturnValue('linux');
+
+    os.arch = jest
+      .fn()
+      .mockReturnValue('amd64');
+
+    nock('https://releases.hashicorp.com')
+      .get('/terraform/index.json')
+      .reply(200, json);
+
+    await setup();
+
+    const creds = await fs.readFile(configPath, { encoding: 'utf8' });
+    // existing content is preserved and credentials were appended
+    expect(creds.indexOf(existingConfig)).toBe(0);
+    expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
+    expect(creds.indexOf(credentialsToken)).toBeGreaterThan(-1);
+
+    delete process.env.TF_CLI_CONFIG_FILE;
+  });
+
   test('fails when metadata cannot be downloaded', async () => {
     const version = 'latest';
     const credentialsHostname = 'app.terraform.io';
