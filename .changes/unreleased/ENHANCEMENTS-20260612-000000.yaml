@@ -1,0 +1,5 @@
+kind: ENHANCEMENTS
+body: Verify the downloaded Terraform archive against the PGP-signed SHA256SUMS published by HashiCorp before extracting it
+time: 2026-06-12T00:00:00Z
+custom:
+  Issue: "556"
