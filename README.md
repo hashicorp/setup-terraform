@@ -59,7 +59,9 @@ steps:
     terraform_wrapper: false
 ```
 
-Subsequent steps can access outputs when the wrapper script is installed:
+Subsequent steps can access outputs when the wrapper script is installed.
+
+> **Notice:** Do not use `plan` as a GitHub Actions step `id`. It is a reserved word: the step can disappear from the Actions UI while still running. Use an id such as `tfplan` instead.
 
 ```yaml
 steps:
@@ -67,12 +69,12 @@ steps:
 
 - run: terraform init
 
-- id: plan
+- id: tfplan
   run: terraform plan -no-color
 
-- run: echo ${{ steps.plan.outputs.stdout }}
-- run: echo ${{ steps.plan.outputs.stderr }}
-- run: echo ${{ steps.plan.outputs.exitcode }}
+- run: echo ${{ steps.tfplan.outputs.stdout }}
+- run: echo ${{ steps.tfplan.outputs.stderr }}
+- run: echo ${{ steps.tfplan.outputs.exitcode }}
 ```
 
 Outputs can be used in subsequent steps to comment on the pull request:
@@ -107,14 +109,14 @@ steps:
   run: terraform validate -no-color
 
 - name: Terraform Plan
-  id: plan
+  id: tfplan
   run: terraform plan -no-color -input=false
   continue-on-error: true
 
 - uses: actions/github-script@v7
   if: github.event_name == 'pull_request'
   env:
-    PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+    PLAN: "terraform\n${{ steps.tfplan.outputs.stdout }}"
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
@@ -129,7 +131,7 @@ steps:
 
       </details>
 
-      #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      #### Terraform Plan 📖\`${{ steps.tfplan.outcome }}\`
 
       <details><summary>Show Plan</summary>
 
@@ -175,14 +177,14 @@ steps:
   run: terraform validate -no-color
 
 - name: Terraform Plan
-  id: plan
+  id: tfplan
   run: terraform plan -no-color -input=false
   continue-on-error: true
 
 - uses: actions/github-script@v7
   if: github.event_name == 'pull_request'
   env:
-    PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+    PLAN: "terraform\n${{ steps.tfplan.outputs.stdout }}"
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     script: |
@@ -208,7 +210,7 @@ steps:
 
       </details>
 
-      #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      #### Terraform Plan 📖\`${{ steps.tfplan.outcome }}\`
 
       <details><summary>Show Plan</summary>
 
