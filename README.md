@@ -257,8 +257,19 @@ The action supports the following inputs:
 
 ## Outputs
 
-This action does not configure any outputs directly. However, when you set the `terraform_wrapper` input
-to `true`, the following outputs are available for subsequent steps that call the `terraform` binary:
+This action sets `terraform_path` to the absolute path of the installed Terraform CLI binary. When `terraform_wrapper` is `true` (the default), that path is `terraform-bin` (the real binary), not the wrapper. Use it for plugin acceptance tests:
+
+```yaml
+- uses: hashicorp/setup-terraform@v4
+  id: setup
+  with:
+    terraform_wrapper: false
+
+- run: echo "TF_ACC_TERRAFORM_PATH=${{ steps.setup.outputs.terraform_path }}" >> "$GITHUB_ENV"
+```
+
+When you set the `terraform_wrapper` input
+to `true`, the following outputs are also available for subsequent steps that call the `terraform` binary:
 
 - `stdout` - The STDOUT stream of the call to the `terraform` binary.
 - `stderr` - The STDERR stream of the call to the `terraform` binary.
