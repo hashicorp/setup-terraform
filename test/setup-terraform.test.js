@@ -78,6 +78,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
@@ -122,6 +123,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform.exe'));
 
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/terraform.rc`, { encoding: 'utf8' });
@@ -165,6 +167,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
 
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
@@ -208,6 +211,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
 
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
@@ -251,6 +255,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
@@ -293,6 +298,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
@@ -335,6 +341,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
@@ -377,6 +384,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
@@ -419,6 +427,7 @@ describe('Setup Terraform', () => {
 
     // downloaded CLI has been added to path
     expect(core.addPath).toHaveBeenCalled();
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform'));
     // expect credentials are in ${HOME}.terraformrc
     const creds = await fs.readFile(`${process.env.HOME}/.terraformrc`, { encoding: 'utf8' });
     expect(creds.indexOf(credentialsHostname)).toBeGreaterThan(-1);
@@ -587,6 +596,7 @@ describe('Setup Terraform', () => {
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform`, `file${path.sep}terraform-bin`);
     expect(ioCp).toHaveBeenCalledWith(wrapperPath, `file${path.sep}terraform`);
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform-bin'));
   });
 
   test('installs wrapper on windows', async () => {
@@ -631,5 +641,6 @@ describe('Setup Terraform', () => {
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform.exe`, `file${path.sep}terraform-bin.exe`);
     expect(ioCp).toHaveBeenCalledWith(wrapperPath, `file${path.sep}terraform`);
+    expect(core.setOutput).toHaveBeenCalledWith('terraform_path', path.join('file', 'terraform-bin.exe'));
   });
 });

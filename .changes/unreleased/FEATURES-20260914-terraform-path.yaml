@@ -1,0 +1,5 @@
+kind: FEATURES
+body: Output the path to the installed Terraform binary as `terraform_path` for use with `TF_ACC_TERRAFORM_PATH`
+time: 2026-09-14T21:00:00Z
+custom:
+  Issue: 507

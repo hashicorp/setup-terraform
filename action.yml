@@ -17,6 +17,9 @@ inputs:
     description: 'Whether or not to install a wrapper to wrap subsequent calls of the `terraform` binary and expose its STDOUT, STDERR, and exit code as outputs named `stdout`, `stderr`, and `exitcode` respectively. Defaults to `true`.'
     default: 'true'
     required: false
+outputs:
+  terraform_path:
+    description: 'Absolute path to the installed Terraform CLI binary. When terraform_wrapper is true this is terraform-bin (the real binary), not the wrapper. Use this for TF_ACC_TERRAFORM_PATH in plugin acceptance tests.'
 runs:
   using: 'node24'
   main: 'dist/index.js'

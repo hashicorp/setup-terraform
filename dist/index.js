@@ -168,6 +168,13 @@ async function run () {
     // Add to path
     core.addPath(pathToCLI);
 
+    // Expose the real Terraform binary (terraform-bin when the wrapper is installed)
+    const exeSuffix = osPlatform.startsWith('win') ? '.exe' : '';
+    const terraformBinary = wrapper
+      ? path.join(pathToCLI, `terraform-bin${exeSuffix}`)
+      : path.join(pathToCLI, `terraform${exeSuffix}`);
+    core.setOutput('terraform_path', terraformBinary);
+
     // Add credentials to file if they are provided
     if (credentialsHostname && credentialsToken) {
       await addCredentials(credentialsHostname, credentialsToken, osPlatform);
