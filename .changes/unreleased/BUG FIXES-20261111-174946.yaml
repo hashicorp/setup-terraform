@@ -1,0 +1,5 @@
+kind: BUG FIXES
+body: Fix the wrapper crashing with a TypeError when Terraform is terminated by a signal
+time: 2026-11-11T17:49:46.332336+01:00
+custom:
+    Issue: "276"
