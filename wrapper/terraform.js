@@ -41,6 +41,11 @@ async function checkTerraform () {
   // Set outputs, result, exitcode, and stderr
   core.setOutput('stdout', stdout.contents);
   core.setOutput('stderr', stderr.contents);
+  if (exitCode === null) {
+    // No exit code is reported when the process is terminated by a signal
+    core.setFailed('Terraform terminated without an exit code. The process may have been killed by a signal.');
+    return;
+  }
   core.setOutput('exitcode', exitCode.toString(10));
 
   if (exitCode === 0 || exitCode === 2) {
