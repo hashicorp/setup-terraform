@@ -571,6 +571,13 @@ describe('Setup Terraform', () => {
       .fn()
       .mockReturnValueOnce('file');
 
+    tc.cacheDir = jest.fn()
+      .mockReturnValueOnce('file');
+
+    tc.find = jest
+      .fn()
+      .mockReturnValueOnce(null);
+
     os.platform = jest
       .fn()
       .mockReturnValue('linux');
@@ -614,6 +621,13 @@ describe('Setup Terraform', () => {
     tc.extractZip = jest
       .fn()
       .mockReturnValueOnce('file');
+
+    tc.cacheDir = jest.fn()
+      .mockReturnValueOnce('file');
+
+    tc.find = jest
+      .fn()
+      .mockReturnValueOnce(null);
 
     os.platform = jest
       .fn()
