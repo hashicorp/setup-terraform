@@ -47,5 +47,8 @@
     "undici": "^7.29.0",
     "test-exclude": "^7.0.1",
     "babel-plugin-istanbul": "^7.0.0"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }
