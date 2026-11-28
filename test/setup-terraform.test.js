@@ -27,6 +27,9 @@ const setup = require('../lib/setup-terraform');
 // core.error = jest
 //   .fn(console.error);
 
+const fsReadFileImplementation = fs.readFile;
+const fsWriteFileImplementation = fs.writeFile;
+
 describe('Setup Terraform', () => {
   const HOME = process.env.HOME;
   const APPDATA = process.env.APPDATA;
@@ -553,8 +556,20 @@ describe('Setup Terraform', () => {
 
     const ioMv = jest.spyOn(io, 'mv')
       .mockImplementation(() => {});
-    const ioCp = jest.spyOn(io, 'cp')
-      .mockImplementation(() => {});
+    const fsReadFile = jest.spyOn(fs, 'readFile').mockImplementation((...args) => {
+      if (args[0] === wrapperPath) {
+        return Promise.resolve('');
+      } else {
+        return fsReadFileImplementation(...args);
+      }
+    });
+    const fsWriteFile = jest.spyOn(fs, 'writeFile').mockImplementation((...args) => {
+      if (args[0] === `file${path.sep}terraform`) {
+        return Promise.resolve();
+      } else {
+        return fsWriteFileImplementation(...args);
+      }
+    });
 
     core.getInput = jest
       .fn()
@@ -586,7 +601,8 @@ describe('Setup Terraform', () => {
     await setup();
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform`, `file${path.sep}terraform-bin`);
-    expect(ioCp).toHaveBeenCalledWith(wrapperPath, `file${path.sep}terraform`);
+    expect(fsReadFile).toHaveBeenCalledWith(wrapperPath, 'utf8');
+    expect(fsWriteFile).toHaveBeenCalledWith(`file${path.sep}terraform`, expect.any(String), { mode: 0o755 });
   });
 
   test('installs wrapper on windows', async () => {
@@ -597,8 +613,21 @@ describe('Setup Terraform', () => {
 
     const ioMv = jest.spyOn(io, 'mv')
       .mockImplementation(() => {});
-    const ioCp = jest.spyOn(io, 'cp')
-      .mockImplementation(() => {});
+    const fsReadFileImplementation = fs.readFile;
+    const fsReadFile = jest.spyOn(fs, 'readFile').mockImplementation((...args) => {
+      if (args[0] === wrapperPath) {
+        return Promise.resolve('');
+      } else {
+        return fsReadFileImplementation(...args);
+      }
+    });
+    const fsWriteFile = jest.spyOn(fs, 'writeFile').mockImplementation((...args) => {
+      if (args[0] === `file${path.sep}terraform`) {
+        return Promise.resolve();
+      } else {
+        return fsWriteFileImplementation(...args);
+      }
+    });
 
     core.getInput = jest
       .fn()
@@ -630,6 +659,7 @@ describe('Setup Terraform', () => {
     await setup();
 
     expect(ioMv).toHaveBeenCalledWith(`file${path.sep}terraform.exe`, `file${path.sep}terraform-bin.exe`);
-    expect(ioCp).toHaveBeenCalledWith(wrapperPath, `file${path.sep}terraform`);
+    expect(fsReadFile).toHaveBeenCalledWith(wrapperPath, 'utf8');
+    expect(fsWriteFile).toHaveBeenCalledWith(`file${path.sep}terraform`, expect.any(String), { mode: 0o755 });
   });
 });
